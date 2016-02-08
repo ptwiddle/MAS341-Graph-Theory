@@ -1,0 +1,34 @@
+\documentclass{amsart}[12pt]
+
+
+\usepackage{mathpazo}
+\linespread{1.2}
+\title{MAS-439: Solutions to Problem set 1}
+
+
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+
+\section{Question 1}
+
+Each part gives a subset of a commutative ring.  Determine, with proof, whether or not each subset is a subring.
+
+\subsection{1} The subset of $\Q$ consisting of numbers with odd denominators, when written in lowest terms.
+
+\begin{proof}
+Recall that a subset $$S$$ is a subring of $$R$$ if and only if it contains $$1_R$$, and is closed under addition, taking negatives, and multiplication.
+
+Let $\mathbf{Odd}\subset\Q$ be the subset of $\Q$ consisting of those numbers which have an odd denominator when written in lowest terms; we show that $\mathbf{Odd}$ satisfies these properties, and hence is a subring.
+
+When written in lowest terms
+
+
+\end{proof}
+
+
+\end{document}
