@@ -15,8 +15,8 @@ Lectures are Tuesdays at 10 in Hicks LT2, and Fridays at 9 in Hicks LT7.
 
 Office hours are currently scheduled for:
 
- -  Monday 2-3
- -  Wednesday 11-12
+ -  Monday 1:30-2:30
+ -  Wednesday 11:30-12:30
 
 Immediately after lecture is also typically a good time to talk in person.  Office hours may later in the semester, but always feel free to email me questions, or to set up a time to chat in person.
 
