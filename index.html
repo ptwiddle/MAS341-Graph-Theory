@@ -7,16 +7,6 @@ layout: default
 
 
 
-<h3>Most recent problem set:</h3>
-<ul>
-{% assign problems = site.problemsets | reverse %}
-{% for set in problems limit:1 %}
-<li>
-<a href="{{ set.url | prepend:site.baseurl }}"> {{ set.title }}</a>  Due {{ set.duedate }}
-</li>
-{% endfor %} 
-</ul>
-
 
 
 <h3> Recent Lectures: </h3>
@@ -29,7 +19,5 @@ layout: default
 {% endfor %} 
 </ul>
 
-
-<a href="MAS439LastYear.pdf">Notes from last year's course</a>.  The current plan is to follow these fairly closely, with some minor changes.  I will try to alert you to any larger changes that may occur.
 
 </div>

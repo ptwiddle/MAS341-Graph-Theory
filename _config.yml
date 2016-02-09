@@ -2,7 +2,7 @@
 title: "MAS 341: Graph Theory"
 email: "paul.johnson@sheffield.ac.uk"
 description: 
-baseurl: "/MAS341-Graph-Theory" # the subpath of your site, e.g. /blog/
+baseurl: "/MAS341-Graph-Theory/" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 collections:
   lecturenotes:
