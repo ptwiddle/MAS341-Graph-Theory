@@ -14,7 +14,7 @@ layout: default
 {% assign lectures = site.lecturenotes | reverse %}
 {% for lecture in lectures limit:2 %}
 <li>
-<a href="{{ lecture.url | prepend:site.baseurl }}"> {{ lecture.title }}</a>  
+<a href="{{ lecture.url | prepend:site.baseurl }}"> {{ lecture.title }} </a>  
 </li>
 {% endfor %} 
 </ul>

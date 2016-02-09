@@ -1,8 +1,11 @@
 ---
 layout: lecture
-tite: Lecture 1&#; Examples, definitions, instant insanity
+title: Lecture 1&#; Examples, definitions, instant insanity
 comments: True
 ---
+
+The slides for this talk are available <a href="/MAS341-Graph-Theory/Slides/Lecture1.html"> here </a>.
+
 
 Course Policies
 ====
