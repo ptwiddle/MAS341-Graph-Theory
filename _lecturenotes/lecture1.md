@@ -1,5 +1,5 @@
 ---
-layout: lectue
+layout: lecture
 tite: Lectue 1&#; Examples, definitions, instant insanity
 comments: True
 ---
