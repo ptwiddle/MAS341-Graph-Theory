@@ -1,6 +1,6 @@
 ---
 layout: lecture
-tite: Lectue 1&#; Examples, definitions, instant insanity
+tite: Lecture 1&#; Examples, definitions, instant insanity
 comments: True
 ---
 
