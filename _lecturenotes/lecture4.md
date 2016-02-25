@@ -98,26 +98,12 @@ Proof
 
 Suppose that $$v\in V(\Gamma)$$ has an odd degree, and consider a closed path in $$\Gamma$$.  The path may visit $$v$$ multiple times; each time it does, it must enter from one edge, and leave from another edge, unless we leave along a loop, and return via the loop).  In either case, each time the path visits $$v$$, it "uses up" two of the degree of $$v$$.  Therefore, if $$v$$ has odd degree,  for any closed path there will be an edge incident to $$v$$ that wasn't used in our path, and hence the path will not be Eulerian.  $$\square$$
 
-The above lemma shows that a necessary condition for having an Eulerian cycle is that every vertex has even degree.  Another obvious necessary condition is that the graph is connected.  It turns out that these two conditions are also sufficient:
+The above lemma shows that a necessary condition for having an Eulerian cycle is that every vertex has even degree.  Another obvious necessary condition is that the graph is connected.  It turns out that these two conditions are also sufficient.  In the next lecture, we will prove the following:
 
 Lemma
 ===
 
 If $$\Gamma$$ is connected, and every vertex has even degree, then it has an Eulerian cycle.
 
-Proof
-===
 
-Let $$P$$ be a closed walk in $$\Gamma$$ -- as a base case, we can take $$P$$ to be the empty walk that just stays at $$v$$.  We inductively show that if $$P$$ does not use all the edges of $$\Gamma$$, then we can enlarge $$P$$ to a longer closed walk, which would complete the proof.
-
-Suppose that there is some edge $$e$$ that is not in $$P$$.  We first show that there is some edge $$f\notin P$$ that contains a vertex that is in $$P$$.  
-If one of the edges of $$e$$ is in $$P$$, we can just take $$f=e$$.  If not, then consider any vertex $$v\in P$$, and a vertex $$w$$ incident to $$e$$.  Since the graph $$\Gamma$$ is connected there is a path $$Q$$ from $$v$$ to $$w$$.  Since $$w\notin P$$, eventually the path $$Q$$ must contain an edge not in $$P$$ -- we can take $$f$$ to be the first such edge.
-
-So, now, we have a vertex $$v\in P$$, incident to an edge $$e\notin P$$.  We claim we can grow $$e$$ into another closed trail $$Q$$, that does not share any edges with $$P$$.  
-
-
-
-Let $$v_1$$ be the other end of the edge $$e$$; if $$v_1=v$$, we are done.  If not, then consider the edges incident to $$v_1$$ that are used in $$P$$ and our new path $$Q$$: there are an odd number, but $$v_1$$ has an even degree, and so there must be another edge incident to $$v_1$$ that is not in $$P$$ or $$Q$$, and so we can extend our trail.  Continuing this process, our trail must eventually reach $$v_1$$ again, in which case we may stitch together the two trails by first doing $$P$$ starting at $$v_1$$, and then doing $$Q$$ from $$v_1$$ to $$v_1$$.  $$\square$$
-
-Note that this proof not only completely characterizes the graphs that have Eulerian cycles, it provides an algorithm for finding an Eulerian cycle in such a graph.
 
