@@ -60,9 +60,9 @@ Since the odd cycle is not bipartite, any graph containing an odd cycle cannot b
 
 The proof proceeds by trying to color the vertices of $$\Gamma$$.  Pick any vertex $$v$$, and define $$S_k$$ to be the set of all vertices with distance exactly $$k$$ from $$v$$.  We will try to color $$\Gamma$$ by coloring the vertices in $$S_n$$ to be red if $$n$$ is even, and blue if $$n$$ is odd.  
 
-Suppose that this is not a valid coloring; then we have a vertex $$a\in S_k$$ with $$k$$ even, adjacent to a vertex $$b\in S_\ell$$ with $$\ell$$ odd.
+Suppose that this is not a valid coloring; then we either have two adjacent vertices $$a\in S_k$$ and $$n\in S_\ell$$ with $$k$$ even and $$\ell$$ odd.
 
-Since $$a\in S_k$$, there is a path $$v=v_0v_1\cdots v_k=a$$; and similarly since $$b\in S_\ell$$ there is a path $$v=w_0w_1\cdots w_\ell=b$$.  Concatening these gives us a closed walk $$a=v_kv_{k-1}\cdots v_0 w_1 w_2\cdots w_\ell=b$$ of length $$a+b$$ which is odd; since $$a$$ and $$b$$ are adjacent this gives us an odd walk in $$\Gamma$$, and hence by the previous lemma an odd path $$\square$$.
+Since $$a\in S_k$$, there is a path $$v=v_0v_1\cdots v_k=a$$; and similarly since $$b\in S_\ell$$ there is a path $$v=w_0w_1\cdots w_\ell=b$$.  Concatening these gives us a closed walk $$a=v_kv_{k-1}\cdots v_0 w_1 w_2\cdots w_\ell=b$$ of length $$a+b-1$$, which is odd since $$a$$ and $$b$$ have the same parity.  Since $$a$$ and $$b$$ are adjacent this gives us an odd walk in $$\Gamma$$, and hence by the previous lemma an odd path $$\square$$.
 
 
 Eulerian and Hamiltonian cycles
