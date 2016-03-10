@@ -96,3 +96,34 @@ The lowest unused number is 3, so that is the first child.
 To find the next unused number, we move to the second column.  1 only appears in the first column, and so it is now the lowest number that doesn't appear, and so it goes underneath the first 6.  Moving to the third column, we have already used 1 and 3 as child nodes.  The number 2 is still to appear as a parent, and so can't be a leaf yet, and so 4 is the first number that we haven't used yet.  Similar reasoning gives 5 and 7 for the 4th and 5th column.  
 
 Finally, the last remaining edge connects the two nodes we have not used as leaves yet; in this case 2 and 6.  
+
+Introduction to optimisation problems
+----
+
+One motivation for introducing trees was as the "cheapest" way of connecting $$n$$ points.  Here, "cheapest" just means the least number of edges.  In real world applications, not all edges are created equal.  For example, consider the case where the vertices of $$\Gamma$$ represent cities, and the edges are roads connecting them.  If we're looking for the shortest path between two cities, we do not just want the least number of edges, as some roads will be longer than others, or be busy and take longer to drive.  These subtleties can be addressed with a *weighted graph*.
+
+Definition
+===
+
+A *weighted graph* is a graph $$\Gamma$$, together with a non-negative real number $$w(e)$$ for each edge $$e\in E(\Gamma)$$.
+
+Example
+===
+
+Typically, weighted graphs are presented by drawing labelling each edge of the graph with its weight:
+
+![Example of a weighted graph](../Slides/Pictures/weightedgraph.png)
+
+Real world examples of weights
+===
+Even in the case where the vertices of $$\Gamma$$ are cities and the edges are conenctions between them, there are many possible interpretations of edges weights:
+ - The edge weights $$w(e)$$ might represent the cost of building or maintaining the road between the city
+ - The edge weights migth represent the distance between the cities
+ - The edge weights might represent travel times between the cities
+ - the edge weights might represent the cost of a train/plane ticket between the cities
+
+In the next few class lectures, we will discuss the following optimisation problems for weighted graphs:
+
+ - The *minimal spanning tree* -- finding a spanning tree $$T$$ of $$\Gamma$$ where the total cost of the edges in $$T$$ is the cheapest among all spanning trees of $$\Gamma$$.
+ - The *shortest path* -- finding a path between two vertices of $$\Gamma$$, where the total weight of all the edges in the path is minimal among all paths between the two vertices.
+ - The *traveling salesman problem* -- finding a hamiltonian cycle in a graph $$\Gamma$$ where the total weight of all the edges is minimal.
