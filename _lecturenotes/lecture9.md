@@ -76,7 +76,9 @@ Thus, the Prufer code for the above tree is 16622.
 Reconstructing a tree from its Prufer Code
 ===
 
-It is clear from the above definition that the Prufer code is a list of $$n-2$$ numbers between 1 and $$n$$; it is not clear that any such list of numbers is obtained, nor that any two trees give us a different set of numbers.  To see this, we describe an inverse algorithm, that constructs a tree on $$n$$ vertices from a Prufer code.
+It is clear from the above definition that the Prufer code is a list of $$n-2$$ numbers between 1 and $$n$$; it is not clear that any such list of numbers is obtained, nor that any two trees give us a different set of numbers.  To see this, we describe an inverse algorithm, that constructs a tree on $$n$$ vertices from a Prufer code.  
+
+More explicitly, the inverse algorithm will take as input a Prufer code, and from that Prufer code it will reconstruct the full ordered table of edges we constructed in the Prufer code algorithm.  It should be clear from the description that the algorithm actually reproduces this table, and not some other table, and hence that the two algorithms are inverse to each other.  This shows that the Prufer code is a bijection, which proves Cayley's formula, as there are $$n^{n-2}$$ valid Prufer codes on $$n$$ vertices.
 
 This algorith proceeds by figuring out the corresponding child nodes one by one.  Recall that any number in our list appeared as a parent node, and so is not a leaf.  At the first step, we deleted the smallest leaf.  So the first child node is the smallest number that does not appear on our list.  
 

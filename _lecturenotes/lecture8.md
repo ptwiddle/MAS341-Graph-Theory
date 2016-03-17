@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: Lecture 8&#58; More trees	
+title: Lecture 8&#58; More trees.  Chemistry and spanning trees
 comments: True
 ---
 

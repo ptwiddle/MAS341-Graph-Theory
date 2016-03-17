@@ -53,7 +53,7 @@ Proof:
 
 We first show the first 4 are equivalent.
 
-1 implies 3:
+1 implies 3
 ===
 
 Trees are by definition connected, so we must show that removing any edge of $$\Gamma$$ disconnects $$\Gamma$$.  Let $$a$$ and $$b$$ be two adjacent vertices, and suppose removing the edge between them did not disconnect $$\Gamma$$.  Then there is a path from $$a$$ to $$b$$ in $$\Gamma$$ not using the edge connecting them; adding the last edge back in makes a cycle, a condtradiction.  
@@ -75,7 +75,7 @@ If $$\Gamma$$ had a cycle, then any two vertices on the cycle have two distinct 
 
 We now show these are equivalent to the last two.
 
-3 implies 5:
+3 implies 5
 ====
 
  We proceed by induction on $$n$$.  If $$n=1$$, the graph is automatically connected; any edges would be loops and removing them would not make the graph disconnected, and so there must be 0 edges, as desired.  Now suppose $$n>1$$, and remove the edge between $$a$$ and $$b$$ from $$\Gamma$$.  The new graph is disconnected, so there are at least two components, call $$\Gamma_a$$ the component containing $$a$$ and $$\Gamma_b$$ the component containing $$b$$.  Since in the original graph every vertex had a path to both $$a$$ and $$b$$, in the graph after we've removed the vertex every graph must lie in one of these two components.  
