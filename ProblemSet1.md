@@ -1,8 +1,11 @@
 ---
-layout: page
-title: Problem Set 1
+layout: default
 permalink: /ProblemSet1/
 ---
+
+Problem Set 1
+----
+
 
 This problem set does not contribute to your final course grade, but is useful practice writing proofs for the exam.  It is due in class on Friday, March 11. 
 
