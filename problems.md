@@ -21,3 +21,12 @@ Practice Problems
 [Problems from a previous year](../OldProblems.pdf)
 
 These do not cover *exactly* the material that will be cover this year, but are pretty close.  I will try to keep a running commentary on differences between these problems and the course as a whole.
+
+Solutions to practice problems:
+===
+
+* [Problems 1-22](../solutions2015-1-22.pdf)
+* [Problems 23-27](../solutions2015-23-27.pdf)
+* [Problems 28-36](../solutions2015-28-36.pdf)
+* [Problems 37-41](../solutions2015-37-41.pdf)
+* [Problems 42-51](../solutions2015-42-51.pdf)
