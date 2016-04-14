@@ -98,7 +98,7 @@ Example of the algorithm
 
 We illustrate the longest path algorithm with our example graph.  Our start vertex is $$S$$, and so $$\ell(S)=0$$.
 
-Vertex 1 has only one incoming edge: $$A$$, with weight 6, and so $$\ell(1)=6+\ell(S)=6.
+Vertex 1 has only one incoming edge: $$A$$, with weight 6, and so $$\ell(1)=6+\ell(S)=6$$.
 
 Vertex 2 has two incoming edges: $$B$$ and $$D$$, and so we see that $$\ell(2)$$ is the maximum of $$w(D)+\ell(1)=3+6=9$$, and $$w(B)+\ell(S)=7+0=7$$, and so $$\ell(2)=9$$.  
 
@@ -113,7 +113,7 @@ Critical path analysis
 
 Apart from knowing the minimum time for completion of the project, finding the longest paths is useful for analysing where to put resources.  In particular, which tasks, if they run slightly over, would make the whole project run late?  Which tasks, if they were able to finish slightly early, would make the whole project finish early?
 
-To make the whole project run later, we need to increase the length of the longest path, which means we to increase the length of *any* long path.  Thus, the edges that would make the whole project run over are those contained in *any* longest path -- in our graph, these are edges $$A,C,D, E$$ and $$H$$.  
+To make the whole project run later, we need to increase the length of the longest path, which means we to increase the length of *any* long path.  Thus, the edges that would make the whole project run over are those contained in *any* longest path -- in our graph, these are edges $$A,C,D,E, G$$ and $$H$$.  
 
 To make the whole project finish early, we need to decrease the length of *every* longest path, and so these are the edges that are included in *every* longest path. In our graph, these are edges $$A$$ and $$H$$.
 
