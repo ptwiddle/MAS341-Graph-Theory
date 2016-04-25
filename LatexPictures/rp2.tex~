@@ -1,0 +1,23 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+
+
+
+\begin{tikzpicture}[scale=2]
+
+\draw[white] (-1.2,-.2)--(-1.2,-.2);
+\draw[white] (3.2,2.2)--(3.2,2.2);
+
+\draw[ 
+        decoration={markings, mark=at position 0.55 with {\arrow[scale=4]{latex}}},     postaction={decorate}
+        ] (0,0) arc (-180:180:2);
+\draw[        decoration={markings, mark=at position 0.55 with {\arrow[scale=4]{latex}}},     postaction={decorate}] (0,0) arc (180:360:2);
+
+
+\end{tikzpicture} 
+
+
+\end{document}

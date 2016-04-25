@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+
+
+
+\begin{tikzpicture}[scale=2]
+
+\draw[white] (-2.2,-.2)--(-2.2,-.2);
+\draw[white] (2.2,4.2)--(2.2,4.2);
+
+\draw[ 
+        decoration={markings, mark=at position 0.55 with {\arrow[scale=4]{latex}}},     postaction={decorate}
+        ] (0,0) arc (-90:90:2);
+\draw[        decoration={markings, mark=at position 0.55 with {\arrow[scale=4]{latex}}},     postaction={decorate}] (0,4) arc (90:270:2);
+\filldraw (0,0) circle (.05cm);
+\filldraw (0,4) circle (.05cm);
+
+
+
+\end{tikzpicture} 
+
+
+\end{document}
