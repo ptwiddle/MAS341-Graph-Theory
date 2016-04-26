@@ -83,16 +83,22 @@ The proof is similar, in that we begin by picking a Hamiltonian cycle, say, $$a-
 
 Begin by considering the case that $$a-c$$ is draw *inside* the circle, giving us the following picture:
 
-  
+  <a href="http://presheaf.com/?d=dq3e1p4v556ry3y6sf702oq317343"><img src="http://presheaf.com/cache/dq3e1p4v556ry3y6sf702oq317343.png" title="click to go to presheaf.com for editing"/></a>
 
 
   Then $$b$$ is separated from $$d$$ and $$e$$ on the inside of the circle, and hence the edges $$b-e$$ and $$b-d$$ must be drawn on the outside of the circle.  These edges separate $$a$$ from $$d$$ on the outside of the circle, and so this must be drawn inside, giving the following picture:
 
 <a href="http://presheaf.com/?d=d5f4c451j4lgx3zy171b161j6f52i"><img src="http://presheaf.com/cache/d5f4c451j4lgx3zy171b161j6f52i.png" title="click to go to presheaf.com for editing"/></a>
 
- but now we cannot add the final $$c-e$$, as $$c$$ and $$e$$ are separated from each other on both the outside and the inside of the circle.
+But now we cannot add the final $$c-e$$, as $$c$$ and $$e$$ are separated from each other on both the outside and the inside of the circle.
 
-Similarly, if we had drawn $$a-c$$ outside the circle, then $$b-d$$ and $$b-e$$ would ahve had to be drawn inside the circle, and then $$a-d$$ must also be outside, and drawing $$c-e$$ is not possible.
+Similarly, if we had drawn $$a-c$$ outside the circle, then $$b-d$$ and $$b-e$$ would have had to be drawn inside the circle, and then $$a-d$$ must also be outside, and drawing $$c-e$$ is not possible.  $$\square$$
+
+In some sense, having a $$K_{3,3}$$ or a $$K_5$$ are the only obstructions to being nonplanar.  
+
+
+Kuratowski's Theorem
+====
 
 
 

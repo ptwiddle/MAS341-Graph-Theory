@@ -66,7 +66,7 @@ The euler characteristic of surfaces can be used to show some graphs can't be em
 
 If we are given a graph $$\Gamma$$, we know its number of edges and number of vertices.  $$\Gamma$$ may be embeddable on different surfaces, with the number of faces changing (and maybe not being just disks).
 
-If $$\Gamma$$ is simple, then every face must have at least 3 edges, perhaps more.  But each edge is incident to two faces.  If $$\Gamma$$ were drawn on a surface so that every face was a triangle, we would have $$2e=3f$$ by essentially the handshaking argument, in if every face has at least three sides we have $$2e\leq 3f$$.
+If $$\Gamma$$ is simple, then every face must have at least 3 edges, perhaps more.  But each edge is incident to two faces.  If $$\Gamma$$ were drawn on a surface so that every face was a triangle, we would have $$2e=3f$$ by essentially the handshaking argument, in if every face has at least three sides we have $$2e\geq 3f$$.
 
 Lemma
 ====
