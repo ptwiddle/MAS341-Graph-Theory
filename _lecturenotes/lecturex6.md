@@ -117,7 +117,17 @@ The previous examples illustrate that Euler characteristic solves a problem we h
 Proposition
 ====
 1. The oriented surface $$S_g$$ of genus $$g$$ has euler characteristic $$\chi(S_g)=2-2g$$
-2. The unorientable surface $$U_k$$ made by gluing $$k$$ Mobius bands into the sphere has euler characteristic $$\chi(U_k)=2-2k$$.
+2. The unorientable surface $$U_k$$ made by gluing $$k$$ Mobius bands into the sphere has euler characteristic $$\chi(U_k)=2-k$$.
+
+Proof sketch:
+====
+
+The sphere has euler characteristic 2.  To increase the genus, we remove two faces, subtracting one from the Euler characteristic, and glue in a cylinder, which can be done by adding one edge and one face, not further changing the Euler characteristic.
+
+Similarly, to add an extra Mobius band we remove one face, subtracting one from the euler characteristic, and glue in a Mobius band, which can be done by adding one edge and one face, which does not further change the Euler characteristic. $$\square$$
+
+
+
 
 We see from the proposition that the euler characteristic itself does not determine the surface -- for instance, both the torus and Klein bottle and torus have euler characteristic 0.  But knowing the euler characteristic and whether the surface is orientable or not determines which surface we have.
 
