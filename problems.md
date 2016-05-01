@@ -63,7 +63,7 @@ Sorry for the poor appearance; close model to what your exam will look like.  Th
 
 
 
-[2015 Exam](../2015mas341.pdf) and [solutions](ExamSolution2015.pdf)
+[2015 Exam](../2015mas341.pdf) and [solutions](../ExamSolution2015.pdf)
 ====
 
 - 1.i we didn't cover.
