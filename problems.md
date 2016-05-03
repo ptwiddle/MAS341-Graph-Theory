@@ -29,9 +29,13 @@ These do not cover *exactly* the material that will be cover this year, but are 
 
 *Excellent* problems to do: 10, 11, 19, 23 (but use nearest neighbour, not nearest insertion, which we didn't cover), 24, 29, 31, 33, 38, 43, 44, 45, 46
 
-
 Problems to *skip* because we didn't cover:
 12, 15, 16, 17, 18, 25, 26, 27, 28, 40.
+
+Notes:
+
+* In Question 34, you may not remember the word "subdivisions", as we talked about it only briefly when discussing homeomorphic graphs.  A graph $$G$$ is a subdivision of the graph $$H$$ if $$G$$ is obtained from $$H$$ by adding some vertices of degree two in the middle of edges.
+
 
 
 Solutions to practice problems:

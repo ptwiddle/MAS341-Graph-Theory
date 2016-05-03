@@ -87,7 +87,7 @@ To prove this more formally, we use induction on the number of vertices.  It is 
 
 Suppose now that we have fixed an interger $$m$$, and we know that every graph with $$\Delta(G)\leq m$$ and with less than $$k$$ vertices can be coloured with at most $$m+1$$ colours.  We want to show that any graph $$\Gamma$$ with $$k$$ vertices can be coloured with at most $$m+1$$ vertices.  
 
-Pick any vertex $$v$$ of $$\Gamma$$ and remove it.  The resulting graph $$\Gamma\setminus $$ has $$k-1$$ vertices and so by the inductive hypothesis can be coloured with at most $$m+1$$ colours.  Now, we need to colour $$v$$.  But $$v$$ is adjacent to at most $$m$$ vertices of $$\Gamma$$, so at least one of $$m+1$$ colours does not appear at a vertex adjacent to $$v$$ -- colouring $$v$$ this colour does what we need.
+Pick any vertex $$v$$ of $$\Gamma$$ and remove it.  The resulting graph $$\Gamma\setminus v$$ has $$k-1$$ vertices and so by the inductive hypothesis can be coloured with at most $$m+1$$ colours.  Now, we need to colour $$v$$.  But $$v$$ is adjacent to at most $$m$$ vertices of $$\Gamma$$, so at least one of $$m+1$$ colours does not appear at a vertex adjacent to $$v$$ -- colouring $$v$$ this colour does what we need.
 
 
 The 6 Colour Theorem
