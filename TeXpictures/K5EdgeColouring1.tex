@@ -1,0 +1,34 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+
+
+
+\begin{tikzpicture}[scale=2.5]
+
+
+\filldraw (2,2) circle(3pt);
+\filldraw (2,4) circle(3pt);
+\filldraw (4,2) circle(3pt);
+\filldraw (4,4) circle(3pt);
+\filldraw (3,5) circle(3pt);
+
+\draw[blue] (3,5)-- node {B} (2,4);
+\draw[green] (3,5)-- node [near start] {G} (2,2);
+\draw[red] (3,5) -- node [near start] {R} (4,2);
+\draw[purple] (3,5)-- node {P} (4,4);
+
+\draw (2,4)--(2,2);
+\draw (2,4)--(4,4);
+\draw (2,4)--(4,2);
+
+\draw (2,2)--(4,4);
+\draw[blue] (2,2)-- node {B} (4,2);
+\draw (4,2)--(4,4);
+
+
+
+\end{tikzpicture}
+\end{document}
