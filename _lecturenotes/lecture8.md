@@ -24,7 +24,7 @@ In the last lecture, one characterization of trees we gave is that they were con
 
 Any graph of a molecule is necessarily connected, and so to prove an Alkane is a tree we must count the number of vertices and edges.  
 
-There are $$n+2n+n=3n+2$$ vertices.  
+There are $$n+(2n+2)=3n+2$$ vertices.  
 
 We count the edges using the Handshaking lemma. Carbon atoms have valency 4, and there are $$n$$ of them, while Hydrogen atoms have valency 1.  Thus, the sum of all the degrees of the vertices is $$6n+2$$.  The number of edges is half of these, namely $$3n+1$$, which is 1 less than the number of vertices.  Since to be an atom it must be connected, we see that any Alkane is a tree.  $$\square$$
 
