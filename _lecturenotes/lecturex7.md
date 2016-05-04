@@ -79,6 +79,29 @@ Proof
 Since $$K_8$$ has 8 vertices and $$\binom{8}{2}=28$$ edges; suppose it was embedded on the torus with $$f$$ faces.  We'd have $$8-28+f=0$$, and hence $$f$$ would be 20.  But since $$K_8$$ is simple each face would have to have at least three sides, and so $$K_8$$ would need at least $$3/2*20=30$$ edges to account for this.  
 
 
+Dual graphs
+====
+Before giving another application, we briefly expand on our statement that the inequality $$2e\geq 3f$$ is *essentially* the handshaking argument, by showing how it *is* the handshaking argument.
+
+Definition
+====
+Given a graph $$\Gamma$$ embedded on a surface $$S$$, the dual graph $$\Gamma^\prime$$ is another graph embedded on $$S$$, obtained as follows:
+
+1. For every face of $$\Gamma$$, place a vertex $$v$$ in the middle of $$f$$
+2. Every edge $$e$$ of $$\Gamma$$ is the boundary between two faces of $$\Gamma$$.  In $$\Gamma^\prime$$, we add an edge connected the corresponding vertices.
+3. As a result, every face of $$\Gamma^\prime$$ will contain exactly one vertex of $$\Gamma$$
+
+Thus, we see that taking the dual graph interchanges the roles of vertices and faces.
+
+Here's an example stolen from the internet -- the red graph is dual to the black graph:
+
+![dual graph](../TeXpictures/dualgraph.jpeg)
+
+For more examples, the [wikipedia page](https://en.wikipedia.org/wiki/Dual_graph) is quite useful.
+
+We will not make any essential use of the dual graph but it can be conceptually enlightening in two ways -- as already mentioned, it explains the handshaking type argument we use with faces and edges. It also sheds light on colouring faces of a graph $$\Gamma$$ on a surface: this is just the same as colouring vertices of the dual graph $$\Gamma^\prime$$
+
+
 
 Lemma
 ====
