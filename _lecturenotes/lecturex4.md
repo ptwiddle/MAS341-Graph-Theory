@@ -61,7 +61,7 @@ The following graph $$G$$ is nonplanar, since it is obtained from $$K_{3,3}$$ by
 ![K33 Subdivision](../TeXpictures/K33homeo.png)
 
 
-Putting together the two lemmas, we see that we can find a
+Putting together the two lemmas, we see that if $$G$$ has a subgraph $$H$$, so that $$H$$ is homeomorphic to subgraph that we know isn't planar, (like $$K_5$$ or $$K_{3,3}$$), then we know that $$G$$ isn't planar.  We illustrate this now in an exmaple.
 
 Example: The Petersen graph is not planar
 =====
