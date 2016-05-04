@@ -58,7 +58,7 @@ The lowest leaf is 3, which is attached to 1, so the first column goes
    <td> 6</td>
    <td> 2</td>
    <td> 2</td>
-   <td> 6</td>
+   <td> 7</td>
 </tr>
 <tr>
   <td> Child node </td>
@@ -66,7 +66,7 @@ The lowest leaf is 3, which is attached to 1, so the first column goes
    <td> 1</td>
    <td> 4</td>
    <td> 5</td>
-   <td> 7</td>
+   <td> 6</td>
    <td> 2</td>   
 </tr>
 </table>
