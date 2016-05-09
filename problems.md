@@ -15,8 +15,8 @@ Problem Sets and Solutions
 
 <ul> 
 <li> <a href="../ProblemSet1/"> Problem Set 1 </a> and <a href="../Set1Solutions.pdf"> Solutions </a> </li>
-<li> <a href="../ProblemSet2/"> Problem Set 2 </a> </li>
-<li> <a href="../ProblemSet3/"> Problem Set 3 </a> </li>
+<li> <a href="../ProblemSet2/"> Problem Set 2 </a> and <a href="../Set2Solutions.pdf"> Solutions </a> </li>
+<li> <a href="../ProblemSet3/"> Problem Set 3 </a> and <a href="../Set3Solutions.pdf"> Solutions </a> </li>
 </ul>
 
 
