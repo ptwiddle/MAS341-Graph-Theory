@@ -50,9 +50,11 @@ Solutions to practice problems:
 Practice Exams
 ----
 
-[Hacked together practice exam ](../PracticeExam.pdf)
+[Hacked together practice exam ](../PracticeExam.pdf) and [Solutions](../PracticeExamSolutions.pdf).
 
 Sorry for the poor appearance; close model to what your exam will look like.  This should also feel quite similar to the last two years exams...
+
+
 
 
 
