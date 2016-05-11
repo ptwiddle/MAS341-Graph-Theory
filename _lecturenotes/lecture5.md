@@ -39,9 +39,9 @@ Intuitively, in the language of cross bridges, the algorithm is the following: t
 More formally, the algorithm is as follows:
 
 
-1. Find an edge $$e$$ that is not contained in $$w$$, but shares a vertex with $$w$$.  Say, $$e$$ is between $$v$$ and $$w$$, with $$v\in w$$.
-2. Start building a walk $$Q$$ of unused edges from the *other* vertex of $$e$$ -- that is, find an edge $$f$$ adjacent to $$w$$, so that $$f$$ is not in $$Q$$ or $$w$$.
-3. Continue extending $$Q$$ by unused edges until we return to the starting vertex $$v$$ of $$Q$$, making a closed walk.
+1. Find an edge $$e$$ that is not contained in $$w$$, but shares a vertex with $$w$$.  Say, $$e$$ is between $$u$$ and $$v$$, with $$u\in w$$.
+2. Start building a walk $$Q$$ of unused edges from the *other* vertex of $$e$$ -- that is, find an edge $$f$$ adjacent to $$v$$, so that $$f$$ is not in $$Q$$ or $$w$$.
+3. Continue extending $$Q$$ by unused edges until we return to the starting vertex $$u$$ of $$Q$$, making a closed walk.
 4. Merge the two closed walks $$w$$ and $$Q$$ to make a longer closed walk.
 
 
@@ -56,7 +56,7 @@ Proof
 Let $$P$$ be a closed walk in $$\Gamma$$ -- as a base case, we can take $$P$$ to be the empty walk that just stays at $$v$$.  We inductively show that if $$P$$ does not use all the edges of $$\Gamma$$, then we can enlarge $$P$$ to a longer closed walk, which would complete the proof.
 
 Suppose that there is some edge $$e$$ that is not in $$P$$.  We first show that there is some edge $$f\notin P$$ that contains a vertex that is in $$P$$.  
-If one of the edges of $$e$$ is in $$P$$, we can just take $$f=e$$.  If not, then consider any vertex $$v\in P$$, and a vertex $$w$$ incident to $$e$$.  Since the graph $$\Gamma$$ is connected there is a path $$Q$$ from $$v$$ to $$w$$.  Since $$w\notin P$$, eventually the path $$Q$$ must contain an edge not in $$P$$ -- we can take $$f$$ to be the first such edge.
+If one of the vertices of $$e$$ is in $$P$$, we can just take $$f=e$$.  If not, then consider any vertex $$v\in P$$, and a vertex $$w$$ incident to $$e$$.  Since the graph $$\Gamma$$ is connected there is a path $$Q$$ from $$v$$ to $$w$$.  Since $$w\notin P$$, eventually the path $$Q$$ must contain an edge not in $$P$$ -- we can take $$f$$ to be the first such edge.
 
 So, now, we have a vertex $$v\in P$$, incident to an edge $$e\notin P$$.  We claim we can grow $$e$$ into another closed trail $$Q$$, that does not share any edges with $$P$$.  
 
