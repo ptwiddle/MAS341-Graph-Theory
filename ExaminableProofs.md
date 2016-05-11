@@ -13,7 +13,7 @@ Proofs that ARE examinable
 4. Determine whether or not a graph is Hamiltonian "by hand"   
 5. Proving the Petersen graph proof is not Hamiltonian
 6. Proving an Alkane is a tree
-7. Proving every tree has a spanning tree
+7. Proving every connected graph has a spanning tree
 8. Proving that $$K_{3,3}$$ or $$K_5$$ not planar
 9. Proving a graph isn't planar using Kuratowski's theorem
 10. Proving Euler characteristic is well defined

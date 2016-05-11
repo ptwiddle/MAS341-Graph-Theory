@@ -29,9 +29,9 @@ In the two cases, we have increased both $$v$$ and $$e$$ by one, and so when we 
 In the third case, both $$e$$ and $$f$$ increase by one, and again these changes cancel.  
 
 
-To see that these moves suffice, we sweep a few topological technicalities under the rug.  We first argue that we can assume that $$\Gamma_1$$ and $$\Gamma_2$$ intersect nicely -- that they only intersect in the middle of edges, and they always locally intersect "transversely", which is a technical topological term we will not define, but just means that they cross each, and directly, and then.
+To see that these moves suffice, we sweep a few topological technicalities under the rug.  We first argue that we can assume that $$\Gamma_1$$ and $$\Gamma_2$$ intersect nicely -- that they only intersect in the middle of edges, and they always intersect "transversely", which is a technical topological term we will not define, but just means that locally at each intersection point they cross each other like the two branches of the letter "x".  
 
-Then there is a natural way to turn $$\Gamma_1\cup\Gamma_2$$ into a graph -- turn each intersection point into a new vertex, and divide the corresponding edges into more edges.
+Assuming $$\Gamma_1$$ and $$\Gamma_2$$ intersect transversely, there is a natural way to turn $$\Gamma_1\cup\Gamma_2$$ into a graph.  Turn each intersection point into a new vertex, and divide the corresponding edges into more edges.
 
 Then we can go from $$\Gamma_1$$ to $$\Gamma_1\cup\Gamma_2$$ by adding the three moves.   
 
@@ -106,12 +106,14 @@ We will not make any essential use of the dual graph but it can be conceptually 
 Lemma
 ====
 
-A videogame graph will always be a torus.
+A videogame graph will always be a torus or a Klein bottle.
 
 Proof
 ====
 
 In the video game graph, each vertex had degree $$4$$, and each face was a square.  The handshaking lemma then gives $$4v=2e$$, and so $$e=2v$$.  Similarly, counting handshakes between faces and edges gives $$4f=2e$$, and so $$e=2f$$, and hence $$f=v$$.  Thus, for any embedding that locally gives the videogame graph we have
 
-$$\chi(v-e+f)=v-2v+v=0$$, and hence we must 
+$$\chi(v-e+f)=v-2v+v=0$$
+
+ and we will never be on the sphere -- we will always be the torus (if we are orientable) or the klein bottle (if we are not orientable).
 

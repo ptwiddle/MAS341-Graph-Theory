@@ -69,7 +69,7 @@ By our characterisation of trees, if $$T$$ is connected and has no cycles, then 
 
 Let $$H$$ be any subgraph of $$\Gamma$$ that is connected and contains all the vertices of $$\Gamma$$.  If $$H$$ has a cycle, we can pick any edge $$e$$ of that cycle and delete it, and $$H$$ will still be connected: any path that used $$e$$ can use the rest of the cycle instead.  
 
-Thus, starting from $$G$$, we may repeatedly remove edges from cycles and not disconnect $$G$$ until there are no more cycles left; the result will be a spanning tree.  $$\square$$
+Thus, starting from $$\Gamma$$, we may repeatedly remove edges from cycles and not disconnect $$\Gamma$$ until there are no more cycles left; the result will be a spanning tree.  $$\square$$
 
 Counting trees 
 ----
