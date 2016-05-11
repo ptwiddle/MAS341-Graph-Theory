@@ -23,8 +23,7 @@ The following graph is a forest consisting of three trees:
 
 The following graph is a *not* a tree:
 
-
-The following important proposition shows that trees are 
+![Not a graph](../Slides/Pictures/notatree.png)
 
 Consider the two conditions of being tree: being connected, and not having any cycles.  
 
@@ -32,7 +31,9 @@ The first condition is somehow saying that $$\Gamma$$ has *enough* edges: to be 
 
 The second condition is somehow saying that $$\Gamma$$ doesn't have *too many* edges: we *don't* want cycles, and having more edges makes that more likely.
 
-Thus, being a tree a bit of a goldilocks condition -- it has *just the right* amount of edges.  It's not just how many edges the graph has, though, but how they are arranged:
+Thus, being a tree a bit of a goldilocks condition -- it has *just the right* amount of edges.  It's not *just* how many edges the graph has, though -- the path graph $$P_4$$ has 4 vertices and 3 edges, and is a tree, but the disjoint union of a triangle and a single vertex also has 4 vertices and 3 edges but is not a tree.  
+
+The following proposition summarises this discussion and makes it more precise:
 
 
 Proposition
