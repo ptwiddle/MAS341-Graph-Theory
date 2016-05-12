@@ -53,7 +53,7 @@ For simple graphs, one can calculate the chromatic polynomial just by starting a
 Example: The path graph $$P_n$$
 ====
 
-Recall the path graph $$P_n$$ consisted of $$n$$ vertices, with vertex $$v_i$$ adjacent to vertices $$v_{i\pm 1$$}$$.
+Recall the path graph $$P_n$$ consisted of $$n$$ vertices, with vertex $$v_i$$ adjacent to vertices $$v_{i\pm 1}$$.
 
 Starting at the end vertex $$v_1$$, there are $$k$$ possible colours we can colour it.  Moving onto vertex $$v_2$$, it can't be the same colour as $$v_1$$, but otherwise could be any colour, and so there are $$k-1$$ possible colours.  
 
