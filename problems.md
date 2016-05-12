@@ -50,9 +50,9 @@ Solutions to practice problems:
 Practice Exams
 ----
 
-[Hacked together practice exam ](../PracticeExam.pdf) and [Solutions](../PracticeExamSolutions.pdf).
+[Hacked together practice exam ](../PracticeExam.pdf) and [Solutions](../PracticeSolutionsFixed.pdf).
 
-Sorry for the poor appearance; close model to what your exam will look like.  This should also feel quite similar to the last two years exams...
+Sorry for the poor appearance; close model to what your exam will look like.  This should also feel quite similar to the last two years exams.  Question 1 part 4 is actually from last years' exam.  The solution to this question given above was initially left out, and is rather blurry in the above pdf.  It's a bit clearer in the 2015 exam solutions.
 
 
 
