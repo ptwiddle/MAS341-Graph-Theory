@@ -48,11 +48,11 @@ And we cannot have edges $$v_0$$ to $$v_3$$ or to $$v_7$$, as these make 4 cycle
 
 Thus, the only possibility for these edges is that they "skip" 4 or 5 vertices (skipping more than 5 vertices is the same as skipping less vertices in the other direction).  So for instance, $$v_0$$ can only be connected to $$v_4, v_5$$ or $$v_6$$ with its extra edge. 
 
-We now claim that at least one of these extra edges must "skip" 4 vertices.  If not, then every extra edge would skip 5 vertices.  Since each vertex has degree 3, there must be one extra edge through each of these vertices, connecting to the opposite vertex.  But this configuration has many four cycles -- for instance, $$v_0--v_1--v_6--v_5--v_0$$.  Since the Petersen graph does not have any 4 cycles, we see this cannot occur:
+We now claim that at least one of these extra edges must "skip" 4 vertices.  If not, then every extra edge would skip 5 vertices.  Since each vertex has degree 3, there must be one extra edge through each of these vertices, connecting to the opposite vertex.  But this configuration has many four cycles -- for instance, $$v_0-v_1-v_6-v_5-v_0$$.  Since the Petersen graph does not have any 4 cycles, we see this cannot occur:
 
 <a href="http://presheaf.com/?d=dc5s2424634t1dn1654k583r3l5k1f"><img src="http://presheaf.com/cache/dc5s2424634t1dn1654k583r3l5k1f.png" title="click to go to presheaf.com for editing"/></a>
 
-Relabeling our edges if necesary, we can make the extra edge that skips the 4 cycle be the edge $$v_0--v_4$$.  Now, consider the extra edge at $$v_5$$.  This cannot skip 5, because that would make it adjacent to $$v_0$$, which already has its extra edge.  Thus, it must skip 4, and be adjacent to either $$v_9$$ or $$v_1$$.  But since each of these are adjacent to $$v_1$$, it would create a 4-cycle: either $$v_1-v_5-v_6-v_{10}-v_1$$, or $$v_1-v_5-v_6-v_2$$.
+Relabeling our edges if necesary, we can make the extra edge that skips the 4 cycle be the edge $$v_0-v_4$$.  Now, consider the extra edge at $$v_5$$.  This cannot skip 5, because that would make it adjacent to $$v_0$$, which already has its extra edge.  Thus, it must skip 4, and be adjacent to either $$v_9$$ or $$v_1$$.  But since each of these are adjacent to $$v_0$$, it would create a 4-cycle: either $$v_0-v_4-v_5-v_9-v_0$$, or $$v_0-v_4-v_5-v_1-v_0$$.
 
 We have drawn the edge from $$v_0$$ to $$v_4$$ in solid red; any of the dashed edges from $$v_5$$ create a configuration not found in the Petersen graph:
 

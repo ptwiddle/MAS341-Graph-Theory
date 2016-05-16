@@ -15,7 +15,7 @@ We begin with some basic observations:
 
 - The problem of determining whether a given graph $$\Gamma$$ has a Hamiltonian cycle is a special case of the traveling salesman problem.  To see this, suppose we're given a graph $$\Gamma$$, and we want to determine whether it is Hamiltonian.  We create a weighted $$K_n$$, with vertices the vertices of $$\Gamma$$ by giving the edge $$v-w$$ a very small weight $$\epsilon$$ if $$v$$ and $$w$$ *are* adjacent in $$\Gamma$$, and a very large weight $$M$$ if $$v$$ and $$w$$ *are not* adjacent in $$\Gamma$$.  Then, any Hamiltonian path in $$\Gamma$$ would have cost $$n\epsilon$$, where as any path that uses an edge not in $$\Gamma$$ costs more than $$M$$.  So, if we make $$M>n\epsilon$$, the TSP for our weighted $$K_n$$ will have a solution with cost less than $$M$$ if and only if $$\Gamma$$ had a Hamiltonian cycle.
 
-Since the determining whether a graph $$\Gamma$$ is difficult (NP complete), the TSP will also be.  As such, we will not discuss any algorithms for actually solving TSP.  Instead, we will discuss methods for giving upper and lower bounds for the TSP.
+Since determining whether a graph $$\Gamma$$ is Hamiltonian is difficult (NP complete), the TSP will also be.  As such, we will not discuss any algorithms for actually solving TSP.  Instead, we will discuss methods for giving upper and lower bounds for the TSP.
 
 Upper bounds for TSP
 ====
