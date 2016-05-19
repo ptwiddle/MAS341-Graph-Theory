@@ -48,7 +48,7 @@ The same idea can be extended to determine whether any Hamiltonian graph is plan
 
 
 
-Proof that $$K_{3,3}$$ isn't Hamiltonian
+Proof that $$K_{3,3}$$ isn't Planar
 ====
 
 Let the vertices $$a,b,c$$ be coloured red and vertices $$x,y,z$$ be coloured blue.  The path $$a-x-b-y-c-z-a$$ is a Hamiltonian cycle, that we draw as a circle in the plane, as shown below:
@@ -59,7 +59,7 @@ This contains 6 of the 9 edges of $$K_{3,3}$$; we need to add the edges $$a-y, b
 
 <a href="http://presheaf.com/?d=d6p443t5v3w101e1r2g1u1x156y6870"><img src="http://presheaf.com/cache/d6p443t5v3w101e1r2g1u1x156y6870.png" title="click to go to presheaf.com for editing"/></a>
 
-Then on the inside of the circle, $$x$$ and $$c$$ are on different sides of the line $$a-x$$, and so the edge connecting them must go outside the circle.  The added edge could go around the right of the circle, as shown below here:
+Then on the inside of the circle, $$x$$ and $$c$$ are on different sides of the line $$a-y$$, and so the edge connecting them must go outside the circle.  The added edge could go around the right of the circle, as shown below here:
 
 <a href="http://presheaf.com/?d=d2s4y614j59131z1j4ul375e2s1r6l4g"><img src="http://presheaf.com/cache/d2s4y614j59131z1j4ul375e2s1r6l4g.png" title="click to go to presheaf.com for editing"/></a>
 

@@ -46,7 +46,7 @@ Example
 
 This animated gif shows several graphs isomorphic to the Petersen graph, and demonstrates that they are isomorphic:
 
-<image src="../Slides/Pictures/PetersonIsomorphismsAnimated.gif"></image>
+<image src="../Slides/Pictures/PetersenIsomorphismAnimated.gif"></image>
 
 Graph isomorphism problem
 ---
