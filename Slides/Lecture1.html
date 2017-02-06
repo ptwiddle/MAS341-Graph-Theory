@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 1: Introduction, Instant Insanity </title>
+		<title>Lecture 1: Introduction, Handshaking </title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -160,7 +160,7 @@ Basic Information
 
 <ul>
 <li> Vertices are people (so there are 7) </li>
-<li> Edge between two people if the know each other </li>
+<li> Edge between two people if they know each other </li>
 </ul>
 <p> Since each person knows three people, there are three edges coming out of each vertex </p>
 
@@ -180,16 +180,16 @@ Basic Information
 </section>
 
 <section>
-<h3> Two different ways to count it: </h3>
-<ul> <li> Each edge is a pair of people who count each other.  So there will be $|E(\Gamma)|$ handshakes. </li>
-<li> Since everyone knows three people, everyone will be involved in three handshakes.  But each handshake involves two people.  So, by this count, there would be $7\cdot 3/2=10.5$ handshakes, which is obviously nonsense </li>
+<h3> Two ways to count handshakes: </h3>
+<ul> <li> Each edge is a pair of people who know each other.  So there will be $|E(\Gamma)|$ handshakes. </li>
+<li> Since everyone knows three people, everyone will be involved in three handshakes.  But each handshake involves two people.  So, by this count, there would be $7\cdot 3/2=10.5 $  handshakes, i.e., edges, which is obviously nonsense </li>
 </ul>
 
 
 </section>
 
 <section>
-For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjance to $v$.
+<p>For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjance to $v$.</p>
 <h3> Euler's handshaking Lemma </h3>
 
 
@@ -210,6 +210,8 @@ $$\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|$$
 <li> 4 cubes </li>
 <li>Each side of each cube is colored one of four colors</li>
 <li>Goal is to stack the cubes so each direction has one face of each color</li>
+<li>Patterns online to make your own cubes and try to solve  </li>
+<li> Will see how graph theory helps this afternoon </li>
 </ul>
 
 
