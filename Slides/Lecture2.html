@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 2: Examples, isomorphisms, chemistry </title>
+		<title>Lecture 2: Instant Insanity Solution, isomorphisms, chemistry </title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -39,16 +39,62 @@
         	<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-
+			<div class="slides"
+>
 
 
 
 <section>
+
 <h1> Graph Theory Lecture 2 </h1>
-<h2> Examples, isomoprhisms, chemistry </h2>
+<h2> Instant Insanity; </h2>
 
 </section>
+
+
+<section>
+<h1> An application </h1>
+<image src="Pictures/InstantInsanityPackage.JPG"></image>
+</section>
+
+<section>
+<h2> Instant Insanity </h2>
+<ul>
+<li> 4 cubes </li>
+<li>Each side of each cube is colored one of four colors</li>
+<li>Goal is to stack the cubes so each direction has one face of each color</li>
+</ul>
+<p> Given a set of cubes, you will need to be able to either find a solution or prove that a solution does not exist </p>
+
+</section>
+
+<section>
+<h2>These cubes have no solution </h2>
+<image src="Pictures/ImpossibleCubes.png"></image>
+
+</section>
+
+<section>
+<image src="Pictures/InstantInsanityImpossibleGraph.JPG"></image>
+</section>
+
+
+
+<section>
+<h2>Subgraphs</h2>
+
+<p>A <b>subgraph</b> $S$ of $\Gamma$ is a graph $S$ where 
+<ul> 
+<li>$V(S)\subset V(\Gamma)$</li>
+<li>$E(S)\subset E(\Gamma)$</li>
+</ul>
+
+<p> This implies the vertices at the end of each edges of $S$ to be in $S$ </p>
+
+</section>
+
+
+
 
 <section>
 <h1>Basic examples of graphs</h1>
@@ -125,7 +171,7 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <li> It's in NP, but not known to be NP complete or in P </li>
 </ul>
 
-<p>In November, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem.</p>
+<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem.  It's still being checked. </p>
 </section>
 
 
@@ -163,13 +209,6 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 
 </section>
 
-<section>
-<h2> Euler's handshaking lemma </h2>
-
-<p> <i>Lemma:</i> The sum of all the degrees of the vertices of a graph $G$ is equal to twice the number of edges.  
-
-$$\sum_{v\in V(g)} d(v)=2|E(G)|$$
-</section>
 
 <section>
 <h1> Degree sequence in Chemistry </h1>

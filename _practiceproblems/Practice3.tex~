@@ -1,0 +1,15 @@
+
+\documentclass{amsart}
+
+
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usepackage{mathpazo}
+\title{MAS341 Practice Week 1}
+
+ \begin{tikzpicture}
+        \grDodecahedral[form=2] 
+    \end{tikzpicture}
+
+
+\end{document}

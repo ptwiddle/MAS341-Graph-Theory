@@ -61,7 +61,7 @@ Basic Information
 <ul>
 <li>ptwiddle.github.io/MAS439-Commutative-Algebra/</li>
 <li>Email: paul.johnson@sheffield.ac.uk </li>
-<li>Office hours: Wednesday 11:30-12:30, Monday 1:30-2:30 </li>
+<li>Office hours: Tuesday 1:30-2:30, Friday 10-11 </li>
 <li>Office: Hicks J6b </li>
 </ul>
 </section>
@@ -70,10 +70,8 @@ Basic Information
 <h2> Marking </h2>
 <ul>
 <li> The final exam is 100% of the grade </li>
-<li> Exam slightly different than past years</li>
-<li> Some questions will come from a list of proofs </li>
+<li> Exam slightly different than past years: all questions mandatory</li>
 <li> A practice exam will be available </li>
-<li> A few proofs will be assigned as homework </li>
 </ul>
 
 </section>
@@ -91,13 +89,24 @@ Basic Information
 <h3>Graphs can encode connections</h3>
 <p>A <b>graph</b> $\Gamma$ consists of:</p>
 <ul> 
-<li>A set $V(\Gamma)$ of vertices (things)</li>
-<li>A set $E(\Gamma)$ of edges (connections)</li>
+<li>A set $V(\Gamma)$ of vertices (usually things)</li>
+<li>A set $E(\Gamma)$ of edges (usually connections)</li>
 </ul>
 <p>Each edge $e\in E(\Gamma)$ connects two vertices in  $V(\Gamma)$.</p>
+</section>
 
+
+<section>
+<h3>Some features are not always wanted:</h3>
+<ul>
+<li> A <b> loop</b> is an edge connecting a vertex to itself </li>
+<li> There could be multiple edges between the same two vertices </li>
+<ul>
+<p> Graphs without loops or multiple edges are called <b>simple</b></p>
 
 </section>
+
+
 
 <section>
 <h1>Examples</h1>
@@ -133,46 +142,62 @@ Basic Information
 <image class="stretch" src="Pictures/Petersen4.png"></image>
 </section>
 
+
+
 <section>
-<h1>More Definitions</h1>
+<h2> First application </h2>
+<p> Suppose you are at a party with 6 other people.</p>
+<p>  Is it possible that every person knows exactly three other people at the party? </p>
+
+<p> (It is assumed if $A$ knows $B$, then $B$ knows $A$). </p>
+
+<p> </p>
+
 </section>
 
-
 <section>
+<h2> Make it a graph </h2>
 
 <ul>
-<li>If there is an edge between two vertices, we say they are <b>adjacent</b></li>
-<li> If an edge $e$ connects to a vertex $v$, we say they are <b>incident</b></li>
-<li> The <b>degree</b> of a vertex is the number of edges incident to it</li>
+<li> Vertices are people (so there are 7) </li>
+<li> Edge between two people if the know each other </li>
+</ul>
+<p> Since each person knows three people, there are three edges coming out of each vertex </p>
+
+
+<h2> Try to draw such a graph </h2>
+</section>
+
+<section>
+<image class="stretch" src="attempted37.png"></image>
+</section>
+
+<section>
+<h2> Avoiding a case by case proof </h2>
+
+<p>Suppose everyone shook hands with the people at the party they knew.  How many handshakes would occur? </p>
+
+</section>
+
+<section>
+<h3> Two different ways to count it: </h3>
+<ul> <li> Each edge is a pair of people who count each other.  So there will be $|E(\Gamma)|$ handshakes. </li>
+<li> Since everyone knows three people, everyone will be involved in three handshakes.  But each handshake involves two people.  So, by this count, there would be $7\cdot 3/2=10.5$ handshakes, which is obviously nonsense </li>
 </ul>
 
+
 </section>
 
 <section>
-<p>Some features are not always wanted:</p>
-<ul>
-<li> A <b> loop</b> is an edge connecting a vertex to itself </li>
-<li> There could be multiple edges between the same two vertices </li>
-<ul>
-<p> Graphs without loops or multiple edges are called <b>simple</b></p>
+For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjance to $v$.
+<h3> Euler's handshaking Lemma </h3>
+
+
+$$\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|$$
+
+
 
 </section>
-
-
-<section>
-<h2>Subgraphs</h2>
-
-<p>A <b>subgraph</b> $S$ of $\Gamma$ is a graph $S$ where 
-<ul> 
-<li>$V(S)\subset V(\Gamma)$</li>
-<li>$E(S)\subset E(\Gamma)$</li>
-</ul>
-
-<p> This implies the vertices at the end of each edges of $S$ to be in $S$ </p>
-
-</section>
-
-
 
 <section>
 <h1> An application </h1>
@@ -186,18 +211,9 @@ Basic Information
 <li>Each side of each cube is colored one of four colors</li>
 <li>Goal is to stack the cubes so each direction has one face of each color</li>
 </ul>
-<p> Given a set of cubes, you should be able to either find a solution or prove that a solution does not exist </p>
 
-</section>
 
-<section>
-<h2>These cubes have no solution </h2>
-<image src="Pictures/ImpossibleCubes.png"></image>
 
-</section>
-
-<section>
-<image src="Pictures/InstantInsanityImpossibleGraph.JPG"></image>
 </section>
 
 

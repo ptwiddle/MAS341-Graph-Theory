@@ -7,9 +7,9 @@ permalink: /Notes/
 This page contains links to the lecture notes for the course.
 
 [Lecture notes from a previous year.](../OldLectureNotes.pdf)
-These are a slightly skeletal, and may not match *exactly* with what we cover, but they won't be too far off and may be useful.
+These are a bit skeletal, and do not match *exactly* what we cover, but they're very close and you may find them useful.
 
-Each day of lecture will have its own page.  This will contain brief notes on the material covered, links to any slides I used and to other resources, and practice and challenge problems.
+Each day of lecture will have its own page.  This will contain brief notes on the material covered and links to any slides I used in lecture.
 
 Each lecture will have have a comment thread to ask questions and further discuss the material.  
 

@@ -5,8 +5,10 @@ description:
 baseurl: "/MAS341-Graph-Theory" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 collections:
-  lecturenotes:
-    output: true
+   lecturenotes:
+     output: true
+   practiceproblems:
+      output: true
 github_username:  ptwiddle
 
 # Build settings

@@ -1,58 +1,86 @@
 ---
 layout: lecture
-title: Lecture 3&#58; Walks, paths, cycles
+title: Lecture 3&#58; Connectedness.  Walks, trails and paths.
 comments: True
 ---
 
-Types of graphs
----
+If the edges in a graph $$\Gamma$$ represent connections, it is obvious to ask whether $$\Gamma$$ as a whole is "connected".  There are two seemingly different ways of making this precise; today we introduce these and show that they are the same.
+
+It may be easiest to define what it means for a graph $$\Gamma$$ to be *disconnected*.
 
 Definition: Disjoint union
 ===
 
-Given two graphs $$\Gamma_1$$ and $$\Gamma_2$$, the disjoint union $$\Gamma_1\sqcup \Gamma_2$$ is obtained by taking the disjoint union of both the vertices and edges of $$\Gamma_1$$ and $$\Gamma_2$$.  So $$\Gamma_1\sqcup\Gamma_2$$ consists of a copy of $$\Gamma_1$$ and a copy of $$\Gamma_2$$, with no edges in between the two graphs.
+Given two graphs $$\Gamma_1$$ and $$\Gamma_2$$, the *disjoint union* $$\Gamma_1\sqcup \Gamma_2$$ is obtained by taking the disjoint union of both the vertices and edges of $$\Gamma_1$$ and $$\Gamma_2$$.  So $$\Gamma_1\sqcup\Gamma_2$$ consists of a copy of $$\Gamma_1$$ and a copy of $$\Gamma_2$$, with no edges in between the two graphs.
 
-Definition: Connected and disconnected
+Definition: Disconnected
 ===
 
 A graph $$\Gamma$$ is *disconnected* if we can write $$\Gamma=\Gamma_1\sqcup \Gamma_2$$ for two proper (i.e., not all of $$\Gamma$$) subgraphs $$\Gamma_1$$ and $$\Gamma_2$$.
 
-A graph $$\Gamma$$ is *connected* if it is not disconnected.
+It then makes sense to say that $$\Gamma$$ is *connected* if it is not disconnected.  However, the more intuitive notion of being connected is that "you can get from any vertex to any other", which we now make precise.
 
-Definition: Bipartite
-====
-
-A graph $$\Gamma$$ is bipartite if we can color the vertices of $$\Gamma$$ red and blue, so that every edge of $$\Gamma$$ connects a red vertex and a blue vertex.
-
-
-An important example of a bipartite graph is the *complete bipartite graph* $$K_{m,n}$$.  This graph consists of $$m+n$$ vertices, $$m$$ of them red and $$n$$ of them blue, and between every red and blue vertex there is exactly one edge.  $$K_{m,n}$$ has as many edges as possible while still being simple and bipartite.
-
-Definition: The complement
-====
-
-The *complement* of a simple graph $$\Gamma$$, written $$\overline{\Gamma}$$ or $$\Gamma^c$$, has the same vertex set of $$\Gamma$$, but the ``opposite'' edge set: $$v_1,v_2\in V(\overline{\Gamma})$$ are adjacent in $$\overline{\Gamma}$$ if and only if they are *not* adjacent in $$\Gamma$$.
-
-Quick exercises/examples to check:
-
-1. The complement of the complement is the original graph: $$(\Gamma^c)^c=\Gamma$$
-2. Complement of the complete graph is the empty graph: $$\overline{K}_n=E_n$$
-3. Complement of the complete bipartite graph is the disjoint union of two complete graphs: $$\overline{K}_{m,n}=K_m\sqcup K_n$$
 
 Walks, Trails, Paths
 ----
 
 Definition
 ===
- - A *walk* in a graph $$\Gamma$$ is a sequence of edges $$e_1,\dots, e_m$$ so that each pair of consecutive edges $$e_i, e_{i+1}$$ share a vertex; that is, there are vertices $$v_0,\dots, v_m$$ so that edge $$e_i$$ goes between $$v_{i-1}$$ and $$v_i$$.  The number of edges $$m$$ is called the *length* of the walk.
+A *walk* in a graph $$\Gamma$$ is a sequence 
 
-Note that, when the graph $$\Gamma$$ does not have multiple edges, it is enough to record just the vertices.
+$$v_0, e_1, v_1,e_2, v_2,\dots, v_{n-1}, e_n, v_n$$
 
-We say a walk is *closed* if it starts and ends on the same vertex; i.e., $$v_0=v_m$$.
+where 
+ - the $$v_i$$ are vertices
+ - the $$e_j$$ are edges
+ - edge $$e_j$$ goes between vertices $$v_{j-1}$$ and $$v_j$$
+
+
+Note that, when the graph $$\Gamma$$ does not have multiple edges, it is enough to record just the $$v_i$$, but if $$\Gamma$$ has multiple edges that just knowing the vertices does not determine the walk.
+
+
+
+ We say that the walk is between vertices $$a$$ and $$b$$ if $$a=v_0$$ to vertex $$b=v_n$$.  Thus, it is natural to say that a graph $$\Gamma$$ is connected if there is a walk between any two vertices $$a,b\in\Gamma$$.  We now show that this agrees with our previous definition of connected.
+
+
+Lemma
+===
+The following are equivalent:
+
+1. $$\Gamma$$ is connected.
+2. There is a walk between any two vertices $$v, w\in V(\Gamma)$$
+
+Proof
+===
+
+1 implies 2: Supppose that $$\Gamma$$ is connected, and let $$v, w\in V(\Gamma)$$; we want to show that there is a walk from $$v$$ to $$w$$. 
+
+Define $$S\subset V(\Gamma)$$ to be the set of all vertices $$u\in V(\Gamma)$$ so that there is a walk from $$v$$ to $$u$$; we want to show that $$w\in S$$.
+
+First, observe that there are no edges from $$S$$ to $$V(\Gamma)\setminus S$$.  Suppose that $$e$$ was an edge between $$a\in S$$ and $$b\in\Gamma\setminus S$$.  Since $$a\in S$$, by the definition of $$S$$ there is a walk $$v=v_0v_1v_2\cdots v_m=a$$ from $$v$$ to $$a$$.  We can add the edge $$e$$ to the end of the walk, to get a walk from $$v$$ to $$b$$, and hence by definition $$b\in S$$.  
+
+Now suppose that $$w\notin S$$.  Then $$S$$ and $$V(\Gamma)\setminus S$$ are both nonempty, and by the above there are no edges between them, and so $$\Gamma$$ is not connected, a contradiction.
+
+To prove 2 implies 1, we prove the contrapositive.  If $$\Gamma$$ is not connected, then there are two vertices $$v,w\in V(\Gamma)$$ so that there is no walk from $$v$$ to $$w$$. 
+
+Suppose that $$\Gamma=\Gamma_1\sqcup\Gamma_2$$, and pick $$v\in V(\Gamma_1), w\in V(\Gamma_2)$$.  Any walk from $$v$$ to $$w$$ starts in $$V(\Gamma_1)$$ and ends in $$V(\Gamma_2)$$, and so at some point there must be an edge from a vertex in $$\Gamma_1$$ to a vertex in $$\Gamma_2$$, but there are no such edges $$\square$$
+
+
+Types of Walks
+-------
+
+Many questions in graph theory ask whether or not a walk of a certain type exists on a graph: we introduce some notation that will be needed for these questions.
+ 
+
+We say a walk is *closed* if it starts and ends on the same vertex; i.e., $$v_0=v_n$$.  The *length* of a walk is $$n$$, the number of edges in it.  The *distance* between two vertices $$v$$ and $$w$$ is the length of the shortest walk from $$v$$ to $$w$$, if one exists, and $$\infty$$ if one does not exist.
+
+
+Walks, trails and paths
+======
 
  - If the edges $$e_i$$ of the walk are all distinct, we call it a *trail*
  - If the vertices $$v_i$$ of the walk are all distinct (except possibly $$v_0=v_m$$), we call the walk a *path*.  The exception is to allow for the possibility of closed paths.
 
-The *distance* between two vertices $$v$$ and $$w$$ is the length of the shortest walk from $$v$$ to $$w$$, if one exists, and $$\infty$$ if one does not exist.
 
 Lemma
 ===
@@ -68,26 +96,14 @@ Proof
 
 Obviously, 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.  
 
-To see that 1 implies 3, suppose we have a walk $$v=v_0,\dots, v_m=w$$ that is not a path; say, $$v_i=v_k$$, with $$i<k$$.  Then we can cut out all the vertices between $$v_i$$ and $$v_k$$ to obtain a new walk $$v=v_0,v_1,\dots, v_i, v_{k+1}, v_{k+2}, \dots, v_m$$.  
+That 1 implies 3 is intuitively obvious: if you repeat a vertex, then you've visited someplace twice, and weren't taking the shortest route.  Let's make this argument mathematically precise.
 
-Since $$i<k$$, the new walk is strictly shorter.  Since the length of a walk is finite, if we continue this process we'll eventually get a path $$\square$$
+Suppose we have a walk $$v=v_0,e_1,\dots, e_m, v_m=w$$ that is not a path.  Then, we must repeat some vertex, say $$v_i=v_k$$, with $$i<k$$.  Then we can cut out all the vertices and edges between $$v_i$$ and $$v_k$$ to obtain a new walk 
 
+$$v=v_0,e_1, v_1,\dots, e_i, v_i, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m$$.  
 
-Next time, we will prove the following two lemmas:
+Since $$i<k$$, the new walk is strictly shorter than our original walk.  Since the length of a walk is finite, if we iterate this process the result must eventually terminate.  That means all our vertices are distinct, and hence is a path.  $$\square$$
 
-
-Lemma
-===
-
-The following are equivalent:
-
-1. $$\Gamma$$ is connected.
-2. There is a walk between any two vertices $$v, w\in V(\Gamma)$$
-
-
-Lemma
-===
-A graph is bipartite if and only if it does not have an odd cycle.
 
 
 

@@ -1,0 +1,20 @@
+\documentclass{amsart}
+
+
+\usepackage{tikz}
+\usepackage{mathpazo}
+\title{MAS341 Practice Week 1}
+
+\begin{document}
+\maketitle
+\section{Degree for non-simple graphs}
+In class we defined the degree $d(v)$ of a vertex $v$ only for simple graphs.  Explain why the definition of $d(v)$ given in class doesn't satisfy Euler's handshaking lemma if the graph $\Gamma$ has multiple edges or loops.  Can you give a different definition of $d(v)$ that does work?
+
+\section{Chemistry }
+Caffeine has chemical formula $C_8H_{10}N_4O_2$.  How many covalent bonds does a molecule of caffeine have?
+
+Explain why, under the basic rules of chemistry, you could not have a molecule with chemical formula $C_9H_{10}N_5O_4$.
+
+
+
+\end{document}
