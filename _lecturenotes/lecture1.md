@@ -87,3 +87,9 @@ In organic chemistry, atoms are joined together by covalent bonds; we represent 
 Usually, most of the atoms involved are carbon and hydrogen.  Carbon atoms are not labelled with a C, but just left blank, while hydrogen atoms are left off completely.  One can then complete the full structure of the molecule using the valency of each vertex.
 
 Graphs coming from organic chemistry do not have to be simple -- sometimes there are double bonds, where a pair of carbon atoms have two edges between them.
+
+Definition: degree sequence
+====
+The *degree sequence* of a graph is just the list (with multiplicity) of the degrees of all the vertices.  
+
+So, knowing the chemical composition of a molecule determines the degree sequence of its corresponding graph.  However, it is possible that the same set of atoms may be put together into a molecule in more than one different ways.  In terms of graphs, this corresponds to "different" graphs that have the same degree sequence.

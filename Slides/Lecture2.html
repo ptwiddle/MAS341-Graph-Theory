@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 2: Instant Insanity Solution, isomorphisms, chemistry </title>
+		<title>Lecture 2: Instant Insanity Solution, isomorphisms </title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -146,18 +146,18 @@ The <i>wheel graph</i> $W_n$
 
 <section>
 
-<p>An <i>isomorphism</i> of graphs is a bijection between the vertices that preserves the number of edges.</p>  
+<p>An <i>isomorphism</i> of simple graphs is a bijection between the vertices that preserves the number of edges.</p>  
 </section>
 
 <section>
-An isomorphism from $G$ and $H$ is a bijection $$\varphi:V(G)\to V(H)$$ so that, for any $v,w\in V(G)$, the number of edges between $v$ and $w$ (in $G$) is the same as the number of edges between $\varphi(v)$ and $\varphi(w)$ (in $H$).
+An isomorphism from a simple graph $G$ to a graph $H$ is a bijection $$\varphi:V(G)\to V(H)$$ so that, for any $v,w\in V(G)$, the number of edges between $v$ and $w$ (in $G$) is the same as the number of edges between $\varphi(v)$ and $\varphi(w)$ (in $H$).
 </section>
 
 <section>
 <h2>The isomorphism problem:</h2>
 <p>Given two graphs $G$ and $H$, either find an isomorphism $\varphi:G\to H$, or prove such an isomorphism doesn't exist.</p>
 
-<p> You  to be be able to answer instances of the isomorphism problem for the exam </p>
+<p> You need to be be able to answer instances of the isomorphism problem for the exam </p>
 
 </section>
 
@@ -171,7 +171,7 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <li> It's in NP, but not known to be NP complete or in P </li>
 </ul>
 
-<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem.  It's still being checked. </p>
+<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem.  His work is still actively being checked; in January 2017 he patched a hole that had been found. </p>
 </section>
 
 
@@ -195,53 +195,6 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 </section>
 
 <section>
-<h2>A useful obstruction: Degree sequence </h2>
-
-<p>The <i>degree sequence </i> of a graph is just the list of degrees of the vertices, with multiplicity. </p>
-
-<p> If $\varphi:G\to H$ is an isomorphism, and $v\in G$, then $d(v)=d(\varphi(v))$.  So isomorphic graphs must have the same degree sequence.</p>
-
-</section>
-
-<section>
-<h2>"Trees"</h2>
-<image src="Pictures/Trees.jpg"> </image>
-
-</section>
-
-
-<section>
-<h1> Degree sequence in Chemistry </h1>
-</section>
-
-<section>
-
-<img src="Pictures/periodictablebig.jpg"></img>
-</section>
-
-<section>
-<ul> 
-<li>Hydrogen (H) and Fluorine (F) have degree 1</li>
-<li>Oxygen (O) and Sulfur (S) have degree 2 </li>
-<li> Nitrogen (N) and Phosphorous (P) have degree 3 </li>
-<li> Carbon (C) has degree 4 </li>
-</ul>
-<p> In biochemistry, carbon and hydrogen are most common.  Carbon are left blank, and Hydrogen aren't drawn at all </p>
-</section>
-
-
-<section>
-<p> Fluoxetine (Prozac) </p>
-<image src="Pictures/Fluoxetine.jpg"></image>
-</section>
-
-
-
-<section>
-<p>Hydrocarbons</p>
-<image src="Pictures/Hydrocarbons.jpg"></image>
-
-</section>
 
 
 

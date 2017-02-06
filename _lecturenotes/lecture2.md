@@ -154,11 +154,7 @@ If the two graphs are actually isomorphic, you have to actually write down an ex
 
  If they are not isomorphic, you have to prove that they are not isomorphic.  Usually this is done by giving an *obstruction* -- something that is different between the two graphs.  One easy example is that isomorphic graphs have to have the same number of edges and vertices.  
 
-Another, only slightly more advanced invariant is the *degree sequence* of a graph.
-
-Definition: degree sequence
-====
-The *degree sequence* of a graph is just the list (with multiplicity) of the degrees of all the vertices.  
+Another, only slightly more advanced invariant is the degree sequence of a graph that we saw last lecture in our discussion of chemistry.
 
 If $$\varphi:G \to H$$ is an isomorphism of graphs, than we must have $$d(\varphi(v))=d(v)$$ for all vertices $$v$$, and so the degree sequence must be preserved.  However, just because two graphs have the same degree sequences does not mean they are isomorphic.
 
