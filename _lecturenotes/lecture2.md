@@ -91,29 +91,7 @@ This gives three different possibilities for the subgraphs $$S_i$$ that satisfy 
 
 
 
-Examples and types of graphs
----
-
-A few basic examples
-===
-
-1. The *complete graph* $$K_n$$ has $$n$$ vertices, and each vertex is connected to every other vertex by exactly one edge (so $$K_n$$ is a simple graph)
-2. The *empty graph* $$E_n$$ has $$n$$ vertices and no edges between them
-3. The *path* $$P_n$$ consists of $$n$$ vertices, $$v_1,\dots, v_n$$, and $$n-1$$ edges, $$e_1,\dots, e_{n-1}$$, where $$e_i$$ connects $$v_i$$ with $$v_{i+1}$$
-4. The *cycle graph* $$C_n$$ is obtained from the path $$P_n$$ by adding one edge, between $$v_n$$ and $$v_1$$
-5. The *wheel* $$W_{n+1}$$ is obtained from the cycle $$C_n$$ by adding one more vertex $$v_0$$, and connecting to every edge in $$C_n$$
-6. The *Petersen graph* has ten vertices, and is typically drawn as a five sided star inside a pentagon, with corresponding vertices connected:
-
-
-
-Note that in the notation we ahve chosen above, for a graph $$G_n$$, $$n$$ is the number of vertices.
-
-Question:
-====
-How many edges are in $$K_n, P_n, C_n, W_n$$?
-
-
-When are two graphs "the same"?
+Isomorphisms: When are two graphs "the same"?
 -----
 
 It is possible to draw the same graph in the plane in many different ways -- e.g., the pentagon and the five sided star are two different ways of drawing $$C_5$$.  
@@ -123,7 +101,7 @@ If two graphs are "the same" in this way, we say they are *isomorphic*.
 Definition
 ====
 
-An *isomorphism* $$\varphi:G\to H$$ is a bijection $$\varphi:V(G)\to V(H)$$ that preserves the number of edges between vertices.  That is, if $$v,w\in V(G)$$, then the number of edges between $$v$$ and $$w$$ in $$G$$ is equal to the number of edges between $$\varphi(v)$$ and $$\varphi(w)$$ in $$H$$.
+An *isomorphism* $$\varphi:G\to H$$ of simple graphs is a bijection $$\varphi:V(G)\to V(H)$$ that preserves the number of edges between vertices.  That is, if $$v,w\in V(G)$$, then the number of edges between $$v$$ and $$w$$ in $$G$$ is equal to the number of edges between $$\varphi(v)$$ and $$\varphi(w)$$ in $$H$$.
 
 
 Example
