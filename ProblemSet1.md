@@ -7,7 +7,7 @@ Problem Set 1
 ----
 
 
-This problem set does not contribute to your final course grade, but is useful practice writing proofs for the exam.  It is due in class on Friday, March 11. 
+This problem set does not contribute to your final course grade, but is useful practice writing proofs for the exam.  It is due in class on Friday, March 3rd. 
 
 
 Question 1
@@ -31,5 +31,6 @@ Prove that the following graph is not Hamiltonian:
 Question 3
 ---
 
-Prove that a bipartite graph with an odd number of vertices is not Hamiltonian.
+We saw in class that $$\Gamma$$ has a vertex such that removing it disconnects the graph, then $$\Gamma$$ is not Hamiltonian.  Prove the following generalization:
 
+Suppose that graph $$\Gamma$$ has $$n$$ vertices $$v_1,\dots, v_n$$ so that if we remove all $$n$$ vertices, the resulting graph $$\Gamma\setminus \{v_1,\dots, v_n\}$$ has more than $$n$$ components.  Prove that $$\Gamma$$ is not Hamiltonian.  
