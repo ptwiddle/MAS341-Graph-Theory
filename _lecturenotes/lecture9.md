@@ -1,9 +1,43 @@
 ---
 layout: lecture
-title: Lecture 10&#58; Kruskal's algorithm	
+title: Lecture 9&#58; Spanning Trees, Kruskal's algorithm	
 comments: True
 ---
 
+
+
+
+Spanning trees
+----
+
+Definition
+===
+Let $$\Gamma$$ be a graph.  A *spanning tree* of $$\Gamma$$ is a subgraph $$T\subset \Gamma$$ such that $$T$$ is a tree and $$T$$ contains every vertex of $$\Gamma$$.
+
+Spanning trees are useful because they are a minimal connected subgraph that lets us get to all of $$\Gamma$$.  For instance, if the vertices are cities and the edges are roads, a spanning tree is a minimal set of edges that guarantee that you can get from any one city to another.
+
+Examples:
+===
+
+- The cycle graph $$C_n$$ has $$n$$ spanning trees obtained by deleting any one edge.  
+
+- A spanning tree of the complete graph $$K_n$$ is the same thing as a labelled tree, so there are $$n^{n-2}$$ such spanning trees by Cayley's theorem.
+
+
+Lemma:  
+====
+Every connected graph $$\Gamma$$ has a spanning tree.
+
+
+
+
+Proof
+====
+By our characterisation of trees, if $$T$$ is connected and has no cycles, then $$T$$ is a tree.  So it is enough to find a connected subgraph $$T$$ of $$\Gamma$$ that contains every vertex.
+
+Let $$H$$ be any subgraph of $$\Gamma$$ that is connected and contains all the vertices of $$\Gamma$$.  If $$H$$ has a cycle, we can pick any edge $$e$$ of that cycle and delete it, and $$H$$ will still be connected: any path that used $$e$$ can use the rest of the cycle instead.  
+
+Thus, starting from $$\Gamma$$, we may repeatedly remove edges from cycles and not disconnect $$\Gamma$$ until there are no more cycles left; the result will be a spanning tree.  $$\square$$
 
 
 Introduction to optimisation problems
@@ -71,36 +105,14 @@ For finding spanning trees, it turns out there are several easy algorithms that 
 
 Note that to have a spanning tree, the graph $$\Gamma$$ must be connected.  Running Kruskal's algorithm on a disconnected graph will produce a spanning tree for each component of $$\Gamma$$.
 
+
 Proof of the correctness of Kruskal's algorithm:
 ===
 
-From a mathematical point of view, the interesting part is to prove that running Kruskal's algorithm on a connected graph will always produce a minimal spanning tree.  There are two things to prove: that the end result of Kruskal's algorithm actually is a spanning tree, and that it is a minimal cost spanning tree.
+From a mathematical point of view, the interesting part is to prove that running Kruskal's algorithm on a connected graph will always produce a minimal spanning tree.  There are two things to prove: that the end result of Kruskal's algorithm actually is a spanning tree, and that it is a minimal cost spanning tree.  We prove the first part now, and the second part in this afternoon's lecture.
 
 To prove the first part, we first note that the graph $$T$$ produced by Kruskal's algorithm contains all the vertices of $$\Gamma$$, as they were all added at the beginning.  Thus, we only have to show that $$T$$ is a tree -- that is, it is connected, and that it has no cycles.
 
 Suppose that $$T$$ consisted of more than one component.  Since $$\Gamma$$ is connected, there would be two components of $$T$$, say, $$C_1$$ and $$C_2$$, with edges between $$C_1$$ and $$C_2$$.  But adding the cheapest such edge to $$T$$ does not create any loops, and hence it would have been added by Kruskal's algorithm, a contradiction.
 
 It is immediate that $$T$$ will not have any loops, because Kruskal's algorithm checks to make sure no loops are created before it adds an edge.  Thus, the output of Kruskal's algorithm is always a spanning tree.
-
-We now prove that this spanning tree always has minimal weight.  We do this by inductively proving that after each step of the algorithm, the graph $$T$$ we have produced is contained in *some* minimal spanning tree.  
-
-The base case is clear: any minimal spanning tree contains all the vertices of $$\Gamma$$, which is the initial graph $$T$$, and since $$\Gamma$$ is finite there exists *some* minimal spanning tree.
-
-Now, suppose that we are in the middle of running Kruskal's algorithm, know the graph $$T$$ we currently have is contained in a minimal spanning tree, and are about to add the edge $$e$$ to $$T$$.  We need to prove that the result $$T\cup e$$ will also be contained in a minimal spanning tree.
-
-Let $$M$$ be a minimal spanning tree that contains $$T$$; if $$M$$ also contains $$e$$, we are done, and so we suppose that $$M$$ does not contain $$e$$.  That means that adding the edge $$e$$ to $$M$$ must create a cycle $$C$$.  Since $$T\cup e$$ does not contain any cycles, there must be some edge $$f$$ that is in $$C$$ but not in $$T$$.
-
-Thus, we see that $$M^\prime =(M\setminus f) \cup e$$ is a spanning tree that contains $$T\cup e$$.  We claim that $$M^\prime$$ is also a minimal weight spanning tree.  So $$M$$ and $$M^\prime$$ differ only in the edges $$e$$ and $$f$$, we have to show $$w(e)=w(f)$$.  Since $$M$$ is by supposition a minimal weight spanning tree, we have that $$w(f)\leq w(e)$$.  Since Kruskal's algorithm is trying to add the edge $$e$$ instead of $$f$$, we have that either $$w(e)\leq w(f)$$, or that adding $$f$$ to $$T$$ creates a cycle.  But $$T\cup f\subset M$$ which is a tree, so it cannot be creating a cycle, and we must have that $$w(e)=w(f)$$, and so $$M^\prime$$ is a minimal weight spanning tree that contains $$T\cup e.  \square$$
-
-
-
-Comments on minimal spanning trees
-===
-
-Although Kruskal's algorithm only finds a single minimal spanning tree, the only time Kruskal's algorithm has any choice is in what order to add edges with the same weight.  Thus, it is possible to find all minimal spanning trees by analyzing what happens when we had a choice of edges to add.
-
-There are several other algorithms for finding minimal spanning trees:
-
-1. [Prim's algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm) is very similar to Kruskal's algorithm, but we start from a single vertex, and always add the cheapest edge that is connected to what we already have and doesn't create any loops.
-2. The [Reverse-delete algorithm](https://en.wikipedia.org/wiki/Reverse-delete_algorithm) is the opposite of the greedy algorithm.  Rather than adding the cheapest edge possible, the Reverse-delete algorithm worries about getting "stuck" having to add an expensive edge.  It continually finds the most expensive edge.  If removing that edge does not disconnect the graph, it does so.  If it does disconnect the graph, it keeps that edge as part of the spanning tree, and finds the next most expensive edge.
-

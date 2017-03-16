@@ -1,8 +1,44 @@
 ---
 layout: lecture
-title: Lecture 11&#58; Traveling Salesman; Dijkstra's algorithm	
+title: Lecture 10&#58; Kruskal proof, Traveling Salesman
 comments: True
 ---
+
+Kruskal's completed:
+=====
+
+In this morning's lecture we described Kruskal's algorithm for finding a minimal weight spanning tree in a weighted graph.  After demonstrating the algorithm, we showed that it always produces a spanning tree, but we have not yet shown that this spanning tree has minimal weight.  We do that now.
+
+
+The proof will be inductive.  Let $$T_0$$ be the subgraph that Kruskal's algorithm starts with, namely, all the vertices of $$\Gamma$$ and none of the edges.  Let $$T_k\subset\Gamma$$ be the subgraph Kruskal's produces after adding $$k$$ edges to $$T_0$$.  We willinductively prove that $$T_k$$ is contained in *some* minimal spanning tree of $$\Gamma$$.  In particular, since we know $$T_{n-1}$$ is a spanning tree, we see that $$T_{n-1}$$ will be a minimal weight spanning tree.  
+
+The base case is clear: any minimal spanning tree contains all the vertices of $$\Gamma$$, which is the initial graph $$T_0$$, and since $$\Gamma$$ is finite there exists *some* minimal spanning tree.
+
+For the inductive step, we assume that $$T_k$$ produced from Kruskal's algorithm is contained in some minimal spanning tree $$M$$, and Kruskal's algorithm tells us we should construct $$T_{k+1}$$ from $$T_k$$ by adding the edge $$e$$ to $$T$$.  We need to prove that $$T_{k+1}$$ is contained in some minimal weight spanning tree $$M^\prime$$.  We claim we can take $$M^\prime=M\setminus\{e\}\cup\{f\}$$.
+
+First, note that $$M^\prime$$ is indeed a spanning tree; since $$M\cup e$$ has a cycle, $$M^\prime$$ is connected, and it has the right number of edges.
+
+Now, we must show $$M^\prime$$ has minimal weight.  Since $$M^\prime$$ only differs from $$M$$ (which had minimal weight) by adding $$f$$ and removing $$e$$, we see that $$w(M^\prime)=w(M)$$ if and only if $$w(e)=w(f)$$.
+
+Since $$M$$ is by supposition a minimal weight spanning tree, we have that $$w(f)\leq w(e)$$.  Since Kruskal's algorithm is trying to add the edge $$e$$ instead of $$f$$, we have that either $$w(e)\leq w(f)$$, or that adding $$f$$ to $$T$$ creates a cycle.  But $$T\cup f\subset M^\prime$$ which is a tree, so it cannot be creating a cycle, and we must have that $$w(e)\leq w(f)$$.
+
+
+Thus, $$w(e)=w(f)$$, and so $$M^\prime$$ is a minimal weight spanning tree that contains $$T\cup e.  \square$$
+
+
+
+Comments on minimal spanning trees
+===
+
+Although Kruskal's algorithm only finds a single minimal spanning tree, the only time Kruskal's algorithm has any choice is in what order to add edges with the same weight.  Thus, it is possible to find all minimal spanning trees by analyzing what happens when we had a choice of edges to add.
+
+There are several other algorithms for finding minimal spanning trees:
+
+1. [Prim's algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm) is very similar to Kruskal's algorithm, but we start from a single vertex, and always add the cheapest edge that is connected to what we already have and doesn't create any loops.
+2. The [Reverse-delete algorithm](https://en.wikipedia.org/wiki/Reverse-delete_algorithm) is the opposite of the greedy algorithm.  Rather than adding the cheapest edge possible, the Reverse-delete algorithm worries about getting "stuck" having to add an expensive edge.  It continually finds the most expensive edge.  If removing that edge does not disconnect the graph, it does so.  If it does disconnect the graph, it keeps that edge as part of the spanning tree, and finds the next most expensive edge.
+
+
+
 
 Traveling Salesman Problem
 ---
@@ -45,31 +81,5 @@ $$w(C)=w(P)+w(a-v)+w(b-v)\geq w(T)+w(e_1)+w(e_2)$$
 giving us a lower bound on solutions to the TSP.
 
 This method of finding lower bounds is illustrated in [this video](https://www.youtube.com/watch?v=NA2RToI4-ro)
-
-Dijkstra's Algorithm
-----
-
-Dijkstra's algorithm finds the shortest path between two points in a weighted graph; there are some variations on it, and the version we present will find the shortest path between a fixed vertex $$v$$ and every other vertex $$a$$ of $$\Gamma$$.  We will denote $$c_v(a)$$ to be the cost of the shortest path from $$v$$ to $$a$$.
-
-The algorithm
-===
-
-The basic set-up of the algorithm is to keep a running a list of "potential" shortest paths between $$v$$ and some of the vertices.  To initialize this list, we just record every vertex $$a$$ adjacent to $$v$$, and the weight of the edge $$vw$$ connecting them.  
-
-At each step of the algorithm, we choose the lowest such "potential" shortest path, say, a path to $$a$$, and declare it to actually be the shortest path.  We then update our list of potential shortest paths by looking at all vertices $$b$$ adjacent to $$w$$.  We could get a path from $$v$$ to $$b$$ by first taking a path from $$v$$ to $$a$$, which costs $$c_v(a)$$, and then adding on the edge from $$a$$ to $$b$$, which costs $$w(ab)$$.  Thus, we compare the cost of the "potential" shortest path from $$v$$ to $$b$$ (if there is one), with $$c_v(a)+w(a-b)$$, and make whichever one is lower the new potential cheapest path from $$v$$ to $$b$$.  We then remove $$a$$ from the list of vertices, and continue on our way.
-
-
-Proof of correctness
-===
-
-Unlike Kruskal's algorithm, where we had to do some work to prove that the algorithm always produced the correct answer, with Dijkstra's algorithm it is fairly obvious that it will always give the correct answer.  Consider the step where we final a potential shortest path from $$v$$ to $$a$$ as actually being the shortest.  If this wasn't true, then there would be some shorter path from $$v$$ to $$a$$.  We haven't found this path yet, which means it would have to travel through some other vertex $$b$$ we haven't yet optimized the minimal path for.  But any path from $$v$$ to $$b$$.  But since the cost of the path from $$v$$ to $$a$$ is minimal among potential paths we can see, the cost of the path from $$v$$ to $$b$$ would be at least as much as the cost to $$v$$ to $$a$$, and that's before we add the extra cost from $$b$$ to $$a$$.
-
-
-Examples
-===
-
-There are [many](https://www.youtube.com/watch?v=0nVYi3o161A) [videos](https://www.youtube.com/watch?v=WN3Rb9wVYDY) online demonstrating Dijkstra's algoirth, as well as some [applets](http://optlab-server.sce.carleton.ca/POAnimations2007/DijkstrasAlgo.html)
-
-We did one quick example at the end of class, and will begin the next class working another example, which will get transcribed and discussed in the notes.
 
 
