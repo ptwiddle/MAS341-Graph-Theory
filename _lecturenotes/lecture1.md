@@ -25,7 +25,7 @@ A *graph* $$\Gamma$$ consists of:
 - a set $$V(\Gamma)$$ of vertices 
 - a set $$E(\Gamma)$$ of edges 
 
-Each edge either connects two vertices of $$V(\Gamma)$$ together, or connects an edge to itself.
+Each edge either connects two vertices of $$V(\Gamma)$$ together, or connects a vertex to itself.
 
 Examples
 ===

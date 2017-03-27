@@ -1,16 +1,15 @@
 ---
 layout: lecture
-title: Lecture 14&#58; Kuratowski's theorem; graphs on the torus
+title: Lecture 14&#58; Kuratowski's theorem; graphs on the torus and Mobius band
 comments: True
 ---
 
-Kuratowski's theorem
----------
 
-Last session we proved that the graphs $$K_{3,3}$$ and $$K_5$$ are not planar.  We now explain a method to prove a general graph is nonplanar.  We begin with some simple observations.
+Last session we proved that the graphs $$K_{3,3}$$ and $$K_5$$ are not planar.  We now discuss Kuratowski's theorem, which states that, in a well defined sense, having a $$K_{3,3}$$ or a $$K_5$$ are the *only* obstruction to being non-planar.
 
+ We begin with some two simple observations.
 
-Lemma 1
+Observation 1
 =====
 
 If $$H$$ is a subgraph of $$G$$, and $$H$$ is not planar, then $$G$$ is not planar.
@@ -20,39 +19,28 @@ Proof
 
 If we could draw $$G$$ in the plane, it would produce a drawing of $$H$$ in the plane, a contradiction.  $$\square$$
 
-As an immediate corrolary, we see that $$K_n$$ is not planar for $$n\geq 5$$, as all such complete graphs contain $$K_5$$ as a subgraph.
+As an immediate corrolary, we see that $$K_n$$ is not planar for $$n\geq 5$$, as all such complete graphs contain $$K_5$$ as a subgraph; similarly, $$K_{m,n}$$ are not planar, with $$m,n\geq 3$$.
+
+Our second observation is the following: suppose we took a graph $$\Gamma$$, and made a new graph $$\Gamma^\prime$$ by adding one vertex of degree 2 in the middle of one of the edges of $$\Gamma$$.  Then drawing $$\Gamma^\prime$$ is basically the same as drawing $$\Gamma$$, and then sticking an extra dot on an edge.  Hence, $$\Gamma^\prime$$ will be planar if and only if $$\Gamma$$ was.  
 
 
-Our method will be a strengthening of this, based on another observation.  Note that as far as drawing goes, drawing an edge is the same as drawing two edges, together incident on a vertex of degree 2 -- they're both just a line; one of them has an extra dot on it:
 
-![Splitting/Joining an edge](../TeXpictures/split.png)
-
-Subdividing the edge $$e$$ into two edges $$e_1$$ and $$e_2$$ by adding a vertex $$v$$ does not change what it would be like to draw the edge.
-
+We now make this precise:
 
 Definition
 ======
 
-Two graphs $$G$$ and $$H$$ are homeomorphic if they are connected by a sequence of either splitting an edge into two edges by adding a vertex of degree 2 in the middle, or the inverse operation of this: merging two edges into one by deleting a vertex of degree two.
 
-Example
+
+We say that $$\Gamma^\prime$$ is a subdivision of $$\Gamma$$ if it is obtained from $$\Gamma$$ by repeatedly choosing an edge $$e$$ and splitting it into two by adding a new vertex, as in the following picture: 
+
+![Splitting/Joining an edge](../TeXpictures/split.png)
+
+
+Observation 2
 =====
-The following three graphs are homeomorphic:
-![Homeomorphic example](../TeXpictures/HomeoExample.png)
+Suppose that $$\Gamma^prime$$ is a subdivision of $$\Gamma$$.  Then $$\Gamma^\prime$$ is planar if and only if $$\Gamma$$ is.
 
-
-
-Note: Homeomorphic is a word from topology -- homeomorphic graphs give give "the same" topological space.
-
-Lemma 2
-=====
-
-If $$G$$ is homeomorphic to $$H$$, then either both $$G$$ and $$H$$ are planar, or neither $$G$$ nor $$H$$ are planar.
-
-Proof
-====
-
-If $$G$$ and $$H$$ are homeomorphic, a drawing of one is the same as a drawing of the other, with some "dots" (vertices) in different positions.  $$\square$$
 
 Example
 =====
@@ -61,7 +49,7 @@ The following graph $$G$$ is nonplanar, since it is obtained from $$K_{3,3}$$ by
 ![K33 Subdivision](../TeXpictures/K33homeo.png)
 
 
-Putting together the two lemmas, we see that if $$G$$ has a subgraph $$H$$, so that $$H$$ is homeomorphic to subgraph that we know isn't planar, (like $$K_5$$ or $$K_{3,3}$$), then we know that $$G$$ isn't planar.  We illustrate this now in an exmaple.
+Putting together the two lemmas, we see that if $$G$$ has a subgraph $$H$$, so that $$H$$ is a subdivision of a non-planar graph (like $$K_5$$ or $$K_{3,3}$$), then we $$G$$ isn't planar.  We illustrate this now in an exmaple.
 
 Example: The Petersen graph is not planar
 =====
@@ -76,11 +64,13 @@ Kuratowski's Theorem
 
 A graph $$G$$ is nonplanar if and only if it contains a subgraph homeomorphic to $$K_5$$ or $$K_{3,3}$$.
 
-Today's two lemmas, together with yesterday's result that $$K_{3,3}$$ and $$K_5$$ are nonplanar, prove the "if" direction.  The "only if" direction is much harder, and we will not prove it.
 
-However, we will only use the "only if" direction implicitly.  Using the "only if" direction explicitly would amount to prove that some graph was planar by showing it had no subgraphs heomeomorphic to $$K_5$$ or $$K_{3,3}$$, which we would be quite laborious.  We have a much easier way to prove that a graph is planar: drawing it in the plane.
 
-We will however, use the "only if" direction implicitly in the following way.  Suppose we have a graph $$G$$, and we want to determine if $$G$$ is planar or not.  We can try to prove it is planar by trying to draw it in the plane.  We can try to prove it is not planar by finding a subgraph of $$G$$ that is homeomorphic to either $$K_{3,3}$$ or $$K_5$$.  The "only if" direction of Kuratowski's theorem tells us that one or the other of these attempts will *always* work.  Thus, we have a practical method to determine whether or not a graph is planar or not -- try to draw it in the plane.  If you find this difficult, and begin to expect that it isn't possible, start looking for a subgraph homeomorphic to either $$K_5$$ or $$K_{3,3}$$ to prove it.
+Our two observations, together with this morning's result that $$K_{3,3}$$ and $$K_5$$ are nonplanar, prove the "if" direction.  The "only if" direction is much harder, and we will not prove it.
+
+However, we will only use the "only if" direction implicitly.  Using the "only if" direction explicitly would amount to prove that some graph was planar by showing it had no subgraphs that were subdivisions of $$K_5$$ or $$K_{3,3}$$, which we would be quite laborious.  We have a much easier way to prove that a graph *is* planar: drawing it in the plane.
+
+We will however, use the "only if" direction implicitly in the following way.  Suppose we have a graph $$G$$, and we want to determine if $$G$$ is planar or not.  We can try to prove it is planar by trying to draw it in the plane, and we can try to prove it is not planar by finding a subgraph of $$G$$ that is homeomorphic to either $$K_{3,3}$$ or $$K_5$$.  The "only if" direction of Kuratowski's theorem tells us that one or the other of these attempts will *always* work.  Thus, we have a practical method to determine whether or not a graph is planar or not -- try to draw it in the plane.  If you find this difficult, and begin to expect that it isn't possible, start looking for a subgraph homeomorphic to either $$K_5$$ or $$K_{3,3}$$, which would prove it can't be drawn on the plane.
 
 
 Graphs on other surfaces
@@ -107,8 +97,8 @@ Definition
 
 A "video-game graph" is one that "locally looks like" a part of graph paper.
 
-Question
-====
+Motivating Question
+=======
 
 If videogame designers were more clever, could they put a finite videogame graph on the sphere?  Can you prove that it isn't possible?
 
@@ -117,7 +107,7 @@ If videogame designers were more clever, could they put a finite videogame graph
 Drawing graphs on the torus
 ------
 
-If we wanted to draw a graph on the sphere, we could do this physically by taking a balloon and a felt pen, but it would be a little awkward to turn in or mark homeworks this way ;)  Luckily, we saw last time that, using stereographic projection, drawing a graph on the sphere is equivalent to being able to draw it on the plane.
+If we wanted to draw a graph on the sphere, we could do this physically by taking a balloon and a felt pen, but it would be a little awkward to turn in or mark homeworks this way.  Luckily, we saw last time that, using stereographic projection, drawing a graph on the sphere is equivalent to being able to draw it on the plane.
 
 Similarly, we could draw graphs on torus by getting donuts, and writing on them with icing sugar.  But again, this is rather impractical, and we'd like a way to represent drawing a graph on a torus that is conveniently done on a piece of paper.  
 
@@ -146,15 +136,36 @@ It turns out that $$K_8$$ cannot be drawn on the torus; we will prove this later
 
 What comes next?
 -------
-what other surfaces other than the sphere and torus are possible?  One possibility is just adding  "more holes"; this produces the "donut with $$g$$ holes", more formally known as the "suface of genus $$g$$".
+What other surfaces other than the sphere and torus are possible?  One possibility is just adding  "more holes"; this produces the "donut with $$g$$ holes", more formally known as the "suface of genus $$g$$".
 
+You won't have to work with surfaces of higher genus, but it is worth knowing that this is an active area of research and investigation.  It turns out (try to prove it!  It's not hard...) that given any finite graph $$\Gamma$$, there is some $$g$$ so that $$\Gamma$$ can be drawn on a surface of genus $$g$$ without the edges crossing.  The *genus* of a graph $$\Gamma$$ is defined to be the lowest $$G$$ such that this can be done.
 
+Nonorientable Surfaces
+=======
 
-Are any other surfaces possible?  What is a convenient way for drawing graphs on a $$g$$-holed torus?  We will prove the following theorem: 
+Although you won't have to work with surfaces of higher genus, you will have to be able to work with a couple of other surfaces.  We will end this lecture by introducing the Mobius band:
 
-Any finite graph $$G$$ can be drawn on a surface of genus $$g$$, for some $$g$$ large enough.
+Unorientable surfaces
+-----
 
+In this half of the lecture, we introduce the real projective plane, the simplest closed compact unorientable surface.  
 
+Before we do that, it is easiest to review an unorientable surface with boundary that may be more familiar: the Mobius band.
+
+The Mobius band
+===
+
+Suppose one has a strip of paper and glues the opposite edges together in the natural way -- this makes a cylinder.
+
+If instead, one glued the ends together with half a twist, one would get the Mobius band:
+
+![mobius band glue](../Slides/Pictures/mobiusglue.jpg)
+
+The mobius band is not the same topological space as the cylinder.  One way to see this is that it is *unorientable* -- there is not a consistent notion of left and right on the Mobius band.  If you start at one point on the Mobius band, and travel along it until you jump across the other side of the identification, you will eventually return to where you started.  However, your left and right will have been interchanged!  This is seen in the following pictures, [stolen from this blog post](https://haggisthesheep.wordpress.com/2009/06/15/mobius-strips/):
+
+![courtesy haggisthesheep.blogspot.com](../Slides/Pictures/mobiusunorientable.jpg)
+
+The creature started out, his right hand was blue, but when he returns from his trip around the mobius band it is now his left hand that is blue!
 
 
 
