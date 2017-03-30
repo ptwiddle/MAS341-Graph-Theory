@@ -39,7 +39,7 @@ We say that $$\Gamma^\prime$$ is a subdivision of $$\Gamma$$ if it is obtained f
 
 Observation 2
 =====
-Suppose that $$\Gamma^prime$$ is a subdivision of $$\Gamma$$.  Then $$\Gamma^\prime$$ is planar if and only if $$\Gamma$$ is.
+Suppose that $$\Gamma^\prime$$ is a subdivision of $$\Gamma$$.  Then $$\Gamma^\prime$$ is planar if and only if $$\Gamma$$ is.
 
 
 Example
