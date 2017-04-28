@@ -13,7 +13,7 @@ We begin by counting the number of vertices, edges, and faces of some graphs on 
 Euler's Theorem
 ======
 
-Let $$\Gamma$$ be a graph drawn on the sphere, and suppose that $$\Gamma$$ has $$v$$ vertices, $$e$$ edges, and $$f$$ faces.  Then $$v-e+f=2$$.
+Let \\(\Gamma\\) be a graph drawn on the sphere, and suppose that $$\Gamma$$ has $$v$$ vertices, $$e$$ edges, and $$f$$ faces.  Then $$v-e+f=2$$.
 
 Proof idea 1: 
 =====
