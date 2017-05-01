@@ -79,16 +79,13 @@ More generally, consider the induced subgraph $$H_{1,3}$$ of $$G\setminus v$$ co
 
 Thus, if $$w_1$$ and $$w_3$$ are in different components of $$H_{1,3}$$, we can switch the colours of all the vertices in the component that $$w_3$$ is in, then $$w_1$$ and $$w_3$$ are both coloured 1, and we may extend the colouring by $$v$$ by making it 1.
 
-So, we need only consider the case that $$w_1$$ and $$w_3$$ are in the same component of $$H_{1,3}$$.  This means that there is a path from $$w_1$$ to $$w_3$$ in $$H_{1,3}$$; that is, a path $$P=w_1--u_1--u_2\cdots-- u_k=w_3$$ consisting of vertices $$u_i$$ coloured only 1 and 3.
+So, we need only consider the case that $$w_1$$ and $$w_3$$ are in the same component of $$H_{1,3}$$.  This means that there is a path from $$w_1$$ to $$w_3$$ in $$H_{1,3}$$; that is, a path $$P=w_1-u_1-u_2\cdots-u_k=w_3$$ consisting of vertices $$u_i$$ coloured only 1 and 3.
 
 
 of vertices between $$w_1$$ and $$w_3$$ in $$G\setminus v$$ consisting only of vertices coloured 1 and 3.
 
 Now, we try to play the same game with $$w_2$$ and $$w_4$$, and consider the subgraph $$H_{2,4}$$ consisting of only those vertices coloured 2 and 4.  If $$w_2$$ and $$w_4$$ lie on different components of $$H_{2,4}$$, we can switch the colours on the component of $$H_{2,4}$$ containing $$w_4$$, which will make $$w_4$$ coloured 2, and we can colour $$v$$ with colour 4.
 
-Thus, we need to consider the case where $$w_2$$ and $$w_4$$ are on the same component of $$H_{2,4}$$, thus, there is chain $$P^\prime=w_2--y_1--y_2\cdots--y_k=w_4$$ consisting only of vertices coloured 2 and 4.
+Thus, we need to consider the case where $$w_2$$ and $$w_4$$ are on the same component of $$H_{2,4}$$, thus, there is chain $$P^\prime=w_2-y_1-y_2\cdots-y_k=w_4$$ consisting only of vertices coloured 2 and 4.
 
-Thus we have two walks $$P$$ and $$P^\prime$$ in the plane, that cannot share and vertices, a contradiction, as they'd have to cross over each other.
-
-
-$$\square$$
+Thus we have two walks $$P$$ and $$P^\prime$$ in the plane, that cannot share and vertices, a contradiction, as they'd have to cross over each other.  $$\square$$

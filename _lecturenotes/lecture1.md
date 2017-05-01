@@ -20,12 +20,12 @@ Graphs usually (but not always) are thought of showing how things are set of thi
 Definition of a graph
 ===
 
-A *graph* $$\Gamma$$ consists of: 
+A *graph* \\(\Gamma\\) consists of: 
 
-- a set $$V(\Gamma)$$ of vertices 
-- a set $$E(\Gamma)$$ of edges 
+- a set \\(V(\Gamma)\\) of vertices 
+- a set \\(E(\Gamma)\\) of edges 
 
-Each edge either connects two vertices of $$V(\Gamma)$$ together, or connects a vertex to itself.
+Each edge either connects two vertices of \\(V(\Gamma)\\) together, or connects a vertex to itself.
 
 Examples
 ===
@@ -68,11 +68,11 @@ Euler's handshaking lemma:
 ====
 The sum of the degrees of the vertices of a graph is twice the number of edges of the graph:
 
-$$\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|$$
+\\[\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|\\]
 
 Proof:
 ===
-Each edge has two ends; each end contributes 1 to the degree of one vertex, and hence to the sum of all the degrees.  $$\square$$
+Each edge has two ends; each end contributes 1 to the degree of one vertex, and hence to the sum of all the degrees.  \\(\square\\)
 
 Graph theory in Chemistry
 ----

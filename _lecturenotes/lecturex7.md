@@ -90,39 +90,10 @@ Suppose now that we have fixed an interger $$m$$, and we know that every graph w
 Pick any vertex $$v$$ of $$\Gamma$$ and remove it.  The resulting graph $$\Gamma\setminus v$$ has $$k-1$$ vertices and so by the inductive hypothesis can be coloured with at most $$m+1$$ colours.  Now, we need to colour $$v$$.  But $$v$$ is adjacent to at most $$m$$ vertices of $$\Gamma$$, so at least one of $$m+1$$ colours does not appear at a vertex adjacent to $$v$$ -- colouring $$v$$ this colour does what we need.
 
 
-The 6 Colour Theorem
+The 5 Colour Theorem
 ----
 
-Although the 4 colour theorem is extremely difficult to prove, weaker bounds are easy.  We will prove that 6 colours suffices for any planar map now; with a little more work the argument can be adjusted to prove that actually 5 colours is enough, but getting to 4 is very hard.
-
-
-
-
-Theorem
-====
-Any planar graph has $$\chi(G)\leq 6$$.
-
-Proof
-===
-
-The proof of this theorem is in some ways very similar to the previous proof.  We will induction, deleting vertices one by one.  
-
-We need to use that $$G$$ is planar somehow.  And from the previous theorem, we see that we want $$G$$ to have vertices with low degree, because deleting them leads to efficient colourings.  The following lemma connects these ideas
-
-Lemma
-====
-
-Any planar graph $$G$$ has a vertex $$v$$ of degree at most $$5$$.  
-
-Before proving this lemma, we will see how the lemma leads to a proof of the 6 colour theorem.
-
-We again use induction.  As a base case, it is clear than any planar graph with at most 6 vertices can be coloured with 6 colours.  Now, suppose that all planar graphs with less than $$k$$ vertices can be coloured with 6 colours, and suppose $$\Gamma$$ is a planar graph with $$k$$ vertices.  We must show that $$\chi(\Gamma)\leq 6$$.
-
-By the Lemma, since $$\Gamma$$ is planar it has a vertex $$v$$ with $$d(v)\leq 5$$.  Deleting $$v$$, the graph $$\Gamma\setminus v$$ has strictly less than $$k$$ vertices, and hence can be coloured with 6 colours.  Now, taking this colouring and trying to extend it to a colouring of $$\Gamma$$ we just have to colour $$v$$.  But $$v$$ is only adjacent to 5 vertices, and so at least one of our six colours is not used in these vertices.  If we colour $$v$$ one of these unused colours, then we have the colouring we want.  
-
-We will prove the lemma needed at the beginning of the next session.
-
-
+Although the 4 colour theorem is extremely difficult to prove, weaker bounds are easy.  The last lecture we will prove that 5 colours suffices for any planar map now, but getting to 4 is very hard.
 
 
 

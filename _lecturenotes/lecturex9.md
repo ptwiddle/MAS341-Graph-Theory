@@ -5,50 +5,19 @@ comments: True
 ---
 
 
-
-Chromatic polynomial
-----
-
-Instead of just asking whether the vertices of a graph can be coloured using $$k$$ colours, one could try to *count* how many different ways the graph can be coloured using that many colours.
-
-Definition
-====
-
-Let $$G$$ be a simple graph and let $$k$$ be a positive integer.  The *chromatic polynomial*, written $$P_G(k)$$ counts the number of ways to colour the vertices of $$G$$ with $$k$$ colours
-
-
-From the definition, $$P_G(k)$$ is simply a function from the non-negative integers to itself.  Our main goal today is to prove that $$P_G(k)$$ is actually a polynomial, and to calculate this polynomial.
-
-Relation between chromatic polynomial and chromatic number.
-====
+At the end of the last lecture, we introduced the chromatic polynomial $$\chi_G(k)$$, which counts the number of ways to colour $$G$$ with $$k$$ colours.  We demonstrated that the chromatic polynomial of the empty graph $$E_n$$ was $$k^n$$, and the chromatic polynomial of the complete graph $$K_n$$ was $$\chi_{K_n}(k)=k\cdot(k-1)\cdot (k-2)\cdots (k-n+1)$$.  
 
 
 
-Recall the chromatic number $$\chi(G)$$ is the least number $$k$$ so that $$G$$ can be coloured with $$k$$ colours.  If $$G$$ can't be coloured with $$k$$ colours, then there are 0 colourings of $$G$$ with $$k$$ colourings, and so $$P_G(k)=0$$.  If $$G$$ *can* be coloured with $$k$$ colourings, then there is at least one such colouring, and so $$P_G(k)>0$$.
+Recall the chromatic number $$\chi(G)$$ is the least number $$k$$ so that $$G$$ can be coloured with $$k$$ colours.  If $$G$$ can't be coloured with $$k$$ colours, then there are 0 colourings of $$G$$ with $$k$$ colourings, and so $$P_G(k)=0$$.  If $$G$$ *can* be coloured with $$k$$ colourings, then there is at least one such colouring, and so $$P_G(k)>0$$.  Thus, we see that the chromatic polynomial $$P_G(k)$$ determines the chromatic number $$\chi(G)$$.
 
-Thus, we see that the chromatic polynomial $$P_G(k)$$ determines the chromatic number $$\chi(G)$$:  $$\chi(G)$$ is the least number $$k$$ so that $$P_G(k)\neq 0$$.
-
-
-
-
-
-Example: The empty graph
-====
-
-Recall the empty graph $$E_n$$ has $$n$$ vertices and no edges.  Thus, if we want to color $$E_n$$ with $$k$$ colours, each vertex can be any of the $$k$$ colours independently, and so we see $$P_{E_n}(k)=k^n$$.
+Lemma
+=====
+The chromatic number $$\chi(G)$$ is the least number $$k$$ so that $$P_G(k)\neq 0$$.
 
 
-Example: The complete graph
-====
 
-Suppose we want to colour the complete graph $$K_n$$ with $$k$$ colours.  We colour the vertices one by one.  For the first vertex, we can choose any of the $$k$$ colours.  For the second vertex, we can choose any colour except the one used in the first vertex, and so we have $$k-1$$ choices.  For the third vertex, we must pick a new colour, and hence have $$k-2$$ choices.  Continuing in this manner, we see for the last vertex we will have $$k-(n-1)$$ choices.  Thus, we see that
-
-$$P_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots (k-(n-1))$$
-
-Note that if we put in a number from $$\{0,\dots,n-1\}$$ we get 0, which makes sense because we cannot colour $$K_n$$ unless we have at least $$n$$ colours, while $$P_{K_n}(n)=n!\neq 0$$, verifying the determination of the chromatic number from the chromatic polynomial.
-
-
-For simple graphs, one can calculate the chromatic polynomial just by starting at a vertex, and attempting to colour nearby vertices.  We illustrate this now for a couple of graphs, and also show how for more complicated graphs this method becomes more complicated.
+For certain graphs, one can calculate the chromatic polynomial just by starting at a vertex, and attempting to colour nearby vertices.  We illustrate this now for a couple of graphs, and also show how for more complicated graphs this method becomes more complicated.
 
 Example: The path graph $$P_n$$
 ====
@@ -88,8 +57,6 @@ $$P_{C_4}(k)=k(k-1)^2+k(k-1)(k-2)^2=k(k-1)[k-1+(k-2)^2]=k(k-1)(k^2-3k+3)\quad\sq
 
 
 For larger graphs, sometimes the colouring method we used above will work well, while for others the type of case by case analysis we needed for $$C_4$$ will explode and make it intractible.  To prove that $$P_G(k)$$ is a polynomial, we will need a general method to deal with it.  
-
-
 
 
 

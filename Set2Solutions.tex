@@ -7,46 +7,64 @@
 \begin{document}
 \maketitle
 \section{Question 1}
-An edge $e$ of a connected graph $\Gamma$ is called a \emph{bridge} if removing $e$ from $\Gamma$ results in a disconnected graph.  
 
-Prove that an edge $e$ is a bridge if and only if it is contained in every spanning tree of $\Gamma$.
 
+The triangular prism graph is a graph with 6 vertices and 9 edges, consiting of two triangls, with three more edges connecting corresponding vertices of the triangles.
+
+As of this writing (hopefully one of you will fix it; I've never edited wikipedia), the Wikipedia article for prism graphs has a mistake in the formula for the number of spanning trees (if you follow the link to their source, they just miscopied something).  
+
+Prove that, in fact, the triangular prism graph has 75 spanning trees, not 78.  (One possible way to organize the count: consider the three edges NOT contained in any triangles.  There are 12 spanning trees that contain all three of these, 36 spanning trees that contain 2 of these edges, and 27 spanning trees that contain just one of these edges).
 
 \begin{proof}
 
-It is easiest to prove the contrapositives.
+  We follow the hint.  Consider three edges connecting the two triangles; since removing these three edges disconnects the graph, our spanning tree must contain at least one of these edges.  We consider three cases, depending on how many of these edges the spanning tree contains.
 
-Suppose that $e$ is not a bridge, that is, the graph $\Gamma\setminus e$ obtained by removing $e$ from $\Gamma$ is connected.  Then in particular, $\Gamma\setminus e$ has a spanning tree $T$.  But $T$ is also a spanning tree of $\Gamma$ that doesn't visit $e$.  So if $e$ isn't a bridge, there is some spanning tree that doesn't contain it.
+  Consider the case when there is just one of these three edges; there are three possibilities for which edge it could be.  Once we have done done this, we need four more edges, and we need a spanning tree of each of the two triangles.  Thus, we need to forget one edge from each triangle.  There are three ways from each triangle to choose this edge, and thus after the initial choice of three edges, we have 9 choices for the rest of the spanning tree, and so there are $$3^3=27$$ spanning trees that involve one of these edges.
 
-Now, suppose that $e$ is not contained in every spanning tree.  Then there is some spanning tree $T$ that doesn't contain it.  But since $T$ doesn't contain $e$, it is also a spanning tree of $\Gamma\setminus e$, and so $\Gamma\setminus e$ is connected.
+  Now, consider the case where the spanning tree contains two of three edges contecting the triangles.  Then we are forgetting one edge, and so there are three ways to choose these two edges.  After we've chosen these edges, we have three edges that will fill the rest of the spanning tree.  We will need one side to contain two edges and one side to contain 1 -- there are 2 ways to choose which side of the triangle has two edges.
 
+  The side that contains two edges will automatically connect the three vertices of that triangle, and so we can choose any of the 3 edges to forget.
 
-Note that the two proofs are really the same in opposite direction: each step is in an if and only if: $e$ is a not a bridge if and only if $\Gamma\setminus e$ is connected if and only if $\Gamma\setminus e$ has a spanning tree if and only if $\Gamma$ has a spanning tree that doesn't contain $e$ if and only if $e$ is not contained in all spanning trees of $\Gamma$.
+  On the side that only has one edge, there will be one vertex that does not yet have an edge connecting to it, so we will need to contain that vertex, and hence only have 2 ways to choose that tree.  Thus, we see there are 3*2*3*2=36 spanning trees that contain 2 of long edges.
 
+  Finally, consider the case where our spanning tree contains all three of the spanning tree.  There are two more edges our tree needs to contain, and we have two cases: where the two edges are in the same end of the prism, and where we have one edge from each end of the prism.
+
+  If both edges are from the same end, there are 2 ways to choose the end, and then 3 ways to choose what those three edges are; the resulting graph will automatically be a tree, and so we have 6 spanning trees of this type.
+
+  If we take one edge from each end, there are 3 ways to choose an edge from the first end.  When we then go to choose an end from the other edge, we can't take the ``same'' edge, as this would result in a disconnected graph (and a loop).  We have to take one of the remaining two edges.  Thus, there are 3*2=6 spanning trees of this type, and hence 12 spanning trees total that contain all three of the long edges.
+
+  Putting it all together, we see there are 27 spanning trees containing 1 long edge, 36 spanning trees containing 2 long edges, and 12 spanning trees containing all three long edges, giving 75 spanning trees total.
+
+  
 \end{proof}
+
+
+
 
 \section{Question 2}
-\subsection{Part 1} Recall the path graph $P_n$ has $n$ vertices $v_i$ with $v_i$ adjacent to $v_{i\pm 1}$.  How many different labeled trees have the path graph $P_n$ as their underlying graph?
+\subsection{Part 1}
+
+
+Prove that the number $k$ appears $m$ times in the Prufer code for a tree $T$ if and only if the vertex labelled $k$ in $T$ has degree $m+1$.
+
+Show that this implies that the number of trees on $n$ labeled vertices, where vertex $i$ had degree $d_i$, is the multinomial coefficient
+
+$$\binom{n-2}{d_1-1, d_2-1,d_3-1,\dots, d_n-1}=\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots (d_n-1)!}$$
 
 \begin{proof}
-Another way of phrasing this question is asking how many non-isomorphic labelings the path graph $P_n$ has.  It may help to look at an example, first -- consider $P_3$.  It looks at first like it has 6 different labelings -- 123, 132, 213, 231, 312, 321.  But reading in the opposite order, we see that 123 is really the same labelled graph as 321, 132 is the same as 231, and 213 is the same as 312.  So there are 3.
 
-In general, since $P_n$ has $n$ vertices it looks at the beginning that there are $n!$ different labelings.  However, $P_n$ has an isomorphism group of size 2 -- the identity isomorphism that sends every vertex to itself, and the isomorphism that reverses $P_n$ and swaps vertices $v_1$ and $v_n$, vertices $v_2$ and $v_{n-1}$, and in general sends vertex $v_i$ to vertex $v_{n+1-i}$.  Thus, each nonisomorphic labelling of $P_n$ will be obtained twice in the $n!$ labeling, and there are $n!/2$ labeled trees that have $P_n$ as the underlying unlabeled graph.
+  Recall that to construct the Prufer code, we first make a table containing 2 rows and $n-1$ columns that records all $n-1$ edges of the tree.  The degree $d_i$ of vertex $i$ is the number of times $i$ appears in this table.
 
+  The Prufer code is first $n-2$ entries of the top row; thus, we see the proposition is equivalent to saying that in the remaining $n$ entries of the table (the bottom row, and the last entry of the top row), every number appears exactly once.  But we put a number in the bottom row when we delete it from the tree, so number can appear twice, and the final column of the table are the two vertices that are left after we've done this.
 
-\end{proof}
+  Put another way, conceptually, the number of times that $i$ appears in the Prufer code is the number of time that vertex $i$ is a parent of another vertex, but it also has its own parent, thus the degree of vertex $i$ is one more than the number of times $i$ appears in the table.
 
-\subsection{Part 2}
-From the Pr\"ufer code of a labelled tree $T$, how can you tell if the underlying graph of $T$ is isomorphic to $P_n$?  Count the nymber of codes that enumerate such labeled trees, and check that it agrees with your answer from Part 1.
+  Now, suppose we want to count the number of trees with $n$ labeled vertices, where vertex $i$ has degree $d_i$.  Since vertex $i$ has degree $d_i$, we have that $i$ appears $d_i-1$ times in the Prufer code.  Thus, the Prufer code has length $n-2$ times, and symbol $i$ appears $d_i-1$ times; this is exactly the multinomial coefficient
 
-\begin{proof}
-The path graph $P_n$ only has vertices of degree 1 and 2 -- any other tree has a vertex of degree 3 or higher.
-
-When we run the Pr\"ufer code algorithm, we are constantly deleting leaves and recording the indices of their parents.  If a number doesn't appear in the Pr\"ufer code of $T$, then it was a leaf in $T$, and had degree 1.  If a number appears once in the Pr\"ufer code, then it is the ``parent'' of one vertex, and will be the child of another vertex, and so have degree 2.  A vertex will have degree 3 or higher if and only if appears more than once in the Pr\"ufer code.  Thus, we see that the Pr\"ufer codes that give labelings of $P_n$ are precisely those in which no number is repeated more than once.
-
-To count such codes, we need to count lists of n-2 numbers from 1 to n, with no number repeated.  There are thus n choices for the first number, then n-1 choices for the second number, n-2 choices for the third number, down to n+1-(n-2)=3 choices for the last number.  Thus, we have $n\cdot(n-1)\cdot (n-2)\cdot 4\cdot 3$ such codes, which we see is equal to $n!/2$, the answer we got in Part 1.
-
+$$\binom{n-2}{d_1-1, d_2-1,d_3-1,\dots, d_n-1}=\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots (d_n-1)!}$$ 
+  
+  
 
 \end{proof}
-
+  
 \end{document}

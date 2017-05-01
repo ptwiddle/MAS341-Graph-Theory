@@ -6,6 +6,8 @@ permalink: /Notes/
 
 This page contains links to the lecture notes for the course.
 
+<a href="./lecturenotes/lecturenotes.pdf"> Lecture notes as a pdf </a>
+
 [Lecture notes from a previous year.](../OldLectureNotes.pdf)
 These are a bit skeletal, and do not match *exactly* what we cover, but they're very close and you may find them useful.
 

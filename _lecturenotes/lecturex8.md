@@ -124,10 +124,3 @@ Suppose we want to colour the complete graph $$K_n$$ with $$k$$ colours.  We col
 
 $$P_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots (k-(n-1))$$
 
-Note that if we put in a number from $$\{0,\dots,n-1\}$$ we get 0, which makes sense because we cannot colour $$K_n$$ unless we have at least $$n$$ colours.  This leads to
-
-Lemma
-===
-
-The chromatic number $$\chi(G)$$ is the least number $$k$$ so that $$P_G(k)\neq 0$$.
-
