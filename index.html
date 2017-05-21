@@ -56,12 +56,28 @@ We didn't quite cover 3.i, either (though it's not so far from what we've done).
 
 <h3> Recent Lectures: </h3>
 <ul>
+{% assign week0 = 5 %}
+{% assign displayed_lectures = 2 %}
+{% assign lectures_per_week = 2 %}
+
+{% comment %}
+  gets what week of the semester we are, multiplies it by `lectures_per_week`
+  and gets that lecture and the previous however many `displayed_lectures`.
+{% endcomment %}
+
+{% capture yearweek %} {{ 'now' | date: '%V' }} {% endcapture %}
+{% assign upper_limit = yearweek | minus: week0 | times: lectures_per_week %}
+{% assign lower_limit = upper_limit | minus: displayed_lectures %}
+
 {% assign lectures = site.lecturenotes | reverse %}
-{% for lecture in lectures limit:2 %}
+{% for lecture in lectures limit:upper_limit %}
+{% if forloop.index > lower_limit %}
 <li>
-<a href="{{ lecture.url | prepend:site.baseurl }}"> {{ lecture.title }} </a>  
+<a href="{{ lecture.url | prepend:site.baseurl }}"> {{ lecture.title }} </a>
 </li>
-{% endfor %} 
+{% endif %}
+{% endfor %}
+
 </ul>
 
 </div>
