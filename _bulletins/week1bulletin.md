@@ -19,5 +19,6 @@ Afternoon
 
 Links:
 ----
- - Timothy Gower's [blogpost](https://gowers.wordpress.com/2007/10/19/my-favourite-pedagogical-principle-examples-first/) on "Examples first"
-
+- [The Union's FAQ about the strike](https://www.ucu.org.uk/uss-action-faqs)
+- Timothy Gower's [blogpost](https://gowers.wordpress.com/2007/10/19/my-favourite-pedagogical-principle-examples-first/) on "Examples first"
+ 
