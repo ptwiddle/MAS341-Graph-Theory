@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 1: Introduction, Handshaking </title>
+		<title>Lecture 1: Introduction</title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -45,8 +45,8 @@
 
 
 <section>
-<h1> Graph Theory Lecture 1 </h1>
-<h2> Introduction, Instant Insanity </h2>
+<h1>Graph Theory Lecture 1</h1>
+<h2>Introduction</h2>
 <small> Lecturer Paul Johnson  </small>
 </section>
 
@@ -59,10 +59,10 @@ Basic Information
 <section>
 <h2> Contact </h2>
 <ul>
-<li>ptwiddle.github.io/MAS439-Commutative-Algebra/</li>
-<li>Email: paul.johnson@sheffield.ac.uk </li>
-<li>Office hours: Tuesday 1:30-2:30, Friday 10-11 </li>
-<li>Office: Hicks J6b </li>
+<li><a href="https://ptwiddle.github.io/MAS341-Graph-Theory/">ptwiddle.github.io/MAS341-Graph-Theory/</a></li>
+<li><b>Email:</b> paul.johnson@sheffield.ac.uk </li>
+<li><b>Office hours:</b> Monday 2:30-3:30, Wednesday 10-11 </li>
+<li><b>Office:</b> Hicks J6b </li>
 </ul>
 </section>
 
@@ -70,50 +70,49 @@ Basic Information
 <h2> Marking </h2>
 <ul>
 <li> The final exam is 100% of the grade </li>
-<li> Exam slightly different than past years: all questions mandatory</li>
-<li> A practice exam will be available </li>
+<li> Like last year, but not previous years: all questions mandatory</li>
+<li> Old exams and solutions available </li>
 </ul>
 
 </section>
 
 <section>
-<h1> Take the National Student Survey </h1>
+  <h1>Political Interlude</h1>
 </section>
 
 
 <section>
-<h1>Basic definitions</h1>
-</section>
-
-<section>
-<h3>Graphs can encode connections</h3>
-<p>A <b>graph</b> $\Gamma$ consists of:</p>
-<ul> 
-<li>A set $V(\Gamma)$ of vertices (usually things)</li>
-<li>A set $E(\Gamma)$ of edges (usually connections)</li>
+<h2> Take the National Student Survey? </h2>
+<br>
+<ul>
+<li>Last year the Student Union Boycotted the NSS "Shef Better than TEF"</li>
+<li>Unsure this year?</li>
 </ul>
-<p>Each edge $e\in E(\Gamma)$ connects two vertices in  $V(\Gamma)$.</p>
 </section>
-
 
 <section>
-<h3>Some features are not always wanted:</h3>
-<ul>
-<li> A <b> loop</b> is an edge connecting a vertex to itself </li>
-<li> There could be multiple edges between the same two vertices </li>
-<ul>
-<p> Graphs without loops or multiple edges are called <b>simple</b></p>
-
+  <h2>UCU Strike </h2>
+  <br>
+  <ul>
+    <li>Negotion over pensions ongoing for years</li>
+    <li>Average member looks to be £10k worse off a year</li>
+    <li>14 day strike over Weeks <span style="color:Tomato"><b>3</b></span>,4,5,<span style="color:Tomato"><b>6</b></span> </li>
+    <li>Will try to put easier, more standard material on strike disrupted days</li>
+    </ul>    
 </section>
 
-
+  
 
 <section>
-<h1>Examples</h1>
+  <h1>Examples and definition</h1>
 </section>
 
-
-
+<section>
+  <h2>Idea:</h2>
+  <p>Typically (but not always) graphs encode <b>connections</b> (edges) between <b>things</b> (vertices)</p>
+<br<  
+  <h2>Examples first!</h2>
+</section>
 
 <section>
 <image class="stretch" src="Pictures/LondonTubeMap.png"> </image>
@@ -139,8 +138,38 @@ Basic Information
 </section>
 
 <section>
-<image class="stretch" src="Pictures/Petersen4.png"></image>
+<image class="stretch" src="Pictures/easygraphs.gif"></image>
 </section>
+
+
+<section>
+<h2>Formal Definition</h2>
+<p>A <b>graph</b> $\Gamma$ consists of:</p>
+<ul> 
+<li>A set $V(\Gamma)$ of <b>vertices</b> </li>
+<li>A set $E(\Gamma)$ of <b>edges</b> of the two element subsets of $V(\Gamma)$</li>
+</ul>
+<p>Suppose $e\in E(\Gamma), e=\{v_1,v_2\}$, then we think of $e$ as connecting $v_1$ and $v_2$</p>
+</section>
+
+
+<section>
+<h2>Some consequences:</h2>
+<p>According to the definition, we can't have:</p>
+<ul>
+<li> A <b>loop</b>, is an edge connecting a vertex to itself </li>
+<li> Multiple edges between the same pair of vertices </li>
+<ul>
+  <p> Sometimes we <b>will</b> allow these.</p>
+  <p>Sometimes graphs without loops are multiple edges are called <b>simple</b></p>
+</section>
+
+
+
+
+
+
+
 
 
 

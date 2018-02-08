@@ -2,64 +2,40 @@
 layout: default
 ---
 
-This is the course website for MAS341: Graph Theory at the University of Sheffield, Spring 2017.
+This is the course website for MAS341: Graph Theory at the University of Sheffield, Spring 2018.
 
-<a href="./lecturenotes/lecturenotes.pdf"> Lecture notes as a pdf </a>
+<h1>Lecture notes and other resources</h1> 
+
+<ul>
+<li><a href="https://ptwiddle.github.io/Graph-Theory-Notes/MAS341.html">Main lecture note site, html with interactive parts, links, videos</a></li>
+<li>Lecture notes as pdf, most up to date</li>
+<li>Previous pdfs drafts of lecture notes, and chapter by chapter breakdown - coming soon</li>
+<li>Instant insanity <a href="boxes12.png">Cubes 1 and 2</a>, <a href="boxes34.png">Cubes 3 and 4 </a> </li>
+<li> Check the "resources tab" for other resources: alternative notes, old exams, things previously on the front page, etc.</li>
+</ul>
+
+
+
+
 
 
 <h3> Problem sets and Solutions </h3>
-<ul> 
-<li> <a href="./ProblemSet1/"> Problem Set 1 </a> and <a href="Set1Solutions.pdf"> Solutions </a> </li> 
-<li> <a href="./ProblemSet2/"> Problem Set 2 </a> and <a href="Set2Solutions.pdf"> Solutions </a> </li>
-</ul>
 
-<h3> <a href="./practiceproblems/solutions.pdf"> Solutions to the practice problems </a></h3>
+The three written problem sets and their solutions will be hosted here.
 
 
 
-
-<h3> Old exams and solutions </h3>
-
-<a href="./Proofs/">Short notes on what proofs may be examined.</a>
-
-<ul>
-  <li> <a href="GraphTheory2016.pdf"> 2016 Exam </a> and <a href="GT2016Solutions.pdf"> Solutions </a>
-<br>
-    We didn't discuss Euler characteristic of arbitrary surfaces, so 4ii is not an appropriate question this year; perhaps replace it with "State Euler's theorm for graphs drawn on the sphere.  Define a spanning tree, and the dual graph of a planar graph.  Sketch the proof of Euler's theorem we gave in lecture that used these ideas"
-    </li> 
-  <li> <a href="GraphTheory2015.pdf"> 2015 Exam </a> and <a href="GT2015Solutions.pdf"> Solutions </a>
-    <br>
-    We didn't cover 1.i (though it's just an application of whether a certain graph is connected or not)
-     For 2.i.a, you can use the nearest neighbour instead of nearest-insertion.
-We didn't quite cover 3.i, either (though it's not so far from what we've done).
-    
-  </li>
-
-  <li> <a href="GraphTheory2014.pdf"> 2014 Exam </a> and <a href="GT2014Solutions.pdf"> Solutions </a>
-    <br>
-    You can skip ii.a.
-    We didn't quite use the language of 2.ii, but it's essentially asking you to prove Euler's theorem characterising Eulerian graph.
-    For question 3, k-regular means every vertex has degree k, and G^c is the complement -- it has the same vertices in G, but two vertices v and w are adjacent in G^c if and only if they are not adjacent in G.
-   For question 4, use the nearest neighbour heuristic instead of nearest-insertion.  
-    </li>
-
-  </ul>
   
 
 
-<h3> Instant Insanity </h3>
-<ul>
-<li> <a href="boxes12.png">Cubes 1 and 2 </a> </li>
-<li> <a href="boxes34.png">Cubes 3 and 4 </a> </li>
-</ul>
 
 
-<h3> Recent Lectures: </h3>
+<h3> Recent Bulletins: </h3>
 <ul>
-{% assign lectures = site.lecturenotes | reverse %}
-{% for lecture in lectures limit:2 %}
+{% assign bulletinlist = site.bulletins | reverse %}
+{% for bulletin in bulletinlist limit:2 %}
 <li>
-<a href="{{ lecture.url | prepend:site.baseurl }}"> {{ lecture.title }} </a>  
+<a href="{{ bulletin.url | prepend:site.baseurl }}"> {{ bulletin.title }} </a>  
 </li>
 {% endfor %} 
 </ul>
