@@ -65,7 +65,6 @@
 <li>Goal is to stack the cubes so each direction has one face of each color</li>
 </ul>
 <p> Given a set of cubes, you will need to be able to either find a solution or prove that a solution does not exist </p>
-
 </section>
 
 <section>
@@ -79,18 +78,52 @@
 </section>
 
 
+<section>
+  <h2>What would a solution look like on the graph?</h2>
+  <p>Think first about colors on front/back:</p>
+  <ul>
+    <li> A set of four edges, one with each label 1-4</li>
+    <li> Each colour appears on two different edges </li>
+</ul>
+<p>Can also see that if we have a set of edges satisfying these properties, we can solve cubes for front and back</p>
+</section>
+
 
 <section>
-<h2>Subgraphs</h2>
+
+  <h2>Can restate with subgraphs</h2>
 
 <p>A <b>subgraph</b> $S$ of $\Gamma$ is a graph $S$ where 
 <ul> 
 <li>$V(S)\subset V(\Gamma)$</li>
 <li>$E(S)\subset E(\Gamma)$</li>
 </ul>
+<p>If an edge $e$ is in $S$, then we need both its ends in $S$.</p>
 
-<p> This implies the vertices at the end of each edges of $S$ to be in $S$ </p>
+</section>
 
+<section>
+  <h2>Back to Instant Insanity</h2>
+  <p>So to solve the front and back of the cube, we're looking for a subgraph $FB$ with:</p>
+  <ul>
+    <li> $FB$ contains all four vertices </li>
+    <li> Each vertex of $FB$ has degree 2</li>
+    <li> Each label 1-4 appears on an edge of $FB$</li>
+  </ul>
+</p>
+</section>
+
+<section>
+  <h2>Completing Instant Insanity</h2>
+  <ul><li>We described how to solve the front and back with a certain subgraph $FB$</li>
+    <li>Solving the top and bottom is equivalent to finding another subgraph $TB$ satisfying the same properties.</li>
+    <li>To solve the whole cube, we need <b>two</b> subgraphs $FB$ and $TB$ satisfying the requirement, that <b>don't share any edges</b></li>
+  </ul>
+</section>  
+	
+  <section>
+    <h2>Let's look for our subgraphs</h2>
+<image src="Pictures/InstantInsanityImpossibleGraph.JPG"></image>
 </section>
 
 
@@ -112,12 +145,13 @@
 
 
 <section>
-
-<p>An <i>isomorphism</i> of simple graphs is a bijection between the vertices that preserves the number of edges.</p>  
+<h3>Definition, slightly loose</h3>
+<p>An <b>isomorphism</b> of graphs is a bijection between the vertices that preserves the number of edges between pairs of vertices.</p>  
 </section>
 
 <section>
-An isomorphism from a simple graph $G$ to a graph $H$ is a bijection $$\varphi:V(G)\to V(H)$$ so that, for any $v,w\in V(G)$, the number of edges between $v$ and $w$ (in $G$) is the same as the number of edges between $\varphi(v)$ and $\varphi(w)$ (in $H$).
+  <h3>Definition, more detailed</h3>
+<p>An isomorphism from a simple graph $G$ to a graph $H$ is a bijection $$\varphi:V(G)\to V(H)$$ so that, for any $v,w\in V(G)$, the number of edges between $v$ and $w$ (in $G$) is the same as the number of edges between $\varphi(v)$ and $\varphi(w)$ (in $H$).</p>
 </section>
 
 <section>
@@ -137,21 +171,60 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <li> Practical applications </li>
 <li> It's in NP, but not known to be NP complete or in P </li>
 </ul>
-
-<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem.  His work is still actively being checked; in January 2017 he patched a hole that had been found. </p>
 </section>
+
+<section>
+  <h2>Mathematical culture, continued</h2>
+  <h3>P vs NP: complexity theory</h3>
+  <ul>
+    <li>A Yes/No question is in P if it can be solved in time polynomial in the input size</li>
+    <li>A Yes/No question is in NP if the answer is Yes, I can give you some information that lets you <i>check</i> that in polynomial time.</li>
+    <li>Settling whether or not P=NP is worth a million dollars (at least)</li>
+  </ul>
+</section>  
+    
+
+<section>
+  <h2>Mathematical culture, continued</h2>
+<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem. The proof that his algorithm is correct depends on the classification of finite simple groups, a deep result whose proof is several thousand pages long.   His work is still actively being checked; in January 2017 he patched a hole that had been found. </p>
+</section>
+
+<section>
+  <h2>Why group theory?</h2>
+<h3>Definition</h3>
+  Let $\textrm{Aut}(\Gamma)$ be the set of all isomorphisms $\varphi:G\to G$.  Then $G$ is a group.
+</section>
+
+<section>
+  <h3>Theorem</h3>
+  Any finite group $H$ appears is of the form $\text{Aut}(\Gamma)$ for some finite graph $\Gamma$.
+  
+  <h3>Idea of proof</h3>
+  <ul><li>  There's a natural way to build a graph (the <i>Cayley graph</i>) from a group $H$ and a set of generators of $H$.</li>
+
+    <li>$H<\textrm{Aut}(\Gamma)$, and can modify the construction to get equality</li></ul>
+  
+ </section>
 
 
 <section>
 <h2> How to prove to graphs are isomorphic? </h2>
-
 <p> Write down an isomorphism </p>
 </section>
 
 <section>
-<h2>How to prove two graphs <i>aren't</i> isomorphic? </h2>
-<p> Find an <i>obstruction</i> -- a difference between the two graphs </p>
+  <h2>Ok, but how do I <i>find</i> an isomorphism?</h2>
+  One useful method -- expanding local isomorphisms.
+  <ul>
+    <li>An isomorphism $\varphi:G\to H$would have to preserve the degree, so pick one vertex $v$; it could map to any vertex $w\in H$ with $d(v)=d(w)$</li>
+    <li>Now, the vertices adjance to $v$ would have to map to the vertices adjacent to $w$; they have to match degrees, etc...</li>
+<li>Continue expanding $\varphi$ out from $v$</li>
+   </ul>
+</section>
 
+<section>
+<h2>How to prove two graphs <i>aren't</i> isomorphic? </h2>
+<p>Could do a case-by-case: expand out as above, and show it's not possible.  Usually better to find an <i>obstruction</i> -- a difference between the two graphs </p>
 <ul>
 <li> Number of vertices </li>
 <li> Number of edges </li>
