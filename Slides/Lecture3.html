@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 3: Connectedness, walks </title>
+		<title>Lecture 3: Walks and Eulerian graphs </title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -47,58 +47,130 @@
 <section>
 
 <h1> Graph Theory Lecture 3 </h1>
-<h2> Connectedness, walks </h2>
+<h2> Walks and Eulerian graphs </h2>
 
+</section>
+
+<section>
+  <h2>The Bridges of Konigsberg</h2>
+  <img src="Pictures/Konigsberg_bridges.png">
+<p>Can you cross every bridge exactly once and return to where you started?</p>
+
+</section>
+<section>
+<h3>Example of a walk on a graph</h3>
+<image src="Pictures/walkdrawing.jpg">
+<p>$A, 6, D, 4, C, 5, F, 3, D, 8, E$</p>
+</section>
+
+<section>
+  <h3>Definition of a walk</h3>
+  <p>A <b>walk</b> from $v$ to $w$ on a graph $G$ is a sequence $$v=v_0, e_1, v_1, e_2, v_2,\dots, e_n, v_n=w$$ of edges and vertices so that $e_i$ is between $v_{i-1}$ and $v_i$</p>
+<p>We say a walk is <b>closed</b> if $v=w$; that is, it starts and ends at the same place</p>
 </section>
 
 
 <section>
-<h1> Administrivia </h1>
+  <h3>Why such a mess?</h3>
+  <p>If our graph is simple, we only need to record the vertices. </p>
+  </section>
+
+<section>
+  <h3>Horrible notation you don't need to remember</h3>
+<ul><li><p>A walk that doesn't repeat any edges is a <b>trail</b></p></li>
+  <li>  <p>A walk that doesn't repeat any vertices is a <b>path</b></p></li></ul>
+
+<p>Actually, we allow paths to have the first and last vertex be the same, so that we can have closed paths</p>
 </section>
 
 <section>
-<h1> <a href="https://ptwiddle.github.io/MAS341-Graph-Theory">Course webpage </a></h1>
-<ul>
-<li> Notes </li>
-<li> Practice Problems </li>
-<li> Assignments </li>
-</ul>
+  <h2>Konigsberg revisted</h2>
+  <img width="300" src="Pictures/Konigsberg_bridges.png">
+    <img width="300" src="Pictures/konigsberg_graph.svg">  
 </section>
 
-<section> 
-<h1> Contact me </h1>
-<ul>
-<li> Should have received an email from me </li>
-<li> If not, email me paul.johnson@sheffield.ac.uk </li>
-<li> Office Hours: Tues 1:30-2:30, Fri 10-11 </li>
-</ul>
+
+<section>
+  <h2>Definition of an Eulerian graph</h2>
+  <p>  A graph $\Gamma$ is <em>Eulerian</em> if it has a walk that uses every edge exactly once. </p>
+
+  <h2>Is the Konigsberg graph Eulerian?</h2>
 </section>
+
+<section>
+  <h2>If $G$ is Eulerian, every vertex has even degree</h2>
+  <ul><li>Stand at a vertex, and watch your friend follow the Eulerian cycle</li>
+    <li>Every time they reach your vertex, they enter by one edge...</li>
+    <li>...and leave by another</li>
+    <li>This puts all the edges you can see at your vertex into pairs</li>
+  </ul>
+</section>
+
+<section>
+<h2>Actually, that's <b>almost all</b> you need.</h2>
+<p>(digression on connectedness, components, disjoint unions...)</p>
+</section>
+
+<section>
+<h2>If $G$ is connected and every vertex has even degree, then $G$ is Eulerian.</h2>
+  </section>
+
+<section>
+  <h2>Skeleton proof</h2>
+  <ul><li>Walk randomly until you get back where you started</li>
+    <li>Remove that walk to get a smaller graph</li>
+    <li>By induction all the pieces of that graph have Eulerian walks</li>
+<li>Glue the cycles together</li>
+  </ul>
+  </section>
+
+<section>
+  <h2>A modest proposal</h2>
+  <p>Find several formally written up proofs of this theorem, and compare them.</p>										  </section>
+
+<section>
+  <h2>A Theorem worth repeating</h2>
+  <p>A connected graph is Eulerian if and only if every vertex has even degree</p>
+  <ul><li>To show a graph isn't Eulerian, quote this, and point out a vertex of odd degree</li>
+    <li>If it <em>is</em> Eulerian, use the algorithm to actually find a cycle.</li>
+</ul>
+
+</section>
+
 
 
 
 <section>
-<h1> Exam </h1>
-<ul>
-<li> Needs to be slightly harder to avoid needing to curve </li>
-<li> Hopefully 4 mandatory instead of 5 choose 4 is most of this </li>
-</ul>
+  <h2>A variation</h2>
+  <p>A graph is <b>semi-Eulerian</b> if it has a not-necessarily closed path that uses every edge exactly once.</p>
+<h2>The obvious question</h2>
+<p>How can you tell whether or not a graph is semi-Eulerian?</p>
 </section>
 
 <section>
-<h1> National Student Survey? </h1>
-<ul>
-<li> Will be used in Teaching Excellence Framework (TEF)
-</li>
-<li> Student Union against: Shef better than TEF </li>
-<li> Calling for boycott of NSS </li>
-</ul>
+  <h2>Theorem</h2>
+  <p>A connected graph is semi-Eulerian if and only if it has most two vertices with odd degree.</p>
+
+  <ul><li>Can prove by adapating proof of Euler's theorem</li>
+    <li>To avoid repetition, can use a sneaky trick...</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>Lazy and devious</h2>
+  <ul><li>Suppose $G$ has two vertices $v$ and $w$ with odd degree.</li>
+    <li>Then add one edge to get $H=G\cup vw$ with all even degrees.</li>
+    <li>By Euler's theorem, $H$ has an Eulerian cycle </li>
+    <li>Delete the edge $vw$ from the Eulerian cycle of $H$ to get an Eulerian path on $G$</li>
+    </ul>
+
 </section>
 
 
 
 
-
-
+    
 
 			</div>
 		</div>
