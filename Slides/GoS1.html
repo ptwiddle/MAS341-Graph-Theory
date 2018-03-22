@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+	<meta charset="utf-8">
+
+		<title>Graphs on surfaces 1</title>
+
+		<meta name="description" content="Lecture slides from MAS341">
+		<meta name="author" content="Paul Johnson">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+        	<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+
+<div class="slides">
+
+<section>
+<h1>Graph on Surfaces</h1>
+<h2>A motivating problem</h2>
+</section>
+<section>
+  <p> A video game world:</p>
+  <image class="stretch" src="Pictures/chronostatic.gif"></image>
+ </section>
+  
+<section>
+  <image class="stretch" src="Pictures/chronofolding.gif"></image>
+</section>
+
+<section>
+  <image class="stretch" src="Pictures/HollowEarth.jpg"></image>
+</section>
+
+<section>
+  <h2>Surfaces</h2>
+  <p> A surface is a space that "locally looks like" $\mathbb{R}^2$</p>
+  <ul><li> $\mathbb{R}^2$</li>
+    <li> Sphere $S^2$ </li>
+    <li> Torus $T$ </li>
+    <li> Mobius band $M$...</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>Couldn't the game designers have done better?</h2>
+ <p>Answer: After break</p>
+</section>
+
+<section>
+  <h2>The Utilities Question</h2>
+  <image class="stretch" src="Pictures/utilities.png"></image>
+  </section>
+
+<section>
+  <h3>Complete bipartite graphs</h3>
+  <p>The complete bipartite graph $K_{n,m}$ has $n$ red vertices, $m$ blue vertices, and every red vertex is connected to every blue vertex.</p>
+</section>
+
+<section>
+  <h3>Planar graphs</h3>
+  <p>A graph is planar if it can be drawn on a sheet of paper without any edges crossing</p>
+</section>
+
+<section>
+  <p>So the utilities question can be rephrased as: is $K_{3,3}$ planar?</p>
+
+  <h3>How do you a show a graph isn't planar?</h3>
+<p>Need a way to organize the cases...</p>
+
+</section>
+
+<section>
+  <h2>Topological interlude: Jordan curve theorem</h2>
+
+  <p>Every simple closed curve separates the plane into an inside and an outside</p>
+
+  <h3>Okay, how does that help...</h3>
+</section>
+
+
+<section>
+<h2>Key idea:</h2>
+  <p>If $\Gamma$ can be drawn in the plane, any cycle has to make a loop; every other edge must be either inside or outside.   </p>
+<p>Want as many edges as possible in the loop.  Best case: $G$ is Hamiltonian</p>
+<p>Eventually, this leads to the "Planarity Algorithm", but first, $K_{3,3}$ and $K_5$...</p>
+</section>
+
+<section>
+  
+
+
+
+
+
+</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+ 
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+                              
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                                        { src: 'plugin/math/math.js', async: true }
+                                               ]
+				
+			});
+
+		</script>
+
+	</body>
+</html>
