@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+	<meta charset="utf-8">
+
+		<title>Graphs on surfaces 3</title>
+
+		<meta name="description" content="Lecture slides from MAS341">
+		<meta name="author" content="Paul Johnson">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+        	<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+
+<div class="slides">
+
+<section>
+<h1>Graphs on Surfaces</h1>
+<ul><li>Review</li>
+<li>Drawing graphs on other surfaces</li>
+  <li>Start Euler's Theorem and applications</li>
+</ul>
+</section>
+
+<section>
+<h2>Before break</h2>
+<image class="stretch" src="Pictures/utilities.png"></image>
+<p>Problem: deciding whether or not a graph is planar</p>
+</section>
+
+<section>
+  <h2>How to decide if a graph $G$ is planar or not?</h2>
+  <ul><li>Try to draw $G$ on the plane</li>
+    <li>If $G$ is Hamiltonian (or nearly), can use Planarity Algorithm</li>
+    <li>Kuratowski's theorem: $G$ is not planar if and only if it has a subgraph $H$ that is a subdivision of $K_5$ or $K_{3,3}$.</li>
+    </ul>
+</section>
+
+<section>
+  <h2>Surfaces</h2>
+  <p> A surface is a space that "locally looks like" $\mathbb{R}^2$</p>
+  <ul><li> $\mathbb{R}^2$</li>
+    <li> Sphere $S^2$ </li>
+    <li> Torus $T$ </li>
+    <li> Mobius band $M$...</li>
+  </ul>
+  <p>Drawing graphs on $\mathbb{R}^2$ same as drawing them on $S^2$.  What about $T, M$?</p>
+  </section>
+
+  
+<section>
+  <h2> Torus $T$ as video-game world:</h2>
+  <image class="stretch" src="Pictures/chronostatic.gif"></image>
+ </section>
+  
+<section>
+  <image class="stretch" src="Pictures/chronofolding.gif"></image>
+</section>
+
+<section>
+  <p>So to draw a graph on the torus, draw it inside a square</p>
+  <p>If an edge hits the side of the square, it comes back at the same spot on opposite edge</p>
+  
+  </section>
+
+<section>
+  <image class="stretch" src="Pictures/K5K6torus.png"></image>
+<p>Challenge: Draw $K_7$ on the torus. </p>
+</section>
+
+<section>
+  A similar idea works for the Mobius band, except we can only go off the left/right side, and we get flipped upside down when we do...
+  </section>
+
+
+</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+ 
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+                              
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                                        { src: 'plugin/math/math.js', async: true }
+                                               ]
+				
+			});
+
+		</script>
+
+	</body>
+</html>
