@@ -1,16 +1,17 @@
 ---
 layout: page
+title: Revision
 permalink: /Exam-Revision/
 ---
 
 This page is a brief discussion of the exam and some material to prepare for it, including coverage and some discussion of old exams.
 
 
-Exam Structure and relatively detailed syllabus
+Exam Structure 
 ----
 
 
-The exam will consist of four equally weighted questions, all mandatory.  The four questions are on: Introductory matters, algorithms, graphs on surfaces, and colourings.  Each question consists of multiple parts.  The questions may not appear in this order.
+The exam will consist of four equally weighted questions, all mandatory.  The four questions are on: Introductory matters, algorithms, graphs on surfaces, and colourings.  Each question consists of multiple parts.  The four questions may not appear in the order we covered them in lecture.
 
 I've given lists of usual question types that appear in each section.  These lists are not necessarily exhaustive, but anything not appearing in the list would most likely be both part of the 20 percent of the exam that's "difficult", and a variation/exension of a question type that **is** on the list.
 
@@ -38,9 +39,9 @@ Additionally, Prim's algorithm is a new topic that had not appeared in previous 
 
 Questions are almost entirely from the following:
  - Using Prim's or Kruskal's algorithm for finding the cheapest weight spanning tree; analysing if there is a unique such tree or more than one
- - Using Dijkstra's algorithm for finding shortest paths between points
+ - Using Dijkstra's algorithm for finding shortest paths between points; what happens if we change edge lengths -- does the shortest path get longer?
  - Traveling Salesman problem: statement, nearest neighbor greedy algorithm for upper bound, finding lower bounds for TSP by considering spanning trees
-  - Prüfer code: going back and forth from a labelled tree and its code, and how it proves Cayley's Theorem.
+  - Prüfer code: going back and forth from a labelled tree and its code; Cayley's Theorem that there are $$n^{n-2}$$ labelled trees on $$n$$ vertices.
 
 The only algorithm I would ask you to prove works as advertised is the lower bound for the Travelling Salesman problem.  In particular, I will *not* ask you to prove Prim, Kruskal's or Dijkstra's algorithm works.
 
@@ -51,7 +52,7 @@ This is Section 4 of the notes, and this material was covered after the strike a
 Questions are almost entirely from the following:
  - Planarity Algorithm for Hamiltonian graphs, in particular proving $$K_{3,3}$$ and $$K_5$$ aren't planar
  - Kuratowski's Theorem characterising planar graphs: stating it, and using and proving the "easy" direction, i.e., that if a $$G$$ has a subgraph $$H$$ that's a subdivision of $$K_{3,3}$$ or $$K_5$$ then $$G$$ isn't planar.
- - Other surfaces: Drawing graphs on the Mobius band and on the torus (in some previous years there have been questions involving the real projective plane $$\mathbb{RP}^2$$ or the Klein bottle; we did *not* cover that this year and it won't be required
+ - Other surfaces: Drawing graphs on the Mobius band and on the torus.  Note: in some previous years there have been questions involving the real projective plane $$\mathbb{RP}^2$$ or the Klein bottle; we did *not* cover that this year and it won't be required
  - Euler's Theorem $$v-e+f=2$$ for planar graphs: proving it and using applications of it.  We did a slightly different proof of Euler's theorem this year than in previous years.  Asking you to prove it is still fair game, but the solutions given in any practice exams may look unfamiliar.
 
 
