@@ -6,6 +6,12 @@ permalink: /Exam-Revision/
 
 This page is a brief discussion of the exam and some material to prepare for it, including coverage and some discussion of old exams.
 
+[List of Proofs](../Proofs/)
+===
+
+This is essentially contained within the discussion of the exam found below, but some people find it useful to find them listed in one place: a list of proof type questions that could appear on the exam, and a few that definitely won't.
+
+
 
 Exam Structure 
 ----
@@ -72,7 +78,7 @@ Old exams and solutions
 I've included links to the last three years exams, and a mock practice exam I wrote up a few years ago.  Note that before last year the exam format was five questions, choose four.  I've looked over the exam and given some comments below on what material is not fair game for this year; I believe I've caught it all, but let me know if you think I've missed something.
 
 
-<a href="../GraphTheory2017.pdf"> 2016 Exam </a> and <a href="../GT2017Solutions.pdf"> Solutions </a>
+<a href="../GraphTheory2017.pdf"> 2017 Exam </a> and <a href="../GT2017Solutions.pdf"> Solutions </a>
 ===
 - **2.i and 2.ii:** We didn't cover longest paths, so skip this question; replace it with a Dijkstra's question
 - **3.iv:** Replace "Projective plane" with "Mobius band"
