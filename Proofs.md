@@ -11,8 +11,9 @@ Proofs that WILL NOT be examined
 1. Ore's theorem -- you could need statement, but won't have to prove
 2. Cayley's theorem -- You need to know the statement, and how to go back and forth between a tree and its Prüfer code.  But you don't need to be able to prove these maps are inverses.
 3. Various definitions of trees are equivalent
-4. Kruskal's and Prim's algorithms work -- you need to use the algorithms, but not prove they give a minimal spanning tree
-5. The five colour theorem.  The six colour theorem won't appear on the exam, either, but the techniques used (Euler's theorem and handshaking) will
+4. Basic lemmas on walks, paths, trails, and connectedness
+5. Kruskal's and Prim's algorithms work -- you need to use the algorithms, but not prove they give a minimal spanning tree
+6. The five colour theorem.  The six colour theorem won't appear on the exam, either, but the techniques used (Euler's theorem and handshaking) will
 
 
 A not necessarily complete list of proofs you might have to do:

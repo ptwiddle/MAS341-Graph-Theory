@@ -12,6 +12,11 @@ This page is a brief discussion of the exam and some material to prepare for it,
 This is essentially contained within the discussion of the exam found below, but some people find it useful to find them listed in one place: a list of proof type questions that could appear on the exam, and a few that definitely won't.
 
 
+[More practice questions](../Problems/)
+===
+
+I'd mentioned in emails that last year's website had an archive of questions and solutions that could be useful practice for the exam. This page has has direct links to these questions, the solutions, and a brief commentary on applicability this year / similarity to exam questions for each week's questions.
+
 
 Exam Structure 
 ----
@@ -80,6 +85,7 @@ I've included links to the last three years exams, and a mock practice exam I wr
 
 <a href="../GraphTheory2017.pdf"> 2017 Exam </a> and <a href="../GT2017Solutions.pdf"> Solutions </a>
 ===
+- Note: The pdf of solutions says 2016, but it is in fact the right set of solutions.
 - **2.i and 2.ii:** We didn't cover longest paths, so skip this question; replace it with a Dijkstra's question
 - **3.iv:** Replace "Projective plane" with "Mobius band"
 
