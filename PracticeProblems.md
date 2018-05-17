@@ -19,4 +19,4 @@ Commentary
 - [Week 7:](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/practiceproblems/week7problems.html) Good practice showing graphs aren't planar and drawing them on other surfaces, like exam questions.  Replace Real Projective Plane with Mobius band.
 - [Week 8:](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/practiceproblems/week8problems.html) Skip "Annoying to draw" (we didn't do Klein Bottle); others are good applications of Euler's theorem.
 - [Week 9:](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/practiceproblems/week9problems.html) Good chromatic number and chromatic index questions
-- [Week 10:](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/practiceproblems/week10problems.html) Good computing chromatic polynomial questions
+- [Week 10:](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/practiceproblems/weekxproblems.html) Good computing chromatic polynomial questions
