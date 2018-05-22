@@ -99,6 +99,7 @@ I've included links to the last three years exams, and a mock practice exam I wr
 ===
 - **1.i:** Skip; it's an application we didn't cover (though it's not hard)   
 - **2.i:** Use the nearest neighbour heuristic (the nearest-insertion heuristic is a bit more complicated and we didn't cover)
+- **2.ii:** Fulkerson's Algorithm is part of what I've lumped into "longest paths" and what we skipped due to the strike; replace this with Dijkstra's algorithm and/or Prufer code question
 - **3.i:** This question wouldn't appear on the exam, because we didn't phrase anything quite this way, but it's basically doable from what we've done if you want to think about it.
 
 <a href="../PracticeExam.pdf"> An old practice exam </a> and <a href="../PracticeSolutionsFixed.pdf"> solutions </a>
