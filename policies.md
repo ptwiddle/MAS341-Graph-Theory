@@ -9,17 +9,20 @@ This page contains essential policies for the course.
 
 Basic facts
 ------
- - **Lectures** Fridays at 9 in Hicks LT7, Fridays at 4 in Hicks LT1
+ - **Lectures** Fridays at 9 in Hicks LT7, Fridays at 4 in Hicks LT7
 - **Lecturer:** Paul Johnson
  - **Email:** paul.johnson@sheffield.ac.uk
  - **Office:** Hicks J6b  
- - **Office hours:** Monday 2:30-3:30, Wednesday 10-11, after class, or by appointment
+ - **Office hours:** Thursday 1-2 or by appointment
 
 
 Marking
 -------
 
-The marks for this course are entirely based on the exam.  As was the case last year but not previous years, all questions will be mandatory.
-
-
+The marks for this course are entirely based on the exam, which will consist of four mandatory questions covering
+1. Basic definitions, Instant Insanity, Walks
+2. Algorithms
+3. Graphs on Surfaces
+4. Graph Colourings
+There will be four homework assignments, one for each question, collected and marked to give you feedback on how you are doing.  Each assignment will be similar to the corresponding question on an exam, including some questions from exams from several years ago.
 
