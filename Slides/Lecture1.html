@@ -45,9 +45,10 @@
 
 
 <section>
-<h1>Graph Theory Lecture 1</h1>
-<h2>Introduction</h2>
-<small> Lecturer Paul Johnson  </small>
+  <h1>MAS341</h1>
+<h1>Graph Theory</h1>
+  <h2>Lecture 1</h2>
+<h2>Paul Johnson</h2>
 </section>
 
 <section>
@@ -61,7 +62,7 @@ Basic Information
 <ul>
 <li><a href="https://ptwiddle.github.io/MAS341-Graph-Theory/">ptwiddle.github.io/MAS341-Graph-Theory/</a></li>
 <li><b>Email:</b> paul.johnson@sheffield.ac.uk </li>
-<li><b>Office hours:</b> Monday 2:30-3:30, Wednesday 10-11 </li>
+<li><b>Office hours:</b> Thursday 1-2 or by appointment </li>
 <li><b>Office:</b> Hicks J6b </li>
 </ul>
 </section>
@@ -70,48 +71,59 @@ Basic Information
 <h2> Marking </h2>
 <ul>
 <li> The final exam is 100% of the grade </li>
-<li> Like last year, but not previous years: all questions mandatory</li>
+<li> Very close to previous two years </li>
 <li> Old exams and solutions available </li>
+<li> Four mock exam questions handed in for feedback </li>
 </ul>
 
 </section>
 
 <section>
-  <h1>Political Interlude</h1>
-</section>
-
-
-<section>
-<h2> Take the National Student Survey? </h2>
-<br>
-<ul>
-<li>Last year the Student Union Boycotted the NSS "Shef Better than TEF"</li>
-<li>Unsure this year?</li>
-</ul>
+  <h2> Outline </h2>
+  <ol>
+    <li> Introduction and paths (6 lectures) </li>
+    <li> Algorithms (4 lectures) </li>
+    <li> Graphs on Surfaces (5 lectures) </li> 
+    <li> Colouring Graphs (5 lectures) </li>
+    <li> Bonus material + review sessions (4 lectures + extra)</li>
+  </ol>
 </section>
 
 <section>
-  <h2>UCU Strike </h2>
-  <br>
+  <h2>Notes and Lectures</h2>
   <ul>
-    <li>Negotion over pensions ongoing for years</li>
-    <li>Average member looks to be £10k worse off a year</li>
-    <li>14 day strike over Weeks <span style="color:Tomato"><b>3</b></span>,4,5,<span style="color:Tomato"><b>6</b></span> </li>
-    <li>Will try to put easier, more standard material on strike disrupted days</li>
-    </ul>    
+    <li>Notes for module cover exactly same content as lecture</li>
+    <li>Different angle -- lecture and reading different mediums</li>
+    <li>Lectures recorded with Encore, but I will use blackboard...</li>
+    <li>Slides will be put online</li>
+  </ul>
+  <p>Let me know if this isn't enough.</p>
+  <p>Organize pictures of blackboards?</p>
 </section>
 
-  
+<section>
+  <h1>Fun survey course</h1>
+  <ul>
+    <li>Proofs and ideas -- not computers </li>
+  </ul>
+  <h2>Not geared to MMath students:</h2>
+  <ul>
+    <li>Doesn't prepare you for anything next year</li>
+    <li>Other combinatorics options: SURE, 4th year project...</li>
+    <li>Talk to me?</li>
+  </ul>
+</section>
+
 
 <section>
   <h1>Examples and definition</h1>
 </section>
 
 <section>
-  <h2>Idea:</h2>
-  <p>Typically (but not always) graphs encode <b>connections</b> (edges) between <b>things</b> (vertices)</p>
-<br<  
-  <h2>Examples first!</h2>
+  <h1>Graphs encode:</h1>
+  <h2><b>Connections</b> (edges) </h2>
+     <p> between</p>
+      <h2><b>things</b> (vertices)</p></h2>  
 </section>
 
 <section>
@@ -149,19 +161,20 @@ Basic Information
 <li>A set $V(\Gamma)$ of <b>vertices</b> </li>
 <li>A set $E(\Gamma)$ of <b>edges</b> of the two element subsets of $V(\Gamma)$</li>
 </ul>
-<p>Suppose $e\in E(\Gamma), e=\{v_1,v_2\}$, then we think of $e$ as connecting $v_1$ and $v_2$</p>
+<p>For $e\in E(\Gamma), e=\{v_1,v_2\}$, then $e$ "connects" $v_1$ and $v_2$</p>
 </section>
 
 
 <section>
 <h2>Some consequences:</h2>
-<p>According to the definition, we can't have:</p>
+<p>According to the formal definition:</p>
 <ul>
-<li> A <b>loop</b>, is an edge connecting a vertex to itself </li>
-<li> Multiple edges between the same pair of vertices </li>
+<li> The edges are <b>symmetrical</b> -- Facebook, not Twitter </li>  
+<li> <b>No loops</b>, i.e. edges connecting a vertex to itself </li>
+<li> <b>No multiple edges</b> between the same pair of vertices </li>
 <ul>
-  <p> Sometimes we <b>will</b> allow these.</p>
-  <p>Sometimes graphs without loops are multiple edges are called <b>simple</b></p>
+<p>Sometimes we want to allow these things</p>
+  
 </section>
 
 
@@ -218,8 +231,16 @@ Basic Information
 </section>
 
 <section>
-<p>For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjance to $v$.</p>
-<h3> Euler's handshaking Lemma </h3>
+  <h1>A generalization</h1>
+</section>
+  
+<section>
+<h2>Definition:</h2>
+  <p>For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjancent to $v$.</p>
+</section>
+
+<section>
+<h2>Euler's handshaking Lemma </h2>
 
 $$\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|$$
 
