@@ -80,7 +80,7 @@
 
 <section>
   <h2>What would a solution look like on the graph?</h2>
-  <p>Think first about colors on front/back:</p>
+  <p>Think first about colors on Front/Rear:</p>
   <ul>
     <li> A set of four edges, one with each label 1-4</li>
     <li> Each colour appears on two different edges </li>
@@ -104,20 +104,20 @@
 
 <section>
   <h2>Back to Instant Insanity</h2>
-  <p>So to solve the front and back of the cube, we're looking for a subgraph $FB$ with:</p>
+  <p>So to solve the front and rear of the cube, we're looking for a subgraph $FR$ with:</p>
   <ul>
-    <li> $FB$ contains all four vertices </li>
-    <li> Each vertex of $FB$ has degree 2</li>
-    <li> Each label 1-4 appears on an edge of $FB$</li>
+    <li> $FR$ contains all four vertices </li>
+    <li> Each vertex of $FR$ has degree 2</li>
+    <li> Each label 1-4 appears on an edge of $FR$</li>
   </ul>
 </p>
 </section>
 
 <section>
   <h2>Completing Instant Insanity</h2>
-  <ul><li>We described how to solve the front and back with a certain subgraph $FB$</li>
+  <ul><li>We described how to solve the front and rear with a certain subgraph $FR$</li>
     <li>Solving the top and bottom is equivalent to finding another subgraph $TB$ satisfying the same properties.</li>
-    <li>To solve the whole cube, we need <b>two</b> subgraphs $FB$ and $TB$ satisfying the requirement, that <b>don't share any edges</b></li>
+    <li>To solve the whole cube, we need <b>two</b> subgraphs $FR$ and $TB$ satisfying the requirement, that <b>don't share any edges</b></li>
   </ul>
 </section>  
 	
@@ -189,20 +189,12 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem. The proof that his algorithm is correct depends on the classification of finite simple groups, a deep result whose proof is several thousand pages long.   His work is still actively being checked; in January 2017 he patched a hole that had been found. </p>
 </section>
 
-<section>
-  <h2>Why group theory?</h2>
-<h3>Definition</h3>
-<p>  Let $\textrm{Aut}(\Gamma)$ be the set of all isomorphisms $\varphi:G\to G$.  Then $G$ is a group.</p>
-  <h3>Theorem</h3>
-<p>  Any finite group $H\cong\text{Aut}(\Gamma)$ for some finite graph $\Gamma$.</p>
-<h3>Why?</h3>
-</section>
-
 
 
 <section>
 <h2> How to prove two graphs are isomorphic? </h2>
-<p> Write down an isomorphism </p>
+<p> Write down an isomorphism! </p>
+
 </section>
 
 <section>
@@ -210,7 +202,7 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
   One useful method -- expanding local isomorphisms.
   <ul>
     <li>An isomorphism $\varphi:G\to H$would have to preserve the degree, so pick one vertex $v$; it could map to any vertex $w\in H$ with $d(v)=d(w)$</li>
-    <li>Now, the vertices adjance to $v$ would have to map to the vertices adjacent to $w$; they have to match degrees, etc...</li>
+    <li>Now, the vertices adjacent to $v$ would have to map to the vertices adjacent to $w$; they have to match degrees, etc...</li>
 <li>Continue expanding $\varphi$ out from $v$</li>
    </ul>
 </section>
@@ -223,7 +215,8 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <li> Number of edges </li>
 <li> "connectedness" </li>
 <li> "loops"</li>
-<li> $\dots$ </li>
+<li> Degree sequence </li>
+<li> ... </li>
 </ul>
 </section>
 
