@@ -7,6 +7,8 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 collections:
    bulletins:
      output: true
+   problemsets:
+     output: true
 github_username:  ptwiddle
 
 # Build settings
