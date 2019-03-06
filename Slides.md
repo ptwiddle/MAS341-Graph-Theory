@@ -14,3 +14,5 @@ This page contains links to slides from lectures when they were used, as well as
 6. Lecture 6 [Slides](../Slides/Lecture6.pdf) - [For taking notes](../Slides/print_Lecture6.pdf) Hamiltonian cycles
 7. Lecture 7 [Slides](../Slides/Lecture7.pdf) - [For taking notes](../Slides/print_Lecture7.pdf) Prufer code
 8. Lecture 8 [Slides](../Slides/Lecture8.pdf) - [For taking notes](../Slides/print_Lecture8.pdf) Minimal spanning trees: Kruskal and Prim
+9. Lecture 9 [Slides](../Slides/Lecture9.pdf) - [For taking notes](../Slides/print_Lecture9.pdf) Shortest and Longest Paths
+10. Lecture 10 [Slides](../Slides/Lecture10.pdf) - [For taking notes](../Slides/print_Lecture10.pdf) Traveling Salesperson Problem
