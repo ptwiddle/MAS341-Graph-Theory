@@ -16,3 +16,5 @@ This page contains links to slides from lectures when they were used, as well as
 8. Lecture 8 [Slides](../Slides/Lecture8.pdf) - [For taking notes](../Slides/print_Lecture8.pdf) Minimal spanning trees: Kruskal and Prim
 9. Lecture 9 [Slides](../Slides/Lecture9.pdf) - [For taking notes](../Slides/print_Lecture9.pdf) Shortest and Longest Paths
 10. Lecture 10 [Slides](../Slides/Lecture10.pdf) - [For taking notes](../Slides/print_Lecture10.pdf) Traveling Salesperson Problem
+9. Lecture 11 [Slides](../Slides/Lecture11.pdf) - [For taking notes](../Slides/print_Lecture11.pdf) Beginning of graphs on surfaces
+10. Lecture 12 [Slides](../Slides/Lecture12.pdf) - [For taking notes](../Slides/print_Lecture12.pdf) Proving graphs aren't planar
