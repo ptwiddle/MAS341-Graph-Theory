@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+	<meta charset="utf-8">
+
+		<title>Lecture 13</title>
+
+		<meta name="description" content="Lecture slides from MAS341">
+		<meta name="author" content="Paul Johnson">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+        	<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+
+<div class="slides">
+
+<section>
+  <p>We can decide whether or not $G$ is planar.</p>
+  <h2>What's left?</h2>
+  <ol>
+    <li>Drawing graphs on other surfaces</li>
+    <li>Euler's Theorem</li>
+    <li>Applications of Euler's Theorem</li>
+  </ol>
+  <h1>Why?</h1>
+</section>
+
+
+<section>
+  <p> A video game world:</p>
+  <image class="stretch" src="Pictures/chronostatic.gif"></image>
+ </section>
+  
+<section>
+  <image class="stretch" src="Pictures/chronofolding.gif"></image>
+</section>
+
+<section>
+  <image class="stretch" src="Pictures/HollowEarth.jpg"></image>
+</section>
+
+<section>
+  <h2>Surfaces</h2>
+  <p> A surface is a space that "locally looks like" $\mathbb{R}^2$</p>
+  <ul><li> $\mathbb{R}^2$</li>
+    <li> Sphere $S^2$ </li>
+    <li> Torus $T$ </li>
+    <li> Mobius band $M$ </li>
+    <li> Klein bottle $K$ </li>
+    <li> ... </li>
+  </ul>
+</section>
+
+
+<section>
+<h2>Motivation:</h2>
+<ul>
+<li> Drawing graphs on the torus arises naturally </li>
+<li> Euler's theorem will let us answer the following question: </li> 
+</ul>
+
+<h2>Couldn't the video game designers do better?</h2>
+</section>
+
+<section>
+  <h2>Drawing graphs on the torus</h2>
+  <p>Exam Question: "Draw $G$ on the torus." </p>
+  <h3>Are you going to need to bring donuts to the exam?</h3>
+
+</section>
+
+  
+<section>
+<h2>Follow the video game example</h2>
+<p>To draw a graph on the torus, draw it inside a square</p>
+  <p>If an edge hits a side of the square, it comes back at the same spot on opposite edge</p>
+  <h2>Can we draw $K_5$ on the torus?  How about $K_6$? $K_n$?</h2>
+  </section>
+
+<section>
+  <image class="stretch" src="Pictures/K5K6torus.png"></image>
+<p>Challenge: Draw $K_7$ on the torus. </p>
+<p>Not possible to draw $K_n$ for $n\geq 8$ on torus without edges crossing...</p>
+</section>
+
+<section>
+  <h2>Mobius band:</h2>
+<h2> Like cylinder, but glued with a half twist</h2>
+<ul>
+<li>Can represent Mobius band in plane...</li>
+<li>Can you draw $K_5$ on the Mobius band? $K_n$?</li>
+<li>What happens when you cut a Mobius band in half?</li>
+</ul>
+</section>
+
+<section><h2>Other surfaces?</h2>
+<iframe width="1040" height="585" src="https://www.youtube.com/embed/G1yyfPShgqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+
+
+
+
+</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+ 
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+                              
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                                        { src: 'plugin/math/math.js', async: true }
+                                               ]
+				
+			});
+
+		</script>
+
+	</body>
+</html>
