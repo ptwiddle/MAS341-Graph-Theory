@@ -21,3 +21,4 @@ This page contains links to slides from lectures when they were used, as well as
 13. Lecture 13 [Slides](../Slides/Lecture13.html) - Notes: print html. Graphs on other surfaces
 14. Lecture 14 [Slides](../Slides/Lecture14.pdf) - [For taking notes](../Slides/print_Lecture14.pdf) Introduction to Euler's Theorem
 15. Lecture 15 [Slides](../Slides/Lecture15.pdf) - [For taking notes](../Slides/print_Lecture15.pdf) Proof of Euler's Theorem + more
+16. Lecture 16 [Slides](../Slides/Lecture16.pdf) - [For taking notes](../Slides/print_Lecture16.pdf) Beginning of colouring: Chromatic number
