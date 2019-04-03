@@ -1,0 +1,134 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{graphicx, tikz}
+
+
+\begin{document}
+
+
+\begin{frame}{Chromatic Number}
+  \begin{theorem} For $G$ a planar graph $\chi(G)\leq 6$.
+\end{theorem}
+
+  \begin{block}{Step 1: Using Euler's Theorem}
+    \begin{definition}$\delta(G)$ denotes the \emph{minimum} degree of all vertices in $G$.
+      \end{definition}
+    \begin{lemma}For $G$ a simple planar graph $\delta(G)\leq 5$.
+    \end{lemma}  
+        \end{block}
+  
+  \begin{block}{Step 2: Induction}
+ We proved $\chi(G)\leq \Delta(G)+1$ by colouring the vertices of $G$ in any order.  The Lemma bounds $\delta(G)$ and not $\Delta(G)$; need to be a little smarter. 
+\end{block}
+    
+\end{frame}
+
+\begin{frame}{Proof that simple planar graphs have $\delta(G)\leq 5$}
+  Assume not, then every vertex has $d(v)\geq 6$.
+\begin{block}{The three ingredients:}
+  \begin{itemize}
+  \item Euler's Theorem $V-E+F=2$
+  \item Face-Edge handshaking \\
+    Simple, so $d(f)\geq 3$ for all faces. So $2E\geq 3F$
+  \item Vertex-Edge handshaking \\
+    By assumption, $d(v)\geq 6$, so $2E\geq 6V$
+    \end{itemize}
+
+
+\end{block}
+ 
+\end{frame}
+
+\begin{frame}{Proof of the Six Colour Theorem}
+  Assume $G$ is planar.  We can assume that $G$ is simple.  Why? 
+
+  \begin{block}{Induct on $n$ the number of vertices}
+  \end{block}
+
+
+  \begin{block}{Base case: $n\leq 6$}
+    At most six vertices, so can give each vertex a different colour.
+  \end{block}
+
+\begin{block}{Inductive Step}
+Assume that $G$ has $n$ vertices, and every planar simple graph with less than $n$ vertices can be coloured with six colours. \\
+\begin{itemize}
+\item By the Lemma, $G$ has a vertex $v$ with $d(v)\leq 5$
+\item The graph $G\setminus v$ has $n-1$ vertices, so can be six coloured
+\item Now colour $v$
+\end{itemize}
+\end{block}
+ \end{frame}
+
+\begin{frame}{Chromatic index}Suppose six teams $A-F$ are in a soccer league, and each team will play three games:
+  $$\begin{array}{cccccc}
+A &   &   &   &   &   \\
+X & B &   &   &   &   \\
+X & X & C &   &   &   \\
+X &   &   & D &   &   \\
+  & X &   & X & E &   \\
+   &   & X & X & X & F
+    \end{array}$$
+If each team plays one game a week, can the tournament be run in three weeks?  How about if we want $AB$ and $DE$ to play on different weeks?
+\begin{block}{Make it a graph}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Chromatic index $\chi^\prime(G)$}
+  \begin{definition}
+The \emph{chromatic index} $\chi^\prime(G)$ denotes the minimum number of colours needed to colour the \emph{edges} of $G$ so that any two edges that share a vertex have different colours.
+    \end{definition}
+In the application: the colours were the weeks?
+
+\begin{block}{Examples:}
+  \begin{itemize}
+  \item $\chi^\prime(K_4)=3$
+    \item $\chi^\prime(K_5)=5$
+  \end{itemize}
+  \end{block}
+\begin{lemma} $\chi^\prime(G)\geq \Delta(G)$
+  \end{lemma}
+
+\end{frame}
+
+\begin{frame}{Finding $\chi^\prime(G)$}
+
+  \begin{theorem}[Vizing]
+For a simple graph $\chi^\prime(G)=\Delta$ or $\Delta+1$
+    \end{theorem}
+  We won't prove Vizing's Theorem, but will only implicitly use it.
+
+  \begin{block}{One method to find $\chi^\prime(G)$ with proof:}
+ We know $\chi^\prime(G)\geq \Delta(G)$.  Try to colour it with $\Delta(G)$.
+ \begin{itemize}
+ \item If we can, we have shown $\chi^\prime(G)=\Delta$
+ \item If we can't, prove it: so we know $\chi^\prime(G)\geq \Delta+1$
+ \item Find a colouring with $\Delta+1$ colours 
+   \end{itemize}
+
+
+   \end{block}
+  \end{frame}
+
+\begin{frame}{Another way to prove $\chi^\prime(G)\geq \Delta+1$}
+
+
+
+  \begin{example}{$K_n$ for $n$ odd}
+    Suppose $n=2k+1$ is odd.
+\begin{itemize}
+\item Then $\Delta(K_n)=n-1=2k$  
+\item Note $K_n$ has $k(2k+1)$ edges.  Why? 
+\item We can have at most $k$ edges of any given colour
+\item So using $2k$ colours, can only colour $2k^2<k(2k+1)$ edges
+\end{itemize}
+  
+
+
+    
+
+\end{example}
+\end{frame}
+
+\end{document}
