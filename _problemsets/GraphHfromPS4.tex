@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[rotate=90]
+ \tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\foreach \x in {1,2,...,5} {
+\node[vertex] (\x) at (162-\x*72:2cm) {\x};
+}  
+\node[vertex] (6) at (0,4) {6};
+\draw (6)--(1)--(2)--(3)--(4)--(5)--(1);
+\draw (2)--(4);
+\draw (3)--(5);
+\end{tikzpicture}
+
+\end{document}

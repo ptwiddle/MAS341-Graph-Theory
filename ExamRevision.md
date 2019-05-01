@@ -81,7 +81,7 @@ I've included links to the last three exams and solutions, and a mock practice e
 ===
 - Note: The pdf of solutions says 2016, but it is in fact the right set of solutions.
 - Question two gives a list of tasks and times -- we didn't cover how to turn this into a directed graph, and you won't have to do this on the exam.  The directed graph is as follows:
-![../Q2.png](Activity Network for Question 2)
+![Activity Network for Question 2](../Q2.png)
 - **3.iv:** Replace "Projective plane" with "Mobius band"
 
 <a href="../GraphTheory2016.pdf"> 2016 Exam </a> and <a href="../GT2016Solutions.pdf"> Solutions </a>
@@ -89,12 +89,12 @@ I've included links to the last three exams and solutions, and a mock practice e
 - **4.i:** Replace "projective plane" with "Mobius band"
 - **4.ii:** We didn't discuss Euler characteristic of arbitrary surfaces.  Replace it with "State Euler's theorm for graphs drawn on the sphere, and prove it."
 
-<a href="../PracticeExam.pdf"> An old practice exam </a> and <a href="../PracticeSolutionsFixed.pdf"> solutions </a>
+<a href="../PracticeExam.pdf"> An old practice exam </a> and <a href="../PracticeSolutionsFixed.pdf"> solutions.</a>  A bit messy, and not as close to what the exam will actually be like, but still some useful questions.
 ===
 - **2.iii:** Replace with "State Euler's Theorem on planar graphs."
 - **2.iv:** Replace with "Using Euler's Theorem for planar graphs, give another proof that $$K_{3,3}$$ isn't planar"
-
-
+- **3.ii (a)** "the heuristic algorithm for finding a good upper bound" is the nearest neighbour algorithm for us (they intend a slightly different 
+- **5.ii (d)** we didn't talk about this with this language, and unlikely to appear on the exam, but it's asking for the chromatic number of the dual graph of $$H$$.
 
  
 

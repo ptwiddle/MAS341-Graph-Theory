@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+
+\foreach \x in {1,2,...,5} {
+\node[vertex] (\x) at (162-\x*72:2cm) {\x};
+}  
+\draw (1) to[bend right] (2) to[bend right](3) to[bend right](4) to[bend right](5) to[bend right](1);
+\draw (1) to (2) to (3) to (4) to(5) to (1);
+
+\end{tikzpicture}
+
+
+\end{document}
