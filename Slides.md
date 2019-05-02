@@ -24,3 +24,7 @@ This page contains links to slides from lectures when they were used, as well as
 16. Lecture 16 [Slides](../Slides/Lecture16.pdf) - [For taking notes](../Slides/print_Lecture16.pdf) Beginning of colouring: Chromatic number
 17. Lecture 17 [Slides](../Slides/Lecture17.pdf) - [For taking notes](../Slides/print_Lecture17.pdf) Six colour theorem, Chromatic index
 18. Lecture 18 [Slides](../Slides/Lecture18.pdf) - [For taking notes](../Slides/print_Lecture18.pdf) Introduction to Chromatic Polynomial
+18. Lecture 19 [Slides](../Slides/Lecture19.pdf) - [For taking notes](../Slides/print_Lecture19.pdf) The Chromatic Polynomial is a Polynomial
+18. Lecture 20 [Slides](../Slides/Lecture20.pdf) - [For taking notes](../Slides/print_Lecture20.pdf) A little more Chromatic Polynomials
+
+
