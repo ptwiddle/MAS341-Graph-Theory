@@ -9,7 +9,7 @@ Proofs that ARE examinable
 =====
 1. Instant insanity -- prove whether or not a set of cubes has a solution
 2. Determine whether or not two graphs are isomorphic, with justification
-3. Determine whether or not a graph is (semi)-Eulerian (with proof)
+3. Prove and apply Euler's Theorem characterising (semi)-Eulerian graphs
 4. Determine whether or not a graph is (semi)-Hamiltonian "by hand"   
 5. Proving the Petersen graph proof is not Hamiltonian
 6. Proving a certain molecule is a tree using handshaking
