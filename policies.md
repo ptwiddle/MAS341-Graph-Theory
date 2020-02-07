@@ -9,11 +9,11 @@ This page contains essential policies for the course.
 
 Basic facts
 ------
- - **Lectures** Fridays at 9 in Hicks LT7, Fridays at 4 in Hicks LT7
+ - **Lectures** Mondays at 3 in Hicks LTC, Fridays at 4 in Hicks LT7
 - **Lecturer:** Paul Johnson
  - **Email:** paul.johnson@sheffield.ac.uk
  - **Office:** Hicks J6b  
- - **Office hours:** Thursday 1-2 or by appointment
+ - **Office hours:** Monday 11-12, Tuesday 2-3, or by appointment
 
 
 Marking

@@ -15,7 +15,6 @@ Other Graph Theory textbooks and notes
 - [Bondy and Murty's Graph Theory with Applications](https://www.iro.umontreal.ca/~hahn/IFT3545/GTWA.pdf) includes most of what we do at about the same level, and
 not too much more
 - The same is true of [Robin J. Wilson's *Introduction to Graph Theory*](http://www.maths.ed.ac.uk/~aar/papers/wilsongraph.pdf)
-- [An archive of a previous year's website](https://ptwiddle.github.io/MAS341-Graph-Theory-2017/) the notes there are close to what we'll be doing, but not identical
 
 About GitHub
 =====

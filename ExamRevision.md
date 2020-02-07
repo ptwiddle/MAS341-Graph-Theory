@@ -4,7 +4,7 @@ title: Revision
 permalink: /Exam-Revision/
 ---
 
-This page is a brief discussion of the exam and some material to prepare for it, including coverage and some discussion of old exams.
+This page is a brief discussion of the exam and some material to prepare for it, including coverage and some discussion of old exams.  Currently this is mostly the page from last year; I will update it and remove this disclaimer at some point, but it shouldn't require very much changing and is a good guide even now.
 
 [List of Proofs](../Proofs/)
 ===
@@ -72,7 +72,10 @@ Questions are almost entirely from the following:
 
 Old exams and solutions
 ----
-I've included links to the last three exams and solutions, and a mock practice exam I wrote up a few years ago.  Note that before last year the exam format was five questions, choose four.  I've looked over the exam and given some comments below on what material is not fair game for this year; I believe I've caught it all, but let me know if you think I've missed something.
+I've included links to the last three exams and solutions.  I've looked over the exam and given some comments below on what material is not fair game for this year; I believe I've caught it all, but let me know if you think I've missed something.
+
+2019 Exam and Solutions coming
+
 
 <a href="../GraphTheory2018.pdf"> 2018 Exam </a> and <a href="../GT2018solutions.pdf"> Solutions </a>
 ===
@@ -84,19 +87,6 @@ I've included links to the last three exams and solutions, and a mock practice e
 ![Activity Network for Question 2](../Q2.png)
 - **3.iv:** Replace "Projective plane" with "Mobius band"
 
-<a href="../GraphTheory2016.pdf"> 2016 Exam </a> and <a href="../GT2016Solutions.pdf"> Solutions </a>
-===
-- **4.i:** Replace "projective plane" with "Mobius band"
-- **4.ii:** We didn't discuss Euler characteristic of arbitrary surfaces.  Replace it with "State Euler's theorm for graphs drawn on the sphere, and prove it."
-
-<a href="../PracticeExam.pdf"> An old practice exam </a> and <a href="../PracticeSolutionsFixed.pdf"> solutions.</a>  A bit messy, and not as close to what the exam will actually be like, but still some useful questions.
-===
-- **2.iii:** Replace with "State Euler's Theorem on planar graphs."
-- **2.iv:** Replace with "Using Euler's Theorem for planar graphs, give another proof that $$K_{3,3}$$ isn't planar"
-- **3.ii (a)** "the heuristic algorithm for finding a good upper bound" is the nearest neighbour algorithm for us (they intend a slightly different 
-- **5.ii (d)** we didn't talk about this with this language, and unlikely to appear on the exam, but it's asking for the chromatic number of the dual graph of $$H$$.
-
- 
 
 
 
