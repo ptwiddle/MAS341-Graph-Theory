@@ -4,16 +4,7 @@
 \usepackage{tikz}
 
 \title{Graph Theory Lecture 6}
-
 \begin{document}
-\begin{frame}{Warm-up: what's all this then?}
- \begin{figure} \includegraphics[width=\textwidth]{Pictures/euler-path.png}
-   \caption{Fleury's algorithm for finding Hamiltonian paths/cycles}
-   \end{figure}
-\end{frame}  
-
-
-
 
 \begin{frame}{To prove a graph is Hamiltonian, find a cycle}
    \begin{definition}A graph $G$ is \emph{Hamiltonian} if there is a closed walk that visits every vertex exactly once. $G$ is \emph{semi-Hamiltonian} if there is a not necessarily closed walk that visits every vertex exactly once.
@@ -137,19 +128,6 @@ This strategy will work in general, but may be very complicated.
 
 
 
-\begin{frame}{Proof of Ore's Theorem}
-\begin{block}{Minimal criminimal:}
-  Assume $G$ is a counterexample, but then adding any edge to $G$ makes it Hamiltonian.  \\ Then $G$ must be semi-Hamiltonian.
-\end{block}
-  \begin{block}{Adding extra edges}
-  Let $v_1-v_2-\dots-v_n$ be the Hamiltonian path.  $v_1$ and $v_2$ not adjacent so $deg(v_1)+deg(v_2)\geq n$.  \\
-  So we need to add $n-2$ more edges to $v$ or $w$.
-\end{block}
-\begin{block}{Pigeon hole principle}
-  Let $i\in 3,\dots, n-1$ with $v_1$ adjacent to $v_i$ and $v_n$ adjacent to $v_{i-1}$: then we have a Hamiltonian path! \\
-  Use pigeon-hole principle to find such an $i$.
-  \end{block}
-  \end{frame}
 
 
 \end{document}
