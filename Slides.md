@@ -15,3 +15,4 @@ This page contains links to slides from lectures when they were used, as well as
 
 
 
+[Minilecture motivating surfaces](../Slides/SurfaceIntro.html)
