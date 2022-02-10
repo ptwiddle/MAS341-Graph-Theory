@@ -145,20 +145,35 @@
 
 
 <section>
-<h3>Definition, slightly loose</h3>
-<p>An <b>isomorphism</b> of graphs is a bijection between the vertices that preserves the number of edges between pairs of vertices.</p>  
+<h3>Definition of an isomorphism</h3>
+<p>An <b>isomorphism</b> $\varphi:G\to H$ of graphs is:
+  <ul>
+    <li>A bijection $\varphi_V:V(G)\to V(H)$</li>
+    <li> A bijection $\varphi_E:E(G)\to E(H)$</li>
+  </ul>
+<p>  That "play nicely together", i.e.:</p>
+<center>  If $e\in E(G)$ connects $u$ and $v$, then $\varphi_E(e)\in E(H)$ connects $\varphi_V(u)$ and $\varphi_V(v)$.</center>
+  
 </section>
 
 <section>
-  <h3>Definition, more detailed</h3>
-<p>An isomorphism from a simple graph $G$ to a graph $H$ is a bijection $$\varphi:V(G)\to V(H)$$ so that, for any $v,w\in V(G)$, the number of edges between $v$ and $w$ (in $G$) is the same as the number of edges between $\varphi(v)$ and $\varphi(w)$ (in $H$).</p>
+  <ul>
+    <li> We say $G$ and $H$ are isomorphic if there is an isomorphism between them.</li>
+    <li> If $G$ and $H$ are simple, then $G$ and $H$ are isomorphic if and only if there is a bijection $\varphi$ that preserves the number of edges between vertices; that is, so that $\varphi(v)$ and $\varphi(w)$ are adjacent if and only if $v$ and $w$ were adjacent.</li>
+
+    <li> This breaks down if $G$ and/or $H$ have multiple edges. (why?) </li>
+    <li>Our original definition of isomorphism is arguably slightly wrong if $G$ and $H$ have loops. (Why?) </li>
+
+  </ul>
+
+  
 </section>
 
 <section>
 <h2>The isomorphism problem:</h2>
 <p>Given two graphs $G$ and $H$, either find an isomorphism $\varphi:G\to H$, or prove such an isomorphism doesn't exist.</p>
 
-<p> You need to be be able to answer instances of the isomorphism problem for the exam </p>
+<p> In general, this is a very important, deep and difficult question.  In practice, it's not too bad for small graphs, and you will need to be able to do this for the exam. </p>
 
 </section>
 
@@ -173,23 +188,6 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 </ul>
 </section>
 
-<section>
-  <h2>Mathematical culture, continued</h2>
-  <h3>P vs NP: complexity theory</h3>
-  <ul>
-    <li>A Yes/No question is in P if it can be solved in time polynomial in the input size</li>
-    <li>A Yes/No question is in NP if the answer is Yes, I can give you some information that lets you <i>check</i> that in polynomial time.</li>
-    <li>Settling whether or not P=NP is worth a million dollars (at least)</li>
-  </ul>
-</section>  
-    
-
-<section>
-  <h2>Mathematical culture, continued</h2>
-<p>In November 2015, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem. The proof that his algorithm is correct depends on the classification of finite simple groups, a deep result whose proof is several thousand pages long.   His work is still actively being checked; in January 2017 he patched a hole that had been found. </p>
-</section>
-
-
 
 <section>
 <h2> How to prove two graphs are isomorphic? </h2>
@@ -198,8 +196,8 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 </section>
 
 <section>
-  <h2>Ok, but how do I <i>find</i> an isomorphism?</h2>
-  One useful method -- expanding local isomorphisms.
+  <h2>How to <i>find</i> an isomorphism?</h2>
+  One useful method -- expanding "local" isomorphisms.
   <ul>
     <li>An isomorphism $\varphi:G\to H$would have to preserve the degree, so pick one vertex $v$; it could map to any vertex $w\in H$ with $d(v)=d(w)$</li>
     <li>Now, the vertices adjacent to $v$ would have to map to the vertices adjacent to $w$; they have to match degrees, etc...</li>
