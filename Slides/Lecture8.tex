@@ -1,138 +1,220 @@
 \documentclass{beamer}
 \beamertemplatenavigationsymbolsempty
 \usepackage{amsmath, amssymb, hyperref, graphics}
+\usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{arrows}
 
-
-
-\title{Graph Theory Lecture 8}
-
+\title{Graph Theory Lecture 12}
 \begin{document}
 
-
-\begin{frame}{Spanning trees}
-Trees are the minimal connected graphs.  Spanning trees are minimal subgraphs that contain all the vertices but are connected.
-  \begin{definition}Let $G$ be a connected graph.  A \emph{spanning tree} of $G$ is a subgraph $T\subseteq G$ such that $T$ is a tree, and $T$ contains every vertex of $G$.
-    \end{definition}
-  \begin{block}{Side point: Kirkchoff's Matrix Tree Theorem}
-    Spanning trees of $K_n$ are the same thing as labelled trees on $n$ vertices. \\
-As a generalization of Cayley's formula, can compute the number of spanning trees of any graph $G$ as the determinant of a matrix.
-    \end{block}
-
-\end{frame}
-
-\begin{frame}{Weighted graphs}
-Edges often have a ``cost'' associated to them -- the time, money, or distance of the corresponding route/connection.
-
-  \begin{definition}{Weighted graph}
-    A \emph{weighted graph} is a graph $G$ together with a weight function $w:E(G)\to \mathbb{R}.$  Normally we assume $w(e)\geq 0$ for all edges $e$.
-  \end{definition}
-
-  Weighted graphs are often encoded in tables: 
-\begin{center}
-  \begin{tabular}{c|c|c|c|c}
-    A &   &   &   &   \\ \hline
-    4 & B &   &   &   \\ \hline
-    5 & 7 & C &   &   \\ \hline
-    9 & 8 & 8 & D &   \\ \hline
-    5 & 5 & 5 & 8 & E \\
-    \end{tabular}
-  \end{center}
-  \end{frame}
-
-\begin{frame}{Minimal spanning trees}
-\begin{block}{Motivating problem:}
-  Suppose that the vertices of a weighted graph $G$ represented cities, and the weight $w(e)$ of an edge was the cost of building a road between the cities.  What's the cheapest way to connect all the cities?
-\end{block}
-  \begin{definition} Let $T\subseteq G$ be a spanning tree of a weighted graph.  The weight of $T$ is the total weight of all its edges:
-    $$w(T)=\sum_{e\in T}w(e)$$
- \end{definition}
-  \begin{block}{Problem becomes: find the minimal weight spanning tree}
-    Checking every spanning tree too slow: $K_n$ has $n^{n-2}$
-    \end{block}
-\end{frame}
-
-\begin{frame}{Many solutions.  Two: Kruskal and Prim}
-  \begin{block}{Loose concept: Greedy Algorithms}
-    A \emph{greedy algorithm} doesn't plan ahead, but just does the best it can at each stage.
-  \end{block}
-
-  \begin{definition}[Kruskal's algorithm]
-Start with $T$ having no edges. Iteratively:
-    \begin{itemize}
-    \item Look at cheapest remaining edge $e$
-    \item If adding $e$ to $T$ creates a loop, discard $e$
-    \item Otherwise, add $e$ to $T$
-      \end{itemize}
-\end{definition}
-  \begin{block}{Fairly clear: produces a spanning tree}
-    But it's \emph{not} clear this spanning tree is \emph{minimal}.
-  \end{block}
-\end{frame}
-
+\begin{frame}{The method we used to show $G$ isn't planar generalises:}
+We did $G=K_{3,3}, K_5$ and the Petersen graph last lecture.
   
-  \begin{frame}{Another approach: Prim}
-\begin{block}{Kruskal:  a global view, ``avoid cycles''}
+\begin{block}{Take any cycle $C$ in a graph $G$}
+\begin{itemize}
+    \item If $G$ is planar, $C$ will be drawn as a "circle"
+    \item Any vertex or edge not in $C$ must lie inside or outside circle
+    \item Handle possibilities case by case
+\end{itemize}
+\end{block}
+
+\begin{block}{Stereographic projection:}
+Don't have to treat inside/outside the circle as separate cases.
+\end{block}
+
+\begin{block}{But for a complicated graph, could still be a lot of cases...}
+  Best case: graph is Hamiltonian.
   \begin{itemize}
-  \item Kruskal's algorithm looks at all edges at start
-  \item $T$ may be disconnected at intermediate steps
+  \item Don't have to put vertices inside/outside circle, only edge
+  \item Turns out there's an easy way to handle the cases ...  
+  \end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{The crossing graph packages the case by case analysis}
+``Edge $e_1$ is in, so edge $e_2$ out, so edge $e_3$ in, so ...'' gets tiresome.
+
+  \begin{block}{For this slide: $G$ a graph with Hamiltonian cycle $C$}
+    \begin{itemize}
+    \item Some pairs of edges in $G\setminus C$ cross if drawn inside $C$
+    \item Some pairs of edges can be drawn on the same side
+\end{itemize}
+\end{block}
+\begin{definition}
+  The \emph{crossing graph} Cross($G, C)$ has:
+  \begin{description}
+  \item[Vertices:] the edges in $G\setminus C$
+  \item[Edges] $e$ and $f$ are adjacent if they cross inside $C$
+  \end{description}
+  \end{definition}
+\begin{theorem}[Planarity Algorithm for Hamiltonian graphs]
+$G$ is planar if and only if Cross($G,C$) is bipartite
+\end{theorem}
+
+\end{frame}
+
+
+\begin{frame}{Example of planarity algorithm:}
+\begin{figure}
+  \begin{tikzpicture}[vert/.style={circle, draw}]
+\begin{scope}[scale=1.2, yshift=-1cm]
+  \node[vert] (A) at (0,2) {$A$};
+\node[vert] (B) at (1,2) {$B$};
+\node[vert] (C) at (2,2) {$C$};
+\node[vert] (D) at (0,1) {$D$};
+\node[vert] (E) at (1,1) {$E$};
+\node[vert] (F) at (2,1) {$F$};
+\node[vert] (G) at (0,0) {$G$};
+\node[vert] (H) at (1,0) {$H$};
+\node[vert] (I) at (2,0) {$I$};
+
+\draw (A)--(B)--(C)--(F)--(A)--(D)--(E)--(F)--(I)--(H)--(G) to [bend left] (A);
+\draw (D)--(G);
+\draw (C)--(H)--(E)--(B);
+\end{scope}
+
+
+
+\begin{scope}[xshift=6cm]
+  \node[vert] (A) at (0:2) {$A$};
+\node[vert] (B) at (200:2) {$B$};
+\node[vert] (C) at (160:2) {$C$};
+\node[vert] (D) at (280:2) {$D$};
+\node[vert] (E) at (240:2) {$E$};
+\node[vert] (F) at (40:2) {$F$};
+\node[vert] (G) at (320:2) {$G$};
+\node[vert] (H) at (120:2) {$H$};
+\node[vert] (I) at (80:2) {$I$};
+
+\draw (A)--(B)--(C)--(F)--(A)--(D)--(E)--(F)--(I)--(H)--(G) to (A);
+\draw (D)--(G);
+\draw (C)--(H)--(E)--(B);
+\end{scope}
+\end{tikzpicture}
+\caption{A graph $\Gamma$, then redrawn with Hamiltonian cycle outside}
+\end{figure}
+\begin{block}{What is Cross($\Gamma, AFIHCBEDGA$)?}
+  \begin{description}
+  \item[Vertices =] edges in middle
+  \item[Edges =] crossings in middle
+    \end{description}
+
+\end{block}
+
+\end{frame}
+\begin{frame}{What if $G$ isn't Hamiltonian? Two lemma suffice.}
+
+  \begin{lemma} If $G$ is a subgraph of $H$, and $G$ is nonplanar, then $H$ is nonplanar.
+  \end{lemma}
+  \begin{proof}
+    To draw $H$, we're drawing $G$ and then adding some things.
+  \end{proof}
+\begin{center}
+  \begin{tikzpicture}[vert/.style={circle, draw}, scale=2]
+\node[vert] (A) at (0,2) {$A$};
+\node[vert] (B) at (1,2) {$B$};
+\node[vert] (C) at (2,2) {$C$};
+\node[vert] (D) at (0,1) {$D$};
+\node[vert] (E) at (1,1) {$E$};
+\node[vert] (F) at (2,1) {$F$};
+\node[vert] (G) at (0,0) {$G$};
+\node[vert] (H) at (1,0) {$H$};
+\node[vert] (I) at (2,0) {$I$};
+
+
+\draw[red] (F)--(A)--(D)--(B)--(E)--(C)--(F)--(B);
+\draw[red] (C)--(D);
+\draw[red] (A)--(E);
+\draw (A)--(B);
+\draw (D)--(G)--(H)--(I)--(E);
+\draw (E)--(G)--(F);
+\end{tikzpicture}
+\end{center}
+  
+\end{frame}  
+
+\begin{frame}{Another tool for showing $G$ isn't planar}        
+    \begin{definition}
+    A graph $H$ is a \emph{subdivision of $G$} if it can be created from $G$ by adding some vertices of degree two in the middle of edges.
+    \end{definition}
+    \begin{lemma}
+      If $H$ is a subdivision of $G$ and $G$ isn't planar, then $H$ isn't planar.
+    \end{lemma}
+    \begin{proof} To draw $H$, we draw $G$ then add some dots on the edges.
+      \end{proof}
+  
+\begin{center}
+\begin{tikzpicture}[vert/.style={circle, draw}, rotate=90, yscale=3]
+\node[vert] (A) at (0,2) {$A$};
+\node[vert] (B) at (1,2) {$B$};
+\node[vert] (C) at (2,2) {$C$};
+\node[vert] (D) at (0,1.5) {$D$};
+\node[vert] (E) at (1,1.5) {$E$};
+\node[vert] (F) at (2,.5) {$F$};
+\node[vert] (G) at (0,0) {$G$};
+\node[vert] (H) at (1,0) {$H$};
+\node[vert] (I) at (2,0) {$I$};
+\draw (A)--(D)--(G)--(B)--(E)--(H)--(C)--(F)--(I)--(B);
+\draw (H)--(A)--(I);
+\draw (C)--(G);
+\end{tikzpicture}
+\end{center}
+
+
+\end{frame}
+
+
+\begin{frame}{Kuratowski's theorem -- proves a general $G$ not planar}
+\begin{theorem} A graph $G$ is not planar if and only if it has a subgraph that is a subdivision of $K_{3,3}$ or $K_5$    
+    \end{theorem}
+
+\begin{block}{Proof of the ``if'' direction:}
+\begin{itemize}
+    \item $K_{3,3}$ and $K_5$ aren't planar
+    \item So subdivisions of $K_{3,3}$ or $K_5$ aren't planar
+    \item So graphs having subgraphs that are subdivisions of $K_{3,3}$ or $K_5$ aren't planar
+\end{itemize}
+\end{block}
+\begin{block}{Remarks on the ``only if'' direction}
+  \begin{itemize}
+  \item Harder to prove and we won't even sketch it
+  \item Won't \emph{explicitly} use: if $G$ is planar, prove it by drawing it!
+  \item Will use \emph{implicitly}: if $G$ nonplanar, there's always a $K_{3,3}$ or $K_5$ 
     \end{itemize}
 \end{block}
-\begin{block}{Prim: local view, ``build tree''}
-  Start at one vertex and explore out
-\end{block}
 
-\begin{definition}[Prim's algorithm]
-  Start $T={v}$, a single vertex.  Iteratively:
-  \begin{itemize}    \item Find the cheapest edge $e=vw$ from $v\in T$ to $w\notin T$
-  \item Add $e$ and $w$ to $T$
-  \end{itemize}
-\end{definition}
-\begin{block}{Fairly clear: produces a spanning tree}
-  But it's \emph{not} clear this spanning tree is \emph{minimal}.
-  \end{block}
 
     
-
 \end{frame}
-  \begin{frame}{Why do Kruskal and Prim work?}
-    \begin{block}{Exchange principle:}
-      Let $T$ be a spanning tree of $G$, and $e=xy$ an edge not in $T$. Then:
-      \begin{itemize}
-      \item Unique path $P$ from $x$ to $y$ using only edges of $T$
-      \item If $f$ any edge in $P$, then $T^\prime=T\setminus f\cup e$ a spanning tree
-      \end{itemize}
-i.e., can exchange edges in $P$ for $e$.
+
+\begin{frame}{Example of using Kuratowski's theorem}
+
+  \begin{center}
+  \begin{tikzpicture}[vert/.style={circle, draw}, scale=1.5]
+  \node[vert] (A) at (0,2) {$A$};
+\node[vert] (B) at (1,2) {$B$};
+\node[vert] (C) at (2,2) {$C$};
+\node[vert] (D) at (0,1) {$D$};
+\node[vert] (E) at (1,1) {$E$};
+\node[vert] (F) at (2,1) {$F$};
+\node[vert] (G) at (0,0) {$G$};
+\node[vert] (H) at (1,0) {$H$};
+\node[vert] (I) at (2,0) {$I$};
+
+\draw (A)--(B)--(C)--(F)--(A)--(D)--(E)--(F)--(I)--(H)--(G) to [bend left] (A);
+\draw (D)--(G);
+\draw (C)--(H)--(E)--(B);
+\end{tikzpicture}
+\end{center}
+  \begin{block}{Give another proof that $\Gamma$ isn't planar}
+
     \end{block}
 
-    \begin{block}{Basic idea of proofs:}
-      \begin{itemize}
-        \item Let $T$ be spanning tree produced by algorithm 
-\item  Let $T_m$ be a minimal spanning tree 
-     \item  Transform $T_m$ to $T$ edge by edge using exchange principle 
-\item   Show each step is a minimal spanning tree
-\end{itemize}
-Key: always add cheapest edge in $T$ but not $T_m$.
-    \end{block}
-\end{frame}
-  \begin{frame}{Finding \emph{all} minimal spanning trees}
-    \begin{block}{All edges have distinct weights:}
-      \begin{itemize}
-        \item Never have to make an arbitrary choice
-        \item      Unique minimal weight spanning tree
-          \end{itemize}
-    \end{block}
-    \begin{block}{All edges have the same weight:}
-      \begin{itemize}
-        \item Any spanning tree is minimal 
-        \item      Probably too many to write down
-          \end{itemize}
-    \end{block}
-    \begin{block}{A few edges have repeated weights:}
-      \begin{itemize} \item Only a few places we have to make a choice
-      \item Can find them with case by case analysis breaking ties
-      \end{itemize}
-    \end{block}
-    \end{frame}
-  
+
+  \end{frame}
+
+
 \end{document}

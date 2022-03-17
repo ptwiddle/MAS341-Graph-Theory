@@ -13,6 +13,7 @@ This page contains links to slides from lectures when they were used, as well as
 5. Lecture 5 [Slides](../Slides/Lecture5.pdf) [For Printing](print_Lecture5.pdf) Eulerian Walks
 6. Lecture 6 [Slides](../Slides/Lecture6.pdf)  Hamiltonian graphs
 7. Lecture 7 [Slides](../Slides/Lecture7.pdf) Introduction to planar graphs
+8. Lecture 8 [slides](../Slides/Lecture8.pdf) Planarity Algortihm for Hamiltonian graphs; Kuratowski's Theorem 
 
 
 [Minilecture motivating surfaces](../Slides/SurfacesIntro.html)

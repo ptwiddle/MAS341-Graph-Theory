@@ -1,0 +1,138 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics}
+\usepackage{tikz}
+
+
+
+\title{Graph Theory Lecture 8}
+
+\begin{document}
+
+
+\begin{frame}{Spanning trees}
+Trees are the minimal connected graphs.  Spanning trees are minimal subgraphs that contain all the vertices but are connected.
+  \begin{definition}Let $G$ be a connected graph.  A \emph{spanning tree} of $G$ is a subgraph $T\subseteq G$ such that $T$ is a tree, and $T$ contains every vertex of $G$.
+    \end{definition}
+  \begin{block}{Side point: Kirkchoff's Matrix Tree Theorem}
+    Spanning trees of $K_n$ are the same thing as labelled trees on $n$ vertices. \\
+As a generalization of Cayley's formula, can compute the number of spanning trees of any graph $G$ as the determinant of a matrix.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Weighted graphs}
+Edges often have a ``cost'' associated to them -- the time, money, or distance of the corresponding route/connection.
+
+  \begin{definition}{Weighted graph}
+    A \emph{weighted graph} is a graph $G$ together with a weight function $w:E(G)\to \mathbb{R}.$  Normally we assume $w(e)\geq 0$ for all edges $e$.
+  \end{definition}
+
+  Weighted graphs are often encoded in tables: 
+\begin{center}
+  \begin{tabular}{c|c|c|c|c}
+    A &   &   &   &   \\ \hline
+    4 & B &   &   &   \\ \hline
+    5 & 7 & C &   &   \\ \hline
+    9 & 8 & 8 & D &   \\ \hline
+    5 & 5 & 5 & 8 & E \\
+    \end{tabular}
+  \end{center}
+  \end{frame}
+
+\begin{frame}{Minimal spanning trees}
+\begin{block}{Motivating problem:}
+  Suppose that the vertices of a weighted graph $G$ represented cities, and the weight $w(e)$ of an edge was the cost of building a road between the cities.  What's the cheapest way to connect all the cities?
+\end{block}
+  \begin{definition} Let $T\subseteq G$ be a spanning tree of a weighted graph.  The weight of $T$ is the total weight of all its edges:
+    $$w(T)=\sum_{e\in T}w(e)$$
+ \end{definition}
+  \begin{block}{Problem becomes: find the minimal weight spanning tree}
+    Checking every spanning tree too slow: $K_n$ has $n^{n-2}$
+    \end{block}
+\end{frame}
+
+\begin{frame}{Many solutions.  Two: Kruskal and Prim}
+  \begin{block}{Loose concept: Greedy Algorithms}
+    A \emph{greedy algorithm} doesn't plan ahead, but just does the best it can at each stage.
+  \end{block}
+
+  \begin{definition}[Kruskal's algorithm]
+Start with $T$ having no edges. Iteratively:
+    \begin{itemize}
+    \item Look at cheapest remaining edge $e$
+    \item If adding $e$ to $T$ creates a loop, discard $e$
+    \item Otherwise, add $e$ to $T$
+      \end{itemize}
+\end{definition}
+  \begin{block}{Fairly clear: produces a spanning tree}
+    But it's \emph{not} clear this spanning tree is \emph{minimal}.
+  \end{block}
+\end{frame}
+
+  
+  \begin{frame}{Another approach: Prim}
+\begin{block}{Kruskal:  a global view, ``avoid cycles''}
+  \begin{itemize}
+  \item Kruskal's algorithm looks at all edges at start
+  \item $T$ may be disconnected at intermediate steps
+    \end{itemize}
+\end{block}
+\begin{block}{Prim: local view, ``build tree''}
+  Start at one vertex and explore out
+\end{block}
+
+\begin{definition}[Prim's algorithm]
+  Start $T={v}$, a single vertex.  Iteratively:
+  \begin{itemize}    \item Find the cheapest edge $e=vw$ from $v\in T$ to $w\notin T$
+  \item Add $e$ and $w$ to $T$
+  \end{itemize}
+\end{definition}
+\begin{block}{Fairly clear: produces a spanning tree}
+  But it's \emph{not} clear this spanning tree is \emph{minimal}.
+  \end{block}
+
+    
+
+\end{frame}
+  \begin{frame}{Why do Kruskal and Prim work?}
+    \begin{block}{Exchange principle:}
+      Let $T$ be a spanning tree of $G$, and $e=xy$ an edge not in $T$. Then:
+      \begin{itemize}
+      \item Unique path $P$ from $x$ to $y$ using only edges of $T$
+      \item If $f$ any edge in $P$, then $T^\prime=T\setminus f\cup e$ a spanning tree
+      \end{itemize}
+i.e., can exchange edges in $P$ for $e$.
+    \end{block}
+
+    \begin{block}{Basic idea of proofs:}
+      \begin{itemize}
+        \item Let $T$ be spanning tree produced by algorithm 
+\item  Let $T_m$ be a minimal spanning tree 
+     \item  Transform $T_m$ to $T$ edge by edge using exchange principle 
+\item   Show each step is a minimal spanning tree
+\end{itemize}
+Key: always add cheapest edge in $T$ but not $T_m$.
+    \end{block}
+\end{frame}
+  \begin{frame}{Finding \emph{all} minimal spanning trees}
+    \begin{block}{All edges have distinct weights:}
+      \begin{itemize}
+        \item Never have to make an arbitrary choice
+        \item      Unique minimal weight spanning tree
+          \end{itemize}
+    \end{block}
+    \begin{block}{All edges have the same weight:}
+      \begin{itemize}
+        \item Any spanning tree is minimal 
+        \item      Probably too many to write down
+          \end{itemize}
+    \end{block}
+    \begin{block}{A few edges have repeated weights:}
+      \begin{itemize} \item Only a few places we have to make a choice
+      \item Can find them with case by case analysis breaking ties
+      \end{itemize}
+    \end{block}
+    \end{frame}
+  
+\end{document}
