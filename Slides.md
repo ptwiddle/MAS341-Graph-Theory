@@ -17,6 +17,6 @@ This page contains links to slides from lectures when they were used, as well as
 9.
 10.
 11. Lecture 11 [slides](../Slides/Lecture16.pdf) Chromatic number
-
+12. Lecture 12 [slides](../Slides/Lecture17.pdf) Chromatic index
 
 [Minilecture motivating surfaces](../Slides/SurfacesIntro.html)
