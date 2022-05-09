@@ -19,4 +19,5 @@ This page contains links to slides from lectures when they were used, as well as
 11. Lecture 11 [slides](../Slides/Lecture16.pdf) Chromatic number
 12. Lecture 12 [slides](../Slides/Lecture17.pdf) Chromatic index
 13. Lecture 13 [slides](../Slides/Lecture18.pdf) Chromatic Polynomial 1
+14. Lecture 14 [slides](../Slides/Final_Lecture_Slides.pdf) Chromatic Polynomial 2
 [Minilecture motivating surfaces](../Slides/SurfacesIntro.html)
