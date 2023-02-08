@@ -62,7 +62,7 @@ Basic Information
 <ul>
 <li>Website is on Blackboard</li>
 <li><b>Email:</b> paul.johnson@sheffield.ac.uk </li>
-<li><b>Office hours:</b> Thursday 1-2 Hicks J06b
+<li><b>Office hours:</b> Monday 2:30-3:30 Hicks J06b
   <li><b>Or:</b> Email for an appointment, <b>or</b> after class</li>
 </ul>
 </section>
@@ -71,7 +71,7 @@ Basic Information
 <h2> Marking </h2>
 <ul>
 <li> The final exam is 100% of the grade :(</li>
-<li> Close to previous years' exams, but unsure of exact format</li>
+<li> Similar to previous years' exams, maybe only three questions?</li>
 <li> Old exams and solutions available </li>
 <li> Homeworks are 'exam type' questions </li>
 </ul>
@@ -82,8 +82,8 @@ Basic Information
   <ul>
   <li> Unless a miracle happens, I will go be on strike</li>  
   <li> Hope to write about why to save class-time</li>
-  <li> We will lose four lectures, plus a bank holiday</li>
-  <li> Plan is to skip the Algorithms unit</li>  
+  <li> We will lose 9 lectures</li>
+  <li> Skip entire Algorithms unit + small topics (Instant Insanity)...</li>  
    
   </ul>
         
@@ -93,9 +93,9 @@ Basic Information
 <section>
   <h2> Fun Survey Course </h2>
   <ol>
-    <li> Introduction and paths (6 lectures) </li>
+    <li> Introduction and paths (5 lectures) </li>
     <li> <strike>Algorithms (4 lectures)</strike> </li>
-    <li> Graphs on Surfaces (5 lectures) </li> 
+    <li> Graphs on Surfaces (4 lectures) </li> 
     <li> Colouring Graphs (4 lectures) </li>
     <li> Bonus material + review sessions (2 lectures + extra)</li>
   </ol>
@@ -104,10 +104,10 @@ Basic Information
 <section>
   <h2>Notes and Lectures</h2>
   <ul>
-    <li>Notes for module cover exactly same content as lecture</li>
-    <li>Different angle -- lecture and reading different mediums</li>
-    <li>Lectures recorded on Encore, but miss board...</li>
-    <li>Probably better using last year's recordings</li>
+    <li>Notes for module cover same content as lecture</li>
+    <li>Different presentation: lecture and reading different mediums</li>
+    <li>Lectures recorded on Encore, but miss chalkboard...</li>
+    <li>Better using recordings from pandemic</li>
   </ul>
 </section>
 
@@ -115,7 +115,7 @@ Basic Information
 <blockquote >
   
 ...the first duty of a lecturer -- to hand you after an hour's discourse a nugget of pure truth to wrap up between the pages of your notebooks and keep on the mantel-piece for ever</blockquote><p>
-  Virginia Woolf, a Room of One's Own
+  Virginia Woolf, <i>A Room of One's Own</i>
   </p>
   
   
@@ -174,13 +174,13 @@ Basic Information
 
 <section>
 <h2>Some consequences:</h2>
-<p>According to the formal definition:</p>
+<p>Following from our choice of formal definition:</p>
 <ul>
 <li> The edges are <b>symmetrical</b> -- Facebook, not Twitter </li>  
 <li> <b>No loops</b>, i.e. edges connecting a vertex to itself </li>
 <li> <b>No multiple edges</b> between the same pair of vertices </li>
 <ul>
-  <p>By default, "graph" will mean "simple graph", but sometimes we will consider non-simple graphs.</p>
+  <p>Generally, "graph" will mean "simple graph", but sometimes we will consider non-simple graphs.</p>
   
 </section>
 
@@ -239,7 +239,7 @@ Basic Information
   
 <section>
 <h2>Definition:</h2>
-  <p>For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjancent to $v$.</p>
+  <p>For a simple graph $\Gamma$, and $v\in V(\Gamma)$, the <i>degree</i> of $v, d(v)$, is the number of vertices adjacent to $v$.</p>
 </section>
 
 <section>
@@ -301,15 +301,49 @@ $$\sum_{v\in V(\Gamma)}d(v)=2|E(\Gamma)|$$
 <ul>
 <li> 4 cubes </li>
 <li>Each side of each cube is colored one of four colors</li>
-<li>Goal is to stack the cubes so each direction has one face of each color</li>
+<li>Goal is to stack cubes so each direction has all 4 colours</li>
 <li>Patterns online to make your own cubes and try to solve  </li>
-<li> Will see how graph theory helps this afternoon </li>
 </ul>
-
-
-
+<h3>Not on exam; can try anyway </h3>
 </section>
 
+<section>
+<h1>Isomorphisms</h1>
+<h2> When are two graphs </h2>
+<h2> "the same"?</h2>
+</section>
+
+<section>
+<image class = "stretch" src="Pictures/PetersenLots.jpg"></img>
+</section>
+
+<section>
+<img src="Pictures/animatedgraphisomorphisms.gif"></img>
+</section>
+
+
+<section>
+<h3>Definition of an isomorphism</h3>
+<p>An <b>isomorphism</b> $\varphi:G\to H$ of graphs is:
+  <ul>
+    <li>A bijection $\varphi_V:V(G)\to V(H)$</li>
+    <li> A bijection $\varphi_E:E(G)\to E(H)$</li>
+  </ul>
+<p>  That "play nicely together", i.e.:</p>
+<center>  If $e\in E(G)$ connects $u$ and $v$, then $\varphi_E(e)\in E(H)$ connects $\varphi_V(u)$ and $\varphi_V(v)$.</center>
+  
+</section>
+
+<section>
+  <ul>
+    <li> We say $G$ and $H$ are isomorphic if there is an isomorphism between them.</li>
+    <li> If $G$ and $H$ are simple, then $G$ and $H$ are isomorphic if and only if there is a bijection $\varphi$ that preserves the number of edges between vertices; that is, so that $\varphi(v)$ and $\varphi(w)$ are adjacent if and only if $v$ and $w$ were adjacent.</li>
+
+    <li> This breaks down if $G$ and/or $H$ have multiple edges. (why?) </li>
+    <li>Our original definition of isomorphism is arguably slightly wrong if $G$ and $H$ have loops. (Why?) </li>
+
+  </ul>
+</section>
 
 
 			</div>
