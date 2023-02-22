@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-		<title>Lecture 2: Instant Insanity Solution, isomorphisms </title>
+		<title>Lecture 2: Isomorphisms </title>
 
 		<meta name="description" content="Lecture slides from MAS341">
 		<meta name="author" content="Paul Johnson">
@@ -46,86 +46,10 @@
 
 <section>
 
-<h1> Graph Theory Lecture 2 </h1>
-<h2> Instant Insanity.  Isomorphisms. </h2>
+<h1> Graph Theory Lecture 2: </h1>
+<h1>Isomorphisms</h1>
 
 </section>
-
-
-<section>
-<h1> An application </h1>
-<image src="Pictures/InstantInsanityPackage.JPG"></image>
-</section>
-
-<section>
-<h2> Instant Insanity </h2>
-<ul>
-<li> 4 cubes </li>
-<li>Each side of each cube is colored one of four colors</li>
-<li>Goal is to stack the cubes so each direction has one face of each color</li>
-</ul>
-<p> Given a set of cubes, you will need to be able to either find a solution or prove that a solution does not exist </p>
-</section>
-
-<section>
-<h2>These cubes have no solution </h2>
-<image src="Pictures/ImpossibleCubes.png"></image>
-
-</section>
-
-<section>
-<image src="Pictures/InstantInsanityImpossibleGraph.JPG"></image>
-</section>
-
-
-<section>
-  <h2>What would a solution look like on the graph?</h2>
-  <p>Think first about colors on Front/Rear:</p>
-  <ul>
-    <li> A set of four edges, one with each label 1-4</li>
-    <li> Each colour appears on two different edges </li>
-</ul>
-<p>Can also see that if we have a set of edges satisfying these properties, we can solve cubes for front and back</p>
-</section>
-
-
-<section>
-
-  <h2>Can restate with subgraphs</h2>
-
-<p>A <b>subgraph</b> $S$ of $\Gamma$ is a graph $S$ where 
-<ul> 
-<li>$V(S)\subset V(\Gamma)$</li>
-<li>$E(S)\subset E(\Gamma)$</li>
-</ul>
-<p>If an edge $e$ is in $S$, then we need both its ends in $S$.</p>
-
-</section>
-
-<section>
-  <h2>Back to Instant Insanity</h2>
-  <p>So to solve the front and rear of the cube, we're looking for a subgraph $FR$ with:</p>
-  <ul>
-    <li> $FR$ contains all four vertices </li>
-    <li> Each vertex of $FR$ has degree 2</li>
-    <li> Each label 1-4 appears on an edge of $FR$</li>
-  </ul>
-</p>
-</section>
-
-<section>
-  <h2>Completing Instant Insanity</h2>
-  <ul><li>We described how to solve the front and rear with a certain subgraph $FR$</li>
-    <li>Solving the top and bottom is equivalent to finding another subgraph $TB$ satisfying the same properties.</li>
-    <li>To solve the whole cube, we need <b>two</b> subgraphs $FR$ and $TB$ satisfying the requirement, that <b>don't share any edges</b></li>
-  </ul>
-</section>  
-	
-  <section>
-    <h2>Let's look for our subgraphs</h2>
-<image src="Pictures/InstantInsanityImpossibleGraph.JPG"></image>
-</section>
-
 
 
 
@@ -192,33 +116,29 @@ The isomorphism problem is of fundamental importance to theoretical computer sci
 <section>
 <h2> How to prove two graphs are isomorphic? </h2>
 <p> Write down an isomorphism! </p>
-
+<h1>An obvious question...</h1>
 </section>
+
+<section>
+  <h2>How to write down an isomorphism?</h2>
+  <ul>
+    <li>Usually <i>not</i> best to write down $\varphi_V$ as list</li>
+    <li>Depends on how graphs are given to you</li>
+    <li>If given as unlabeled drawings, easiest to redraw as given and record $\varphi_V$ by labeling graphs with same symbols</li>
+</section>      
 
 <section>
   <h2>How to <i>find</i> an isomorphism?</h2>
   One useful method -- expanding "local" isomorphisms.
   <ul>
-    <li>An isomorphism $\varphi:G\to H$would have to preserve the degree, so pick one vertex $v$; it could map to any vertex $w\in H$ with $d(v)=d(w)$</li>
-    <li>Now, the vertices adjacent to $v$ would have to map to the vertices adjacent to $w$; they have to match degrees, etc...</li>
-<li>Continue expanding $\varphi$ out from $v$</li>
+    <li>Find a part $A\subset G$ that (would have to / could) map to a part $B\subset H$ 
+    <li>Things adjacent to $A$ need to map to things adjacent to $B$</li>
+<li>Continue expanding what we know of bijection</li>
    </ul>
-</section>
+<p>If graphs are symmetric, need to make an arbitrary choice to break the symmetry</p>
 
-<section>
-<h2>How to prove two graphs <i>aren't</i> isomorphic? </h2>
-<p>Could do a case-by-case: expand out as above, and show it's not possible.  Usually better to find an <i>obstruction</i> -- a difference between the two graphs </p>
-<ul>
-<li> Number of vertices </li>
-<li> Number of edges </li>
-<li> "connectedness" </li>
-<li> "loops"</li>
-<li> Degree sequence </li>
-<li> ... </li>
-</ul>
-</section>
 
-<section>
+</section>
 
 
 
