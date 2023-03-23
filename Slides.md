@@ -13,3 +13,4 @@ This page contains links to slides from lectures when they were used, as well as
 5. Lecture 5 [Slides](../Slides/Lecture6.pdf) Hamiltonian Graphs
 6. Lecture 6 [Slides](../Slides/Prufer.pdf) Prüfer code
 7. Lecture 7 [Slides](../Slides/KruskalPrim.pdf) Minimal Spanning Trees
+8. Lecture 8 [Dijkstra's Algorithm](../Slides/Dijkstra.pdf) Start of [Travelling Salesperon Problem](../Slides/TSP.pdf)
