@@ -14,3 +14,7 @@ This page contains links to slides from lectures when they were used, as well as
 6. Lecture 6 [Slides](../Slides/Prufer.pdf) Prüfer code
 7. Lecture 7 [Slides](../Slides/KruskalPrim.pdf) Minimal Spanning Trees
 8. Lecture 8 [Dijkstra's Algorithm](../Slides/Dijkstra.pdf) Start of [Travelling Salesperon Problem](../Slides/TSP.pdf)
+9. Lecture 9 End of [TSP](../Slides/TSP.pdf), [Utilities problem](../Slides/Lecture 11)
+10. Lecture 10 [Planarity of graphs](../Slides/Lecture 12) Algorithm for Hamiltonian Graphs, Kuratowski's Theorem
+
+
