@@ -17,5 +17,5 @@ This page contains links to slides from lectures when they were used, as well as
 9. Lecture 9 End of [TSP](../Slides/TSP.pdf), [Utilities problem](../Slides/Lecture11.pdf)
 10. Lecture 10 [Planarity of graphs](../Slides/Lecture12.pdf) Algorithm for Hamiltonian Graphs, Kuratowski's Theorem
 11. Lecture 11 [Graphs on Other Surfaces](../Slides/Surfaces.html) Torus, Mobius Band
-
+12. Lecture 12 [Euler's Theorem](../Slides/Euler.pdf)
 
