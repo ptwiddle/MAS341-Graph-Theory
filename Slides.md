@@ -18,4 +18,5 @@ This page contains links to slides from lectures when they were used, as well as
 10. Lecture 10 [Planarity of graphs](../Slides/Lecture12.pdf) Algorithm for Hamiltonian Graphs, Kuratowski's Theorem
 11. Lecture 11 [Graphs on Other Surfaces](../Slides/Surfaces.html) Torus, Mobius Band
 12. Lecture 12 [Euler's Theorem](../Slides/Euler.pdf)
+13. Lecture 13 [Chromatic Number](../Slides/Lecture18.pdf)
 
