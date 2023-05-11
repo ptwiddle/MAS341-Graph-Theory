@@ -20,4 +20,5 @@ This page contains links to slides from lectures when they were used, as well as
 12. Lecture 12 [Euler's Theorem](../Slides/Euler.pdf)
 13. Lecture 13 [Chromatic Number](../Slides/Lecture16.pdf)
 14. Lecture 14 [Introduction to Chromatic Polynomial](../Slides/Lecture18.pdf)
-
+15. Lecture 15 [Deletion-Contraction, proof chromatic polynomial is a polynomial](../Slides/DeletionContraction.pdf)
+16. Lecture 16 [Calculating Chromatic Polynomials](../Slides/Lecture20.pdf)

@@ -3,6 +3,142 @@
 \usepackage{tikz}
 \begin{document}
 
+
+
+\begin{frame}{Review: Chromatic polynomial of $C_4$ and a Lemma}  
+\begin{lemma}Let $x$ and $y$ be two non-adjacent vertices in $G$.  Then 
+$$P_G(k)=P_{G_{+xy}}(k)+P_{G_{x=y}}(k)$$
+\end{lemma}
+
+  \begin{columns}
+     \begin{column}{.5\textwidth}
+\begin{block}{1 and 3 have different colours}
+
+  \centering
+  \begin{tikzpicture}[scale=2]
+\begin{scope}[every node/.style={circle, draw}]
+\node (1) at (0,1) {$1$};
+\node (2) at (1,1) {$2$};
+\node (3) at (1,0) {$3$};
+\node (4) at (0,0) {$4$};
+\draw (1)--(2)--(3)--(4)--(1)--(3);
+\end{scope}
+\end{tikzpicture}
+$k(k-1)(k-2)^2$
+\end{block}
+     \end{column}
+ \begin{column}{.5\textwidth}
+\begin{block}{1 and 3 have the same colour}
+
+  \centering
+  \begin{tikzpicture}[scale=2]
+\begin{scope}[every node/.style={circle, draw}]
+\node (1) at (.5,.5) {$*$};
+\node (2) at (1,1) {$2$};
+\node (4) at (0,0) {$4$};
+\draw (2) to[bend right] (1);
+\draw (1) to[bend right] (4);
+\draw (4) to[bend right] (1);
+\draw (1) to[bend right] (2);
+\end{scope}
+  \end{tikzpicture}
+
+$k(k-1)^2$
+\end{block}
+     \end{column}
+  \end{columns}
+$$P_{C_4}(k)=k(k-1)(k-2)^2+k(k-1)^2=k(k-1)(k^2-3k+3)$$  
+  \end{frame}
+\begin{frame}{Deletion-Contraction: restructuring the lemma}
+The lemmais useful for calculating, but awkward for induction:
+\begin{itemize}
+    \item $G_{+xy}$ has an extra edge; "bigger"
+    \item $G_{x=y}$ has fewer vertices: "smaller"
+\end{itemize}
+Rewrite so $H\cong G_{+xy}$ is the "starting" graph.
+\begin{lemma}[Deletion-Contraction]
+Let $H$ be a graph, and let $e$ be an edge in $H$.  Then
+$$P_H(k)=P_{H\setminus e}(k)-P_{H/e}(k)$$
+\end{lemma}  
+The edge $e$ is between $xy$
+$$H=G+xy,\qquad H\setminus e=G,\qquad H/e=G_{x=y}$$
+
+\end{frame}  
+
+
+
+\begin{frame}{Chromatic polynomial is a polynomial}
+\begin{theorem}
+Let $G$ be a simple graph. Then $P_G(k)$ is a polynomial in $k$.  
+
+Moreover, if $G$ has $n$ vertices and $m$ edges, then 
+$$P_G(k)=k^n-mk^{n-1}+\text{lower order terms}$$
+\end{theorem}
+
+\begin{block}{Proof idea:}
+Induct on the number of edges using deletion-contraction.
+\end{block}
+\begin{block}{Base case(s): $m=0$, any $n$}
+If $G$ has no edges and $n$ vertices, then $G=E_n$ empty graph.
+$P_{E_n}=k^n$ is a polynomial of the right form.
+\end{block}
+
+\end{frame}
+\begin{frame}{Inductive step}
+Assume that $G$ has $m>0$ edges and $n$ vertices, and that for any graph $H$ with $\ell<m$ edges and $p$ vertices, we have $P_H(k)=k^p-\ell k^{p-1}+\cdots$.
+
+\begin{block}{Let $e\in G$ be any edge:}
+\begin{itemize}
+    \item $G\setminus e$ has $n$ vertices and $m-1$ edges
+    \item $G/e$ has $n-1$ vertices and \emph{at most} $m-1$ edges
+\end{itemize}
+So by the inductive hypothesis, theorem holds for $G\setminus e$ and $G/e$
+\end{block}
+\begin{block}{So applying Deletion-Contraction:}\begin{align*}
+    P_G(k) &= P_{G\setminus e}(k)-P_{G/e}(k) \\
+    &= \left(k^n-(m-1)k^{n-1} +\cdots\right) -\left(k^{n-1}-\cdots\right) \\
+    &= k^n-mk^{n-1}+\cdots
+\end{align*}
+Which is what we needed to show. \quad$\square$
+\end{block}
+
+\end{frame}
+\begin{frame}{Odds and Ends}
+  \begin{block}{Deletion-Contraction as an algorithm}
+    \begin{itemize}
+    \item Can always find $P_G(x)$ by iterating deletion-contraction
+    \item In practise, often faster to add edges
+      \end{itemize}
+  \end{block}
+
+  \begin{block}{Information in $P_G(k)$}
+    \begin{itemize}
+    \item Number of vertices is the degree
+    \item Number of edges is negative the coefficient of next highest term
+      \item $\chi(G)$ is the lowest $k$ with $P_G(k)\neq 0$.
+\end{itemize}
+
+    \end{block}
+
+
+
+
+
+\end{frame}
+
+
+\end{document}
+ Binary file addedBIN +119 KB 
+Slides/Lecture20.pdf
+Binary file not shown.
+ 173 changes: 173 additions & 0 deletions173  
+Slides/Lecture20.tex
+@@ -0,0 +1,173 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{tikz}
+\begin{document}
+
 \begin{frame}{More techniques for computing chromatic polynomials}
   \begin{block}{Main goal: two new bits}
     \begin{itemize}
@@ -21,10 +157,10 @@
       \node (7) at (3, 0) {};
       \node (8) at (2,-1) {};
       \draw (1)--(2)--(3)--(4)--(5)--(1)--(6)--(7)--(8)--(1);
-       
+
         \end{scope}
 
-      
+
       \begin{scope}[xshift=5cm]
       \node (1) at (0,0) {};
       \node (2) at (0,1) {};
@@ -59,8 +195,7 @@
 P_5(k)= & k^5-5k^4+10k^3-10k^2+4k \\
 P_6(k)= & k^6-6k^5+15k^4-20k^3+15k^3-5k \\
 P_7(k)= & k^7-7k^6+21k^5-35k^4+35k^3-21k^2+6k
- \end{align*}
- \pause
+    \end{align*}
 \begin{block}{Looks like:}
 $$P_n(k)=(k-1)^n+(-1)^n(k-1)$$
   \end{block}
@@ -110,7 +245,7 @@ Plug in $n=3$, get $k(k-1)(k-2)=P_{C_3}(k)$.
 
 
 
-    
+
     \begin{proof}First colour $G_1$ in any of the $P_{G_1}(k)$ ways.  Now, vertex $v$ of $G_2$ is already coloured, but none of the rest.  Since the colours are interchangable, exactly $1/k$ of the ways of colouring $G_2$ will have the right colour at $v$.
 \end{proof}
     \begin{lemma}
@@ -118,7 +253,7 @@ Plug in $n=3$, get $k(k-1)(k-2)=P_{C_3}(k)$.
 \end{lemma}
 
 
-  
+
 \end{frame}
 
 
@@ -153,7 +288,7 @@ Plug in $n=3$, get $k(k-1)(k-2)=P_{C_3}(k)$.
       \draw (1)--(2)--(5)--(3)--(1)--(4)--(5);
       \draw (2)--(3)--(4);
         \end{scope}
-    
+
   \begin{scope}[xshift=4cm, yshift=-4cm]
       \node (1) at (1,1) {};
       \node (2) at (0,0) {};
