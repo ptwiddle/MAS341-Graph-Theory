@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+	<meta charset="utf-8">
+
+		<title>Lecture 3: Isomorphisms </title>
+
+		<meta name="description" content="Lecture slides from MAS341">
+		<meta name="author" content="Paul Johnson">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+        	<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides"
+>
+
+
+
+
+<section>
+<h1>Isomorphisms</h1>
+<h2> When are two graphs </h2>
+<h2> "the same"?</h2>
+</section>
+
+<section>
+<image class = "stretch" src="Pictures/PetersenLots.jpg"></img>
+</section>
+
+<section>
+<img src="Pictures/animatedgraphisomorphisms.gif"></img>
+</section>
+
+
+<section>
+<h3>Definition of an isomorphism</h3>
+<p>An <b>isomorphism</b> $\varphi:G\to H$ of graphs is:
+  <ul>
+    <li>A bijection $\varphi_V:V(G)\to V(H)$</li>
+    <li> A bijection $\varphi_E:E(G)\to E(H)$</li>
+  </ul>
+<p>  That "play nicely together", i.e.:</p>
+<center>  If $e\in E(G)$ connects $u$ and $v$, then $\varphi_E(e)\in E(H)$ connects $\varphi_V(u)$ and $\varphi_V(v)$.</center>
+  
+</section>
+
+<section>
+  <ul>
+    <li> We say $G$ and $H$ are isomorphic if there is an isomorphism between them.</li>
+    <li> If $G$ and $H$ are simple, then $G$ and $H$ are isomorphic if and only if there is a bijection $\varphi$ between the vertices so that $\varphi(v)$ and $\varphi(w)$ are adjacent in $H$ if and only if $v$ and $w$ are adjacent in $G$.</li>
+
+
+
+  </ul>
+
+  
+</section>
+
+<section>
+<h2>The isomorphism problem:</h2>
+<p>Given two graphs $G$ and $H$, either find an isomorphism $\varphi:G\to H$, or prove such an isomorphism doesn't exist.</p>
+
+<p> In general, this is a very important, deep and difficult question.  In practice, it's not too bad for small graphs, and you will need to be able to do this for the exam. </p>
+
+</section>
+
+
+
+<section>
+<h2> How to prove two graphs are isomorphic? </h2>
+<p> Write down an isomorphism! </p>
+<h1>An obvious question...</h1>
+</section>
+
+<section>
+  <h2>How to write down an isomorphism?</h2>
+  <ul>
+    <li>Usually <i>not</i> best to write down $\varphi_V$ as list</li>
+    <li>Depends on how graphs are given to you</li>
+    <li>If given as unlabeled drawings, easiest to redraw as given and record $\varphi_V$ by labeling graphs with same symbols</li>
+</section>      
+
+<section>
+  <h2>How to <i>find</i> an isomorphism?</h2>
+  One useful method -- expanding "local" isomorphisms.
+  <ul>
+    <li>Find a part $A\subset G$ that (would have to / could) map to a part $B\subset H$ 
+    <li>Things adjacent to $A$ need to map to things adjacent to $B$</li>
+<li>Continue expanding what we know of bijection</li>
+   </ul>
+<p>When graphs have symmetry, need to make an arbitrary choice to break the symmetry</p>
+
+
+</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+ 
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+                              
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                                        { src: 'plugin/math/math.js', async: true }
+                                               ]
+				
+			});
+
+		</script>
+
+	</body>
+</html>
