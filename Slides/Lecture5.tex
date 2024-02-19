@@ -6,24 +6,66 @@
 \title{Graph Theory Lecture 5}
 
 \begin{document}
-\begin{frame}{Last time: trees, ending with applications to chemistry}
-\begin{block}{Review: Alkanes are trees}
-  \begin{itemize}
- \item An Alkane is a molecue with formula $C_nH_{2n+2}$
- \item $3n+2$ vertices
- \item Handshaking says: $(4n+2n+2)/2=3n+1$ edges
-   \item Connected, so a tree.
-\end{itemize}
-\end{block}
 
-\begin{block}{Question: How many isomers does $C_5H_{12}$ have?}
-  Case-by-case reasoning.  Two possible ways to organize:
-  \begin{itemize}
-  \item Length of longest path in carbons
-  \item Highest degree just looking at carbons
+\begin{frame}{This week we're finishing the first unit}
+  \begin{block}{Last Wednesday:}
+    \begin{itemize}
+    \item Trees
+    \item Started Chemistry at very end
     \end{itemize}
+    \end{block}
+    \begin{block}{Today:}
+      \begin{itemize}
+      \item Chemistry
+      \item Eulerian + semi-Eulerian graphs
+      \end{itemize}
+    \end{block}
+
+    \begin{block}{Wednesday}
+      \begin{itemize}
+      \item Hamiltonian graphs
+      \end{itemize}
+      \end{block}
+ 
+
+\end{frame}
+
+
+\begin{frame}{Chemical formulas encode degree sequences}
+\includegraphics[width=\textwidth]{Pictures/periodictablebig.jpg}
+\begin{center} $\begin{array}{c|cccc}
+  \text{Atom} & C & N & O & H \\ \hline 
+  \text{Degree} & 4 & 3 & 2 & 1
+  \end{array}$ \end{center}
+\end{frame}
+
+
+\begin{frame}{Shortcuts around Carbon and Hydrogen}
+  \begin{figure}
+    \includegraphics[width=.5\textwidth]{Pictures/Caffeine3d.png}
+    \includegraphics[width=.5\textwidth]{Pictures/Caffeine_structure.png}
+    \caption{Two pictures of Caffeine}
+  \end{figure}
+  \begin{itemize}
+  \item Unlabelled vertices are Carbon
+  \item Hydrogen not drawn; inferred to make degrees correct
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Isomers are graphs with the same degree sequence}
+  \begin{definition}An \emph{Alkane} is a molecule with formula $C_nH_{2n+2}$
+  \end{definition}
+  \includegraphics[width=.8\textwidth]{Pictures/Hydrocarbons.jpg}
+\begin{definition}[Isomer] Two different molecules are \emph{isomers} if they have the same chemical formula.
+ \end{definition}
+  
+\begin{block}{Lemma: Any alkane is a tree.}
+  Proof: Handshaking.
+  \end{block}
+\begin{block}{Question: How many isomers does $C_5H_{12}$ have?}
 \end{block}
 \end{frame}
+
 
 \begin{frame}{Bridges of Konigsberg: birth of graph theory}
 
