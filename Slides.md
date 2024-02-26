@@ -12,4 +12,5 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 4 [Slides](../Slides/Trees.pdf) Isomorphisms example, trees and applications to chemistry
 1. Lecture 5 [Slides](../Slides/Lecture5.pdf) Chemistry, Eulerian Graphs
 1. Lecture 6 [Slides](../Slides/Lecture6.pdf) Hamiltonian Graphs
-
+1. Lecture 7 [Slides](../Slides/Prufer.pdf) Prufer code
+1. Lecture 8 [Slides](../Slides/KruskalPrim.pdf) Kruskal and Prim's algorithms
