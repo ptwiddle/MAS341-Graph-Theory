@@ -11,7 +11,7 @@
 
 
 \begin{frame}{Spanning trees}
-Trees are the minimal connected graphs.  Spanning trees are minimal subgraphs that contain all the vertices but are connected.
+Trees are the minimal connected graphs.  Spanning trees are minimal subgraphs that contain all the vertices and are connected.
   \begin{definition}Let $G$ be a connected graph.  A \emph{spanning tree} of $G$ is a subgraph $T\subseteq G$ such that $T$ is a tree, and $T$ contains every vertex of $G$.
     \end{definition}
   \begin{block}{Side point: Kirkchoff's Matrix Tree Theorem}
@@ -30,12 +30,14 @@ Edges often have a ``cost'' associated to them -- the time, money, or distance o
 
   Weighted graphs are often encoded in tables: 
 \begin{center}
-  \begin{tabular}{c|c|c|c|c}
-    A &   &   &   &   \\ \hline
-    4 & B &   &   &   \\ \hline
-    5 & 7 & C &   &   \\ \hline
-    9 & 8 & 8 & D &   \\ \hline
-    5 & 5 & 5 & 8 & E \\
+  \begin{tabular}{c|c|c|c|c|c|c}
+    A &   &   &   &   &   & \\ \hline
+    3 & B &   &   &   &   & \\ \hline
+    6 & 7 & C &   &   &   & \\ \hline
+    7 & 9 & 5 & D &   &   & \\ \hline
+    6 & 8 & 9 & 4 & E &   & \\ \hline
+    8 & 7 & 9 & 8 & 9 & F & \\ \hline
+    9 & 8 & 6 & 7 & 5 & 7 & G        
     \end{tabular}
   \end{center}
   \end{frame}
