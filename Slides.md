@@ -14,3 +14,5 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 6 [Slides](../Slides/Lecture6.pdf) Hamiltonian Graphs
 1. Lecture 7 [Slides](../Slides/Prufer.pdf) Prufer code
 1. Lecture 8 [Slides](../Slides/KruskalPrim.pdf) Kruskal and Prim's algorithms
+1. Lecture 9 [Slides](../Slides/ShortestLongest.pdf) Shortest and Longest paths
+1. Lecture 10 [Slides](../Slides/TSP.pdf) Traveling Salesperson Problem
