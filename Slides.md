@@ -16,3 +16,6 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 8 [Slides](../Slides/KruskalPrim.pdf) Kruskal and Prim's algorithms
 1. Lecture 9 [Slides](../Slides/ShortestLongest.pdf) Shortest and Longest paths
 1. Lecture 10 [Slides](../Slides/TSP.pdf) Traveling Salesperson Problem
+1. Lecture 11 [Slides](../Slides/Lecture7.pdf) Introduction to Planar Graphs
+1. Lecture 12 [Slides](../Slides/Lecture8.pdf) Planarity Algorithm for Hamiltonian Graphs and Kuratowski's Theorem
+
