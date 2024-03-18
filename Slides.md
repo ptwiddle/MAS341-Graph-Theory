@@ -18,4 +18,6 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 10 [Slides](../Slides/TSP.pdf) Traveling Salesperson Problem
 1. Lecture 11 [Slides](../Slides/Lecture7.pdf) Introduction to Planar Graphs
 1. Lecture 12 [Slides](../Slides/Lecture8.pdf) Planarity Algorithm for Hamiltonian Graphs and Kuratowski's Theorem
+1. Lecture 13 [Slides](../Slides/Lecture13.html) Graphs on other surfaces
+1. Lecture 14 [Slides](../Slides/Euler.pdf) Euler's Theorem and Applications
 
