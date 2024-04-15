@@ -79,20 +79,23 @@ If each team plays one game a week, can the tournament be run in three weeks?  H
   \begin{definition}
 The \emph{chromatic index} $\chi^\prime(G)$ denotes the minimum number of colours needed to colour the \emph{edges} of $G$ so that any two edges that share a vertex have different colours.
     \end{definition}
-In the application: the colours were the weeks?
+  \begin{block}{What are the colours in the application?}
+    \end{block}
 
 \begin{block}{Examples:}
   \begin{itemize}
   \item $\chi^\prime(K_4)=3$
     \item $\chi^\prime(K_5)=5$
   \end{itemize}
-  \end{block}
+\end{block}
+$\Delta(G)$ is used to denote the maximum degree of a vertex.
+
 \begin{lemma} $\chi^\prime(G)\geq \Delta(G)$
   \end{lemma}
 
 \end{frame}
 
-\begin{frame}{Finding $\chi^\prime(G)$}
+\begin{frame}{How to find $\chi^\prime(G)$}
 
   \begin{theorem}[Vizing]
 For a simple graph $\chi^\prime(G)=\Delta$ or $\Delta+1$
@@ -106,16 +109,18 @@ For a simple graph $\chi^\prime(G)=\Delta$ or $\Delta+1$
  \item If we can't, prove it: so we know $\chi^\prime(G)\geq \Delta+1$
  \item Find a colouring with $\Delta+1$ colours 
    \end{itemize}
+\end{block}
+\begin{block}{What we mean by ' implicitly'} 
+Vizing's Theorem tells us this last step is possible, but we'd still want to do it even if we know Vizing's Theorem.
 
 
    \end{block}
   \end{frame}
 
-\begin{frame}{Another way to prove $\chi^\prime(G)\geq \Delta+1$}
+\begin{frame}{Another way to prove to get a lower bound on $\chi^\prime$}
+Count how many edges could have the same colour.
 
-
-
-  \begin{example}{$K_n$ for $n$ odd}
+  \begin{example}[$\chi^\prime(K_n)$ for $n$ odd]
     Suppose $n=2k+1$ is odd.
 \begin{itemize}
 \item Then $\Delta(K_n)=n-1=2k$  

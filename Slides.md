@@ -20,4 +20,6 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 12 [Slides](../Slides/Lecture8.pdf) Planarity Algorithm for Hamiltonian Graphs and Kuratowski's Theorem
 1. Lecture 13 [Slides](../Slides/Lecture13.html) Graphs on other surfaces
 1. Lecture 14 [Slides](../Slides/Euler.pdf) Euler's Theorem and Applications
+1. Lecture 15 [Slides](../Slides/Lecture16.pdf) Chromatic Number
+1. Lecture 16 [Slides](../Slides/Lecture17.pdf) Six colour theorem and Chromatic Index
 
