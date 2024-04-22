@@ -22,4 +22,4 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 14 [Slides](../Slides/Euler.pdf) Euler's Theorem and Applications
 1. Lecture 15 [Slides](../Slides/Lecture16.pdf) Chromatic Number
 1. Lecture 16 [Slides](../Slides/Lecture17.pdf) Six colour theorem and Chromatic Index
-
+1. Lecture 17 [Slides](../Slides/Lecture18.pdf) Fininishing Chromatic Index, Starting Chromatic Polynomial
