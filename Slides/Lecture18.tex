@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \beamertemplatenavigationsymbolsempty
 \usepackage{graphicx, tikz}
-
+\usepackage{comment}
 
 \begin{document}
 
@@ -20,17 +20,19 @@
     \end{block}
 \end{frame}  
 
+
+
 \begin{frame}{In easy examples, can colour vertex by vertex:}
 \begin{block}{Colour vertex $v_1$, then vertices adjacent to $v_1$, then..}
   
-
   \begin{itemize}
   \item $P_{E_n}(k)=k^n$
   \item $P_{K_n}(k)=k(k-1)(k-2)\cdots (k-n+1)$
   \item If $T$ is a tree with $n$ vertices, then $P_T(k)=k(k-1)^n$
   \end{itemize}
   \end{block}
-  \begin{tikzpicture}
+
+\begin{tikzpicture}
     \node at (1,-2) {$G$};
     \node at (4.5, -2) {$H$};
     \node at (8.75, -2) {$\Gamma$};
@@ -62,15 +64,16 @@
       \node (z) at (3.5,0) {$z$};
       
     \draw (z)--(y)--(w)--(u)--(v)--(w)--(x)--(y)--(v)--(x);  
-
-
       \end{scope}
 \end{scope}
-    
-    \end{tikzpicture}
+        \end{tikzpicture}
   \begin{block}{What patterns do you notice?}
     \end{block}
+
 \end{frame}
+
+
+
 
 \begin{frame}{A harder example: $C_4$}
 \begin{columns}
@@ -112,17 +115,17 @@ Combining the cases, we see:
   $$P_{C_4}=k(k-1)^2+k(k-1)(k-2)^2=k(k-1)(k^2-3k+3)$$  
          \end{frame}
 
-\begin{frame}{Foreshadowing: the two cases are chromatic polynomials}
+\begin{frame}{The two cases are themselves chromatic polynomials!}
   The type of reasoning we used to find the chromatic polynomial of $C_4$ will work to find the chromatic polynomial of any graph; however, many cases might need to be considered, and the argument will get quite complicated.
 
   \begin{block}{It will help to repackage the reasoning}
     \end{block}
 
-  \begin{block}{Case 1: $v_1$ and $v_2$ are the same colour}
+  \begin{block}{Case 1: $v_1$ and $v_3$ are the same colour}
 If they're the same colour, then we can make them same vertex...
         \end{block}
   
-  \begin{block}{Case 2: $V_2$ and $v_3$ are different colours}
+  \begin{block}{Case 2: $v_1$ and $v_3$ are different colours}
         If there's an edge between two vertices, then they need to be different colours.
   \end{block}
 
@@ -140,7 +143,7 @@ If they're the same colour, then we can make them same vertex...
     $$P_G(k)=P_{G_{+xy}}(k)+P_{G_{x=y}}(k)$$
   \end{block}
 
-  \begin{proof} Consider a colouring of $G$; in some of them $x$ and $y$ will have different colourings, and in others $x$ and $y$ will have the same colour.  The colourings in the first case are exactly the colourings of $G_{+xy}$, the colourings in the second are the colourings of $G_{x=y}$.
+  \begin{proof} Consider the colourings of $G$. In some of them $x$ and $y$ will be colours, and in others $x$ and $y$ will be the same colour.  The colourings in the first case are exactly the colourings of $G_{+xy}$, the colourings in the second are the colourings of $G_{x=y}$.
    \end{proof}
     
     \end{frame}
@@ -150,7 +153,7 @@ If they're the same colour, then we can make them same vertex...
   \begin{tikzpicture}
     \begin{scope}[every node/.style={circle, draw}]
       \foreach \x in {1,2,...,5}{
-        \node (\x) at (162-72*\x:1.5) {$\x$}}
+        \node (\x) at (162-72*\x:1.5) {$\x$};}
       \draw (1)--(2)--(3)--(4)--(5)--(1);
 
     \end{scope}
@@ -160,9 +163,9 @@ If they're the same colour, then we can make them same vertex...
     \begin{column}{.7\textwidth}
       \begin{block}{Three cases, but two are the same:}
         \begin{itemize}
-        \item Case 1: 1,2 and 3 all have different colours
-        \item Case 2: 1 and 2 have the same colour
-        \item Case 3: 1 and 3 have the same colour
+        \item Case 1: 1,3 and 4 all have different colours
+        \item Case 2: 1 and 3 have the same colour
+        \item Case 3: 1 and 4 have the same colour
         \end{itemize}
         By symmetry, Cases 2 and 3 are the same.
       \end{block}
@@ -178,8 +181,31 @@ If they're the same colour, then we can make them same vertex...
   &=k(k-1)(k-2)(k^2-2k+2)
   \end{align*}
 
-  
-
   \end{frame}
+
+\begin{frame}{Deletion-Contraction: restructuring the lemma}
+The lemma as stated can be a bit awkward for induction:
+\begin{itemize}
+    \item $G_{+xy}$ has an extra edge; "bigger"
+    \item $G_{x=y}$ has fewer vertices: "smaller"
+\end{itemize}
+Rewrite so $H\cong G_{+xy}$ is the "starting" graph.
+\begin{lemma}[Deletion-Contraction]
+Let $H$ be a graph, and let $e$ be an edge in $H$.  Then
+$$P_H(k)=P_{H\setminus e}(k)-P_{H/e}(k)$$
+\end{lemma}  
+The edge $e$ is between $xy$
+$$H=G+xy,\qquad H\setminus e=G,\qquad H/e=G_{x=y}$$
+
+\begin{example} Re-do finding $P_{C_4}(k)$ and $P_{C_5}(k)$ using deletion-contraction.
   
+  \end{example}
+
+
+\end{frame}  
+
+
+
+
+
 \end{document}
