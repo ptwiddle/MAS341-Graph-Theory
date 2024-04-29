@@ -23,3 +23,5 @@ This page contains links to slides from lectures when they were used, as well as
 1. Lecture 15 [Slides](../Slides/Lecture16.pdf) Chromatic Number
 1. Lecture 16 [Slides](../Slides/Lecture17.pdf) Six colour theorem and Chromatic Index
 1. Lecture 17+18 [Slides](../Slides/Lecture18.pdf) Fininishing Chromatic Index, Starting Chromatic Polynomial, Deletion-Contraction
+1. Lecture 19 [Slides](../Slides/Lecture19.pdf) Chromatic Polynomial and Induction
+1. Lecture 20 [Slides](../Slides/Lecture20.pdf) Gluing Formula and Examples
